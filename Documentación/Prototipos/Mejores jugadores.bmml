@@ -1,0 +1,22 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="510" measuredH="420" mockupW="450" mockupH="400">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="60" y="20" w="-1" h="-1" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mejores%20jugadores</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::DataGrid" x="75" y="68" w="420" h="167" measuredW="334" measuredH="141" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Posici%F3n%2C%20Usuario%2C%20Ganadas%2C%20Perdidas%2C%20Empates%0A1%2C%20Shadow%2C%20120%2C%208%2C%2010%0A2%2C%20Hunter%2C%20115%2C%209%2C%2010%0A3%2C%20Wacha%2C%2010%2C%2090%2C%208%0A4%2C%20Valdivillano%2C%201%2C%20120%2C%200</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::PointyButton" x="75" y="289" w="-1" h="-1" measuredW="75" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>left</direction>
+        <href>Men%FA%26bm%3BMen%FA.bmml%26bm%3BMen%FA.bmml%26bm%3BMen%FA.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2215%2C269%2C90%2C296%22%20href%3D%22Men%25C3%25BA.bmml%22%20alt%3D%22Men%FA%22%20id%3D%222%22/%3E</map>
+        <text>Regresar</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
