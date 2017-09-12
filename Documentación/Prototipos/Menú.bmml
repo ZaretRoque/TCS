@@ -12,6 +12,10 @@
     <control controlID="14" controlTypeID="com.balsamiq.mockups::VRule" x="527" y="116" w="-1" h="262" measuredW="10" measuredH="100" zOrder="8" locked="false" isInGroup="-1"/>
     <control controlID="16" controlTypeID="com.balsamiq.mockups::VRule" x="674" y="116" w="-1" h="262" measuredW="10" measuredH="100" zOrder="9" locked="false" isInGroup="-1"/>
     <control controlID="20" controlTypeID="__group__" x="699" y="293" w="109" h="32" measuredW="109" measuredH="32" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Ver%20reglas%26bm%3BVer%20reglas.bmml%26bm%3BVer%20reglas.bmml%26bm%3BVer%20reglas.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22304%2C280%2C413%2C312%22%20href%3D%22Ver%2520reglas.bmml%22%20alt%3D%22Ver%20reglas%22%20id%3D%2220%22/%3E</map>
+      </controlProperties>
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="20"/>
         <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="47" y="6" w="-1" h="-1" measuredW="62" measuredH="21" zOrder="1" locked="false" isInGroup="20">

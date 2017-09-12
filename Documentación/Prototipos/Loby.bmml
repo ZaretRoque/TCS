@@ -29,7 +29,9 @@
         </control>
         <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="285" y="283" w="-1" h="-1" measuredW="118" measuredH="27" zOrder="4" locked="false" isInGroup="12">
           <controlProperties>
-            <state>selected</state>
+            <href>Jugar%26bm%3BJugar.bmml%26bm%3BJugar.bmml%26bm%3BJugar.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22285%2C283%2C403%2C310%22%20href%3D%22Jugar.bmml%22%20alt%3D%22Jugar%22%20id%3D%224%22/%3E</map>
+            <state>up</state>
             <text>Unirse%20a%20partida</text>
           </controlProperties>
         </control>
@@ -78,6 +80,14 @@
           </controlProperties>
         </control>
       </groupChildrenDescriptors>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::PointyButton" x="104" y="359" w="-1" h="-1" measuredW="75" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>left</direction>
+        <href>Men%FA%26bm%3BMen%FA.bmml%26bm%3BMen%FA.bmml%26bm%3BMen%FA.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2223%2C330%2C98%2C357%22%20href%3D%22Men%25C3%25BA.bmml%22%20alt%3D%22Men%FA%22%20id%3D%2215%22/%3E</map>
+        <text>Regresar</text>
+      </controlProperties>
     </control>
   </controls>
 </mockup>

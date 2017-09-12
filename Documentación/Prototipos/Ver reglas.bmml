@@ -1,0 +1,41 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="850" measuredH="418" mockupW="501" mockupH="400">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="349" y="18" w="501" h="400" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bottomheight>0</bottomheight>
+        <close>true</close>
+        <maximizeRestore>true</maximizeRestore>
+        <minimize>true</minimize>
+        <text>Ver%20reglas</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="364" y="61" w="-1" h="-1" measuredW="461" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Durante%20su%20turno%20cada%20jugador%20elige%20una%20casilla%20vac%EDa%20y%20coloca%20su%20ficha%20en%20ella</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="364" y="104" w="-1" h="-1" measuredW="466" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Gana%20el%20jugador%20que%20logre%20poner%205%20fichas%20en%20l%EDnea%20vertical%2C%20horizontal%20o%20diagonal</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="364" y="159" w="-1" h="-1" measuredW="290" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Si%20el%20tablero%20se%20llena%20de%20fichas%20se%20declara%20empate</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::PointyButton" x="374" y="376" w="-1" h="-1" measuredW="75" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>left</direction>
+        <href>Men%FA%26bm%3BMen%FA.bmml%26bm%3BMen%FA.bmml%26bm%3BMen%FA.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2225%2C358%2C100%2C385%22%20href%3D%22Men%25C3%25BA.bmml%22%20alt%3D%22Men%FA%22%20id%3D%224%22/%3E</map>
+        <text>Regresar</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="359" y="208" w="-1" h="-1" measuredW="348" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Si%20se%20abandona%20la%20partida%20se%20registra%20como%20partida%20perdida</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
