@@ -1,0 +1,33 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="850" measuredH="396" mockupW="414" mockupH="330">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="436" y="66" w="414" h="330" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cinco%20en%20L%EDnea</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TextArea" x="468" y="139" w="349" h="123" measuredW="200" measuredH="140" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>PARTIDA%20ENCONTRADA</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::DataGrid" x="529" y="180" w="-1" h="-1" measuredW="221" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ElBarbaro%2C%20%28PG%29%205%2C%20%28PE%29%201%2C%20%28PP%29%200</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="505" y="218" w="-1" h="-1" measuredW="70" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Jugar%26bm%3BJugar.bmml%26bm%3BJugar.bmml%26bm%3BJugar.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2269%2C152%2C139%2C179%22%20href%3D%22Jugar.bmml%22%20alt%3D%22Jugar%22%20id%3D%223%22/%3E</map>
+        <text>Aceptar</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="684" y="218" w="-1" h="-1" measuredW="80" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Loby%26bm%3BLoby.bmml%26bm%3BLoby.bmml%26bm%3BLoby.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22248%2C152%2C328%2C179%22%20href%3D%22Loby.bmml%22%20alt%3D%22Loby%22%20id%3D%224%22/%3E</map>
+        <text>Rechazar</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

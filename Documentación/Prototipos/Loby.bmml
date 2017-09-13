@@ -29,8 +29,8 @@
         </control>
         <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="285" y="283" w="-1" h="-1" measuredW="118" measuredH="27" zOrder="4" locked="false" isInGroup="12">
           <controlProperties>
-            <href>Jugar%26bm%3BJugar.bmml%26bm%3BJugar.bmml%26bm%3BJugar.bmml</href>
-            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22285%2C283%2C403%2C310%22%20href%3D%22Jugar.bmml%22%20alt%3D%22Jugar%22%20id%3D%224%22/%3E</map>
+            <href>Esperando%20Confirmaci%F3n%26bm%3BEsperando%20Confirmaci%F3n.bmml%26bm%3BEsperando%20Confirmaci%F3n.bmml%26bm%3BEsperando%20Confirmaci%F3n.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22285%2C283%2C403%2C310%22%20href%3D%22Esperando%2520Confirmaci%25C3%25B3n.bmml%22%20alt%3D%22Esperando%20Confirmaci%F3n%22%20id%3D%224%22/%3E</map>
             <state>up</state>
             <text>Unirse%20a%20partida</text>
           </controlProperties>
