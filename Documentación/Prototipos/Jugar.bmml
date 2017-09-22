@@ -6,7 +6,7 @@
         <close>true</close>
         <maximizeRestore>true</maximizeRestore>
         <minimize>true</minimize>
-        <text>Cinco%20en%20L%EDnea</text>
+        <text>Cinco%20en%20L%EDnea%20-%20Jugar</text>
       </controlProperties>
     </control>
     <control controlID="1" controlTypeID="com.balsamiq.mockups::VRule" x="224" y="50" w="-1" h="356" measuredW="10" measuredH="100" zOrder="1" locked="false" isInGroup="-1"/>
