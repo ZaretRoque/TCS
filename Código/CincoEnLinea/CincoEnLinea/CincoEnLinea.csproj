@@ -45,31 +45,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InicioSesion.cs">
+    <Compile Include="GUI\InicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InicioSesion.Designer.cs">
+    <Compile Include="GUI\InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Jugar.cs">
+    <Compile Include="GUI\Jugar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Jugar.Designer.cs">
+    <Compile Include="GUI\Jugar.Designer.cs">
       <DependentUpon>Jugar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Mejores jugadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Mejores jugadores.Designer.cs">
+      <DependentUpon>Mejores jugadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\VerReglas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VerReglas.Designer.cs">
+      <DependentUpon>VerReglas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro.cs">
+    <Compile Include="GUI\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro.Designer.cs">
+    <Compile Include="GUI\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="InicioSesion.resx">
+    <Compile Include="Recursos Internacionalización\StringResources.EN-US.Designer.cs">
+      <DependentUpon>StringResources.EN-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Recursos Internacionalización\StringResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUI\InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Jugar.resx">
+    <EmbeddedResource Include="GUI\Jugar.resx">
       <DependentUpon>Jugar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Mejores jugadores.resx">
+      <DependentUpon>Mejores jugadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\VerReglas.resx">
+      <DependentUpon>VerReglas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,8 +108,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Registro.resx">
+    <EmbeddedResource Include="GUI\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos Internacionalización\StringResources.EN-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResources.EN-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos Internacionalización\StringResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,5 +132,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
