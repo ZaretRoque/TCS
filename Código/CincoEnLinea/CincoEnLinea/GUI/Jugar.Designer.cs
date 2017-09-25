@@ -70,6 +70,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Jugar";
             this.Text = "Cinco en Línea - Jugar";
+            this.Load += new System.EventHandler(this.Jugar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

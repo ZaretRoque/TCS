@@ -25,5 +25,10 @@ namespace CincoEnLinea
 
 
         }
+
+        private void Jugar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

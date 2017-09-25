@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+
 
 namespace CincoEnLinea
 {
@@ -21,9 +19,22 @@ namespace CincoEnLinea
           
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void cambiaFondo(object sender, EventArgs e)
         {
-
+            if(textBoxUsuario.Text == "")
+            {
+                ImageBrush textoFondo = new ImageBrush();
+                textoFondo.ImageSource = new BitmapImage(
+                    new Uri(@"EtiquetaUsuario.jpg", UriKind.Relative)
+                    );
+                textoFondo.AlignmentX = AlignmentX.Left;
+                textoFondo.Stretch = Stretch.None;
+                //se supone que debería ir la propiedad background pero no está para mi textBox :c
+                
+            } else
+            {
+                
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

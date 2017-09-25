@@ -61,7 +61,7 @@
         <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="23" y="283" w="118" h="27" measuredW="102" measuredH="27" zOrder="3" locked="false" isInGroup="14">
           <controlProperties>
             <menuIcon>false</menuIcon>
-            <state>up</state>
+            <state>disabled</state>
             <text>Crear%20Partida</text>
           </controlProperties>
         </control>
