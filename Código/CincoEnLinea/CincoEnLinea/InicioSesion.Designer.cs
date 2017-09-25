@@ -45,6 +45,7 @@
             // textBoxUsuario
             // 
             this.textBoxUsuario.BackColor = System.Drawing.Color.White;
+            this.textBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxUsuario.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsuario.Location = new System.Drawing.Point(57, 70);
             this.textBoxUsuario.Multiline = true;
