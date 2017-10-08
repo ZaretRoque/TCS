@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CincoEnLinea.GUI;
+using CincoEnLinea.BD;
+using System.Configuration;
+using CincoEnLinea.Dominio;
 
 namespace CincoEnLinea {
     static class Program {
@@ -16,5 +19,8 @@ namespace CincoEnLinea {
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new InicioSesion());
         }
+
+        
+
     }
 }
