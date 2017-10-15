@@ -35,17 +35,17 @@ namespace CincoEnLinea.BD {
         }
 
         public int RegistrarUsuario(string nombreUsuario, string contrasena) {
-            int columnasAfectadas = 0; //si es igual a 0 la inserción no salió bien
+            int filasAfectadas = 0; //si es igual a 0 la inserción no salió bien
             MySqlConnection conexion = new MySqlConnection(conexionBD);
             conexion.Open();
             string sqlQuery = "Insert into usuario (nombreUsuario, contrasena) " +
-                "values(@nombreUsuario, SHA2(@nombreUsuario, 256))";
+                "values(@nombreUsuario, SHA2(@contrasena, 256))";
             MySqlCommand cmd = new MySqlCommand(sqlQuery, conexion);
             cmd.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
             cmd.Parameters.AddWithValue("@contrasena", contrasena);
-            columnasAfectadas = cmd.ExecuteNonQuery();
+            filasAfectadas = cmd.ExecuteNonQuery();
             conexion.Close();
-            return columnasAfectadas;
+            return filasAfectadas;
         }
 
         public Usuario RecuperarUsuario(string nombreUsuario) {
@@ -61,6 +61,26 @@ namespace CincoEnLinea.BD {
                 usuario.NombreUsuario = reader.GetString("nombreUsuario");
             }
             return usuario;
+        }
+
+        public List<Usuario> RecuperarMejoresJugadores() {
+            MySqlConnection conexion = new MySqlConnection(conexionBD);
+            conexion.Open();
+            string sqlQuery = "select nombreUsuario, partidasGanadas, partidasEmpatadas, " +
+                "partidasEmpatadas from usuario natural join EstadisticasUsuario order by " +
+                "partidasGanadas";
+            MySqlCommand cmd = new MySqlCommand(sqlQuery, conexion);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            List<Usuario> usuarios = new List<Usuario>();
+            while(reader.HasRows && reader.Read()) {
+                Usuario usuario = new Usuario();
+                usuario.NombreUsuario = reader.GetString("nombreUsuario");
+                usuario.PartidasGanadas = reader.GetInt32("partidasGanadas");
+                usuario.PartidasEmpatadas = reader.GetInt32("partidasEmpatadas");
+                usuario.PartidasPerdidas = reader.GetInt32("partidasPerdidas");
+                usuarios.Add(usuario);
+            }
+            return usuarios;
         }
 
 

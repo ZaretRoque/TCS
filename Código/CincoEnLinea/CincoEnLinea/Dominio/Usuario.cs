@@ -10,6 +10,9 @@ namespace CincoEnLinea.Dominio {
         private int idUsuario;
         private string nombreUsuario;
         private string contrasena;
+        private int partidasGanadas;
+        private int partidasPerdidas;
+        private int partidasEmpatadas;
 
         public Usuario() { }
 
@@ -22,7 +25,8 @@ namespace CincoEnLinea.Dominio {
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
         public string Contrasena { get => contrasena; set => contrasena = value; }
-
-        
+        public int PartidasGanadas { get => partidasGanadas; set => partidasGanadas = value; }
+        public int PartidasPerdidas { get => partidasPerdidas; set => partidasPerdidas = value; }
+        public int PartidasEmpatadas { get => partidasEmpatadas; set => partidasEmpatadas = value; }
     }
 }
