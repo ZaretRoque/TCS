@@ -70,6 +70,12 @@
     <Compile Include="GUI\Mejores jugadores.Designer.cs">
       <DependentUpon>Mejores jugadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Mejores jugadores.resx">
       <DependentUpon>Mejores jugadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
@@ -154,6 +163,7 @@
   <ItemGroup>
     <Content Include="Resources\EtiquetaUsuario.jpg" />
     <Content Include="Resources\FondoInicioSesion.jpg" />
+    <None Include="Resources\fondoMenuPrincipal.jpg" />
     <None Include="Resources\negroDegradado.jpg" />
     <None Include="Resources\fondoTablero.jpg" />
     <None Include="Resources\resize-img.jpg" />

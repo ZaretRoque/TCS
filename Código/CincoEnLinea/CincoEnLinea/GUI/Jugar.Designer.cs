@@ -1,6 +1,6 @@
 ﻿namespace CincoEnLinea
 {
-    partial class Jugar
+    partial class Jugar 
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.abandonaPartida = new System.Windows.Forms.Button();
+            this.labelCincoLinea = new System.Windows.Forms.Label();
             this.pictureBox0_0 = new System.Windows.Forms.PictureBox();
             this.pictureBox0_1 = new System.Windows.Forms.PictureBox();
             this.pictureBox8_0 = new System.Windows.Forms.PictureBox();
@@ -194,31 +194,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4_4)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // abandonaPartida
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(22, 448);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 31);
-            this.button1.TabIndex = 81;
-            this.button1.Text = "Abandonar partida";
-            this.button1.UseVisualStyleBackColor = true;
+            this.abandonaPartida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.abandonaPartida.FlatAppearance.BorderSize = 0;
+            this.abandonaPartida.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.abandonaPartida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.abandonaPartida.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abandonaPartida.Location = new System.Drawing.Point(22, 448);
+            this.abandonaPartida.Name = "abandonaPartida";
+            this.abandonaPartida.Size = new System.Drawing.Size(160, 31);
+            this.abandonaPartida.TabIndex = 81;
+            this.abandonaPartida.Text = "Abandonar partida";
+            this.abandonaPartida.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // labelCincoLinea
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 29);
-            this.label1.TabIndex = 82;
-            this.label1.Text = "Cinco en Línea";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.labelCincoLinea.AutoSize = true;
+            this.labelCincoLinea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelCincoLinea.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCincoLinea.Location = new System.Drawing.Point(0, 0);
+            this.labelCincoLinea.Name = "labelCincoLinea";
+            this.labelCincoLinea.Size = new System.Drawing.Size(156, 29);
+            this.labelCincoLinea.TabIndex = 82;
+            this.labelCincoLinea.Text = "Cinco en Línea";
+            this.labelCincoLinea.Click += new System.EventHandler(this.clickLabel);
             // 
             // pictureBox0_0
             // 
@@ -955,8 +955,8 @@
             this.Controls.Add(this.pictureBox8_0);
             this.Controls.Add(this.pictureBox0_1);
             this.Controls.Add(this.pictureBox0_0);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelCincoLinea);
+            this.Controls.Add(this.abandonaPartida);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Jugar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1049,8 +1049,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button abandonaPartida;
+        private System.Windows.Forms.Label labelCincoLinea;
         private System.Windows.Forms.PictureBox pictureBox0_0;
         private System.Windows.Forms.PictureBox pictureBox0_1;
         private System.Windows.Forms.PictureBox pictureBox8_0;
@@ -1132,5 +1132,8 @@
         private System.Windows.Forms.PictureBox pictureBox6_4;
         private System.Windows.Forms.PictureBox pictureBox4_5;
         private System.Windows.Forms.PictureBox pictureBox4_4;
+
+
+
     }
 }
