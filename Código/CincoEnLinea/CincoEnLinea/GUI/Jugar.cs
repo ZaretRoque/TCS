@@ -2,34 +2,22 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace CincoEnLinea
-{
-    public partial class Jugar : Form
-    {
+namespace CincoEnLinea {
+    public partial class Jugar : Form {
         private PictureBox[,] pictureTablero = new PictureBox[8, 8];
 
-        public Jugar()
-        {
+        public Jugar() {
             InitializeComponent();
         }
 
-        private void tableLayoutPanelTablero_Paint(object sender, PaintEventArgs e)
-        {
+        private void tableLayoutPanelTablero_Paint(object sender, PaintEventArgs e) {
 
         }
 
-        private void Jugar_Load(object sender, EventArgs e)
-        {
-
+        private void Jugar_Load(object sender, EventArgs e) {
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void pictureBoxLlenaTablero()
-        {
+        public void pictureBoxLlenaTablero() {
             pictureTablero[0, 0] = pictureBox0_0;
             pictureTablero[0, 1] = pictureBox0_1;
             pictureTablero[0, 2] = pictureBox0_2;
@@ -119,6 +107,10 @@ namespace CincoEnLinea
             pictureTablero[8, 6] = pictureBox8_6;
             pictureTablero[8, 7] = pictureBox8_7;
             pictureTablero[8, 8] = pictureBox8_8;
+        }
+
+        private void clickLabel(object sender, EventArgs e) {
+
         }
     }
 }
