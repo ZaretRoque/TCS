@@ -82,6 +82,12 @@
     <Compile Include="GUI\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\SalaEspera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SalaEspera.Designer.cs">
+      <DependentUpon>SalaEspera.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\VerReglas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SalaEspera.resx">
+      <DependentUpon>SalaEspera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\VerReglas.resx">
       <DependentUpon>VerReglas.cs</DependentUpon>

@@ -82,7 +82,8 @@
             this.labelEntrarSala.Size = new System.Drawing.Size(157, 30);
             this.labelEntrarSala.TabIndex = 1;
             this.labelEntrarSala.Text = "Entrar a sala";
-            this.labelEntrarSala.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseSobreEntrarSala);
+            this.labelEntrarSala.Click += new System.EventHandler(this.ClicEntrarSala);
+            this.labelEntrarSala.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseSobreEntrarSala);
             // 
             // labelMejoresJugadores
             // 
@@ -94,8 +95,8 @@
             this.labelMejoresJugadores.Size = new System.Drawing.Size(278, 30);
             this.labelMejoresJugadores.TabIndex = 2;
             this.labelMejoresJugadores.Text = "Ver mejores jugadores";
-            this.labelMejoresJugadores.Click += new System.EventHandler(this.mouseClicMejoresJugadores);
-            this.labelMejoresJugadores.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseSobreMejoresJugadores);
+            this.labelMejoresJugadores.Click += new System.EventHandler(this.MouseClicMejoresJugadores);
+            this.labelMejoresJugadores.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseSobreMejoresJugadores);
             // 
             // labelVerReglas
             // 
@@ -107,8 +108,8 @@
             this.labelVerReglas.Size = new System.Drawing.Size(131, 30);
             this.labelVerReglas.TabIndex = 3;
             this.labelVerReglas.Text = "Ver reglas";
-            this.labelVerReglas.Click += new System.EventHandler(this.mouseClicSobreVerReglas);
-            this.labelVerReglas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseSobreVerReglas);
+            this.labelVerReglas.Click += new System.EventHandler(this.MouseClicSobreVerReglas);
+            this.labelVerReglas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseSobreVerReglas);
             // 
             // labelCerrarSesion
             // 
@@ -120,7 +121,8 @@
             this.labelCerrarSesion.Size = new System.Drawing.Size(166, 30);
             this.labelCerrarSesion.TabIndex = 4;
             this.labelCerrarSesion.Text = "Cerrar sesión";
-            this.labelCerrarSesion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseSobreCerrarSesion);
+            this.labelCerrarSesion.Click += new System.EventHandler(this.ClicSalir);
+            this.labelCerrarSesion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseSobreCerrarSesion);
             // 
             // labelMenu
             // 
@@ -226,9 +228,11 @@
             this.Controls.Add(this.labelMejoresJugadores);
             this.Controls.Add(this.labelEntrarSala);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MenuPrincipal";
-            this.Text = "MenuPrincipal";
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseSobrePanelPrincipal);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menú Principal";
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseSobrePanelPrincipal);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEntrarSalaIzq)).EndInit();

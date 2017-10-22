@@ -33,9 +33,9 @@
             this.labelDivisorIdiomas = new System.Windows.Forms.Label();
             this.labelIniciaSesion = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNombreUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxContrasena = new System.Windows.Forms.TextBox();
             this.labelNoTienesCuenta = new System.Windows.Forms.Label();
             this.linkLabelRegistrate = new System.Windows.Forms.LinkLabel();
             this.buttonEntrar = new System.Windows.Forms.Button();
@@ -145,12 +145,12 @@
             this.labelUsuario.TabIndex = 6;
             this.labelUsuario.Text = "Usuario";
             // 
-            // textBox1
+            // textBoxNombreUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 178);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(291, 22);
-            this.textBox1.TabIndex = 7;
+            this.textBoxNombreUsuario.Location = new System.Drawing.Point(127, 178);
+            this.textBoxNombreUsuario.Name = "textBoxNombreUsuario";
+            this.textBoxNombreUsuario.Size = new System.Drawing.Size(291, 22);
+            this.textBoxNombreUsuario.TabIndex = 7;
             // 
             // label1
             // 
@@ -162,12 +162,13 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Contraseña";
             // 
-            // textBox2
+            // textBoxContrasena
             // 
-            this.textBox2.Location = new System.Drawing.Point(127, 261);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(291, 22);
-            this.textBox2.TabIndex = 9;
+            this.textBoxContrasena.Location = new System.Drawing.Point(127, 261);
+            this.textBoxContrasena.Name = "textBoxContrasena";
+            this.textBoxContrasena.PasswordChar = '*';
+            this.textBoxContrasena.Size = new System.Drawing.Size(291, 22);
+            this.textBoxContrasena.TabIndex = 9;
             // 
             // labelNoTienesCuenta
             // 
@@ -189,7 +190,7 @@
             this.linkLabelRegistrate.TabIndex = 11;
             this.linkLabelRegistrate.TabStop = true;
             this.linkLabelRegistrate.Text = "Regístrate";
-            this.linkLabelRegistrate.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mouseClicRegistrate);
+            this.linkLabelRegistrate.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MouseClicRegistrate);
             // 
             // buttonEntrar
             // 
@@ -201,7 +202,7 @@
             this.buttonEntrar.TabIndex = 12;
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.UseVisualStyleBackColor = false;
-            this.buttonEntrar.Click += new System.EventHandler(this.clicEntrar);
+            this.buttonEntrar.Click += new System.EventHandler(this.ClicEntrar);
             // 
             // IniciarSesion
             // 
@@ -212,9 +213,9 @@
             this.Controls.Add(this.buttonEntrar);
             this.Controls.Add(this.linkLabelRegistrate);
             this.Controls.Add(this.labelNoTienesCuenta);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxContrasena);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxNombreUsuario);
             this.Controls.Add(this.labelUsuario);
             this.Controls.Add(this.labelIniciaSesion);
             this.Controls.Add(this.labelDivisorIdiomas);
@@ -222,6 +223,7 @@
             this.Controls.Add(this.linkLabelEspañol);
             this.Controls.Add(this.labelCincoEnLinea);
             this.Controls.Add(this.panelDatosIniciaSesion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "IniciarSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesion";
@@ -243,9 +245,9 @@
         private System.Windows.Forms.Label labelDivisorIdiomas;
         private System.Windows.Forms.Label labelIniciaSesion;
         private System.Windows.Forms.Label labelUsuario;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxNombreUsuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxContrasena;
         private System.Windows.Forms.Label labelNoTienesCuenta;
         private System.Windows.Forms.LinkLabel linkLabelRegistrate;
         private System.Windows.Forms.Label labelDesarrolladores;

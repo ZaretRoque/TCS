@@ -47,7 +47,7 @@
             this.listViewMejoresJugadores.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewMejoresJugadores.ForeColor = System.Drawing.SystemColors.MenuText;
             this.listViewMejoresJugadores.Location = new System.Drawing.Point(87, 152);
-            this.listViewMejoresJugadores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewMejoresJugadores.Margin = new System.Windows.Forms.Padding(4);
             this.listViewMejoresJugadores.Name = "listViewMejoresJugadores";
             this.listViewMejoresJugadores.Size = new System.Drawing.Size(581, 278);
             this.listViewMejoresJugadores.TabIndex = 0;
@@ -84,13 +84,13 @@
             this.bRegresarMejoresJugadores.BackColor = System.Drawing.Color.Silver;
             this.bRegresarMejoresJugadores.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bRegresarMejoresJugadores.Location = new System.Drawing.Point(515, 459);
-            this.bRegresarMejoresJugadores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bRegresarMejoresJugadores.Margin = new System.Windows.Forms.Padding(4);
             this.bRegresarMejoresJugadores.Name = "bRegresarMejoresJugadores";
             this.bRegresarMejoresJugadores.Size = new System.Drawing.Size(153, 38);
             this.bRegresarMejoresJugadores.TabIndex = 1;
             this.bRegresarMejoresJugadores.Text = "Regresar";
             this.bRegresarMejoresJugadores.UseVisualStyleBackColor = false;
-            this.bRegresarMejoresJugadores.Click += new System.EventHandler(this.button1_Click);
+            this.bRegresarMejoresJugadores.Click += new System.EventHandler(this.ClicRegresar);
             // 
             // panel1
             // 
@@ -122,8 +122,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bRegresarMejoresJugadores);
             this.Controls.Add(this.listViewMejoresJugadores);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Mejores_jugadores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mejores jugadores";
             this.Load += new System.EventHandler(this.Mejores_jugadores_Load);
             this.panel1.ResumeLayout(false);

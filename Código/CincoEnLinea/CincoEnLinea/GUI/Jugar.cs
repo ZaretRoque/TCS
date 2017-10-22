@@ -109,8 +109,335 @@ namespace CincoEnLinea {
             pictureTablero[8, 8] = pictureBox8_8;
         }
 
-        private void clickLabel(object sender, EventArgs e) {
+        private void ClicPictureBox0_0(object sender, EventArgs e) {
+            
+        }
 
+        private void ClicPictureBox0_1(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox0_2(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox0_3(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox0_4(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox0_5(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox0_6(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox0_7(object sender, EventArgs e) {
+
+        }
+
+        private void ClicpPictureBox0_8(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox1_0(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox1_1(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox1_2(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox1_3(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox1_4(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox1_5(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox1_6(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox1_7(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox1_8(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox2_0(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox2_1(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox2_2(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox2_3(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox2_4(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox2_5(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox2_6(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox2_7(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox2_8(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox3_0(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox3_1(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox3_2(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox3_3(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox3_4(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox3_5(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox3_6(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox3_7(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox3_8(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox4_0(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox4_1(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox4_2(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox4_3(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox4_4(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox4_5(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox4_6(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox4_7(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox4_8(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox5_0(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox5_1(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox5_2(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox5_3(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox5_4(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox5_5(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox5_6(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox5_7(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox5_8(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox6_0(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox6_1(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox6_2(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox6_3(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox6_4(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox6_5(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox6_6(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox6_7(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox6_8(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox7_0(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox7_1(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox7_2(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox7_3(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox7_4(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox7_5(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox7_6(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox7_7(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox7_8(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox8_0(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox8_1(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox8_2(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox8_3(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox8_4(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox8_5(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox8_6(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox8_7(object sender, EventArgs e) {
+
+        }
+
+        private void ClicPictureBox8_8(object sender, EventArgs e) {
+
+        }
+
+        private void ClicAbandonarPartida(object sender, EventArgs e) {
+            if(MessageBox.Show("¿Seguro que deseas salir?", "¿Miedo?",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes) {
+                this.Dispose();
+            }
         }
     }
 }

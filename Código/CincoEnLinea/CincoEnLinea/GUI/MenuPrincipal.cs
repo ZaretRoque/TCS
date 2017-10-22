@@ -21,7 +21,7 @@ namespace CincoEnLinea.GUI {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mouseSobrePanelPrincipal(object sender, MouseEventArgs e) {
+        private void MouseSobrePanelPrincipal(object sender, MouseEventArgs e) {
             pictureBoxEntrarSalaDer.Visible = false;
             pictureBoxEntrarSalaIzq.Visible = false;
             pictureBoxMejoresJugadoresDer.Visible = false;
@@ -37,7 +37,7 @@ namespace CincoEnLinea.GUI {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mouseSobreEntrarSala(object sender, MouseEventArgs e) {
+        private void MouseSobreEntrarSala(object sender, MouseEventArgs e) {
             pictureBoxEntrarSalaDer.Visible = true;
             pictureBoxEntrarSalaIzq.Visible = true;
 
@@ -48,7 +48,7 @@ namespace CincoEnLinea.GUI {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mouseSobreMejoresJugadores(object sender, MouseEventArgs e) {
+        private void MouseSobreMejoresJugadores(object sender, MouseEventArgs e) {
             pictureBoxMejoresJugadoresDer.Visible = true;
             pictureBoxMejoresJugadoresIzq.Visible = true;
         }
@@ -58,7 +58,7 @@ namespace CincoEnLinea.GUI {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mouseSobreVerReglas(object sender, MouseEventArgs e) {
+        private void MouseSobreVerReglas(object sender, MouseEventArgs e) {
             pictureBoxVerReglasDer.Visible = true;
             pictureBoxVerReglasIzq.Visible = true;
         }
@@ -68,19 +68,31 @@ namespace CincoEnLinea.GUI {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mouseSobreCerrarSesion(object sender, MouseEventArgs e) {
+        private void MouseSobreCerrarSesion(object sender, MouseEventArgs e) {
             pictureBoxCerrarSesionIzq.Visible = true;
             pictureBoxCerrarSesionDer.Visible = true;
         }
 
-        private void mouseClicMejoresJugadores(object sender, EventArgs e) {
+        private void MouseClicMejoresJugadores(object sender, EventArgs e) {
+            this.Dispose();
             Mejores_jugadores mJuga = new Mejores_jugadores();
             mJuga.Show();
         }
 
-        private void mouseClicSobreVerReglas(object sender, EventArgs e) {
+        private void MouseClicSobreVerReglas(object sender, EventArgs e) {
+            this.Dispose();
             VerReglas vReglas = new VerReglas();
             vReglas.Show();
+        }
+
+        private void ClicEntrarSala(object sender, EventArgs e) {
+            this.Dispose();
+            SalaEspera sE = new SalaEspera();
+            sE.Show();
+        }
+
+        private void ClicSalir(object sender, EventArgs e) {
+            this.Dispose();
         }
     }
 }

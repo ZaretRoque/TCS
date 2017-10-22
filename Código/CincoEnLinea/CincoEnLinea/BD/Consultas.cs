@@ -83,6 +83,50 @@ namespace CincoEnLinea.BD {
             return usuarios;
         }
 
+        /// <summary>
+        /// Valida que el nombre del usuario se encuentre registrado en la BD 
+        /// </summary>
+        /// <param name="nombreUsuario"></param>
+        /// <returns>True si el usuario está registrado. 
+        /// False si el usuario no está registrado.</returns>
+        public Boolean ValidaNombreUsuario(String nombreUsuario) {
+            String nombreRecuperadoUsuario = "";
+            MySqlConnection conexion = new MySqlConnection(conexionBD);
+            conexion.Open();
+            string sqlQuery = "Select nombreUsuario from usuario where nombreUsuario = @nombreUsuario";
+            MySqlCommand cmd = new MySqlCommand(sqlQuery, conexion);
+            cmd.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
+            MySqlDataReader reader = cmd.ExecuteReader();
 
+            while (reader.HasRows && reader.Read()) {
+                nombreRecuperadoUsuario = reader.GetString("nombreUsuario");
+            }
+
+            if (nombreRecuperadoUsuario.Equals("")) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        public Boolean ValidaContraUsuario(String contrasenia) {
+            String contraRecuperadaUsuario = "";
+            MySqlConnection conexion = new MySqlConnection(conexionBD);
+            conexion.Open();
+            string sqlQuery = "Select contrasena from usuario where contrasena = @contrasena";
+            MySqlCommand cmd = new MySqlCommand(sqlQuery, conexion);
+            cmd.Parameters.AddWithValue("@contrasena", contrasenia);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.HasRows && reader.Read()) {
+                contraRecuperadaUsuario = reader.GetString("contrasena");
+            }
+
+            if (contraRecuperadaUsuario.Equals("")) {
+                return false;
+            } else {
+                return true;
+            }
+        }
     }
 }

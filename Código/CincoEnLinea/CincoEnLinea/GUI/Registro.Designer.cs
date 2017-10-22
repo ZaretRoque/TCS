@@ -85,6 +85,7 @@
             // 
             this.textBoxContrasenia.Location = new System.Drawing.Point(92, 247);
             this.textBoxContrasenia.Name = "textBoxContrasenia";
+            this.textBoxContrasenia.PasswordChar = '*';
             this.textBoxContrasenia.Size = new System.Drawing.Size(312, 22);
             this.textBoxContrasenia.TabIndex = 5;
             // 
@@ -92,6 +93,7 @@
             // 
             this.textBoxConfirmaContrasenia.Location = new System.Drawing.Point(91, 324);
             this.textBoxConfirmaContrasenia.Name = "textBoxConfirmaContrasenia";
+            this.textBoxConfirmaContrasenia.PasswordChar = '*';
             this.textBoxConfirmaContrasenia.Size = new System.Drawing.Size(313, 22);
             this.textBoxConfirmaContrasenia.TabIndex = 6;
             // 
@@ -124,6 +126,7 @@
             this.buttonRegistrame.TabIndex = 9;
             this.buttonRegistrame.Text = "Regístrame";
             this.buttonRegistrame.UseVisualStyleBackColor = true;
+            this.buttonRegistrame.Click += new System.EventHandler(this.ClicRegistrame);
             // 
             // Registro
             // 

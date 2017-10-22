@@ -42,6 +42,7 @@
             this.buttonRegresarVerReglas.TabIndex = 0;
             this.buttonRegresarVerReglas.Text = "Regresar";
             this.buttonRegresarVerReglas.UseVisualStyleBackColor = false;
+            this.buttonRegresarVerReglas.Click += new System.EventHandler(this.ClicRegresar);
             // 
             // panel1
             // 
@@ -84,7 +85,8 @@
             this.Controls.Add(this.buttonRegresarVerReglas);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VerReglas";
-            this.Text = "VerReglas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Reglas";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

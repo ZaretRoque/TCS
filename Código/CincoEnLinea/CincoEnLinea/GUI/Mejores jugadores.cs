@@ -29,8 +29,10 @@ namespace CincoEnLinea.GUI {
             colEmpatadas.Text = StringResources.colEmpatadas;
         }
 
-        private void button1_Click(object sender, EventArgs e) {
-
+        private void ClicRegresar(object sender, EventArgs e) {
+            this.Dispose();
+            MenuPrincipal mP = new MenuPrincipal();
+            mP.Show();
         }
     }
 }
