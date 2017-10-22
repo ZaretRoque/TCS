@@ -15,25 +15,5 @@ namespace CincoEnLinea.GUI {
             InitializeComponent();
         }
 
-        private void labelRegla1_Click(object sender, EventArgs e) {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e) {
-
-        }
-
-        private void VerReglas_Load(object sender, EventArgs e) {
-            AplicarIdioma();
-        }
-
-        private void AplicarIdioma() {
-            this.Text = StringResources.WindowTitleVerReglas;
-            bRegresarVerReglas.Text = StringResources.bRegresar;
-            labelRegla1.Text = StringResources.labelRegla1;
-            labelRegla2.Text = StringResources.labelRegla2;
-            labelRegla3.Text = StringResources.labelRegla3;
-            labelRegla4.Text = StringResources.labelRegla4;
-        }
     }
 }

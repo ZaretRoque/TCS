@@ -117,4 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelContenidoReglas.Text" xml:space="preserve">
+    <value>·	 Un jugador solo puede colocar una ficha sobre una 
+casilla vacía.
+
+·	 Cuando la ficha se coloca en algún lugar del tablero
+el turno acaba.
+
+·	 Gana el jugador en poner 5 fichas en línea (vertical, 
+horizontal o diagonal) de manera consecutiva.
+
+·	 Si se llenan todas las casillas y nadie ha ganado, la 
+partida se empata.
+</value>
+  </data>
 </root>

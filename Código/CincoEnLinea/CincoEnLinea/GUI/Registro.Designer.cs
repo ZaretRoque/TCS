@@ -28,100 +28,137 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.linkLabelRegistrar5EnLinea = new System.Windows.Forms.LinkLabel();
+            this.labelRegistrarNuevoUsuario = new System.Windows.Forms.Label();
+            this.labelNombreUsuarioRegistro = new System.Windows.Forms.Label();
+            this.textBoxNombreUsuario = new System.Windows.Forms.TextBox();
+            this.textBoxContrasenia = new System.Windows.Forms.TextBox();
+            this.textBoxConfirmaContrasenia = new System.Windows.Forms.TextBox();
+            this.labelContraseniaRegistro = new System.Windows.Forms.Label();
+            this.labelRepiteContrasenia = new System.Windows.Forms.Label();
+            this.buttonRegistrame = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // linkLabelRegistrar5EnLinea
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(69, 40);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(351, 311);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Hola, ¡Qué bien te ves hoy!";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.linkLabelRegistrar5EnLinea.ActiveLinkColor = System.Drawing.Color.White;
+            this.linkLabelRegistrar5EnLinea.AutoSize = true;
+            this.linkLabelRegistrar5EnLinea.Font = new System.Drawing.Font("Moon", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelRegistrar5EnLinea.LinkColor = System.Drawing.Color.Black;
+            this.linkLabelRegistrar5EnLinea.Location = new System.Drawing.Point(-9, 29);
+            this.linkLabelRegistrar5EnLinea.Name = "linkLabelRegistrar5EnLinea";
+            this.linkLabelRegistrar5EnLinea.Size = new System.Drawing.Size(534, 21);
+            this.linkLabelRegistrar5EnLinea.TabIndex = 1;
+            this.linkLabelRegistrar5EnLinea.TabStop = true;
+            this.linkLabelRegistrar5EnLinea.Text = "                                 5inco en linea                                  " +
+    "       \r\n";
+            this.linkLabelRegistrar5EnLinea.VisitedLinkColor = System.Drawing.Color.Black;
             // 
-            // button1
+            // labelRegistrarNuevoUsuario
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(67, 254);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(222, 40);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Regístrame";
-            this.button1.UseVisualStyleBackColor = false;
+            this.labelRegistrarNuevoUsuario.AutoSize = true;
+            this.labelRegistrarNuevoUsuario.Font = new System.Drawing.Font("Moon", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegistrarNuevoUsuario.Location = new System.Drawing.Point(128, 79);
+            this.labelRegistrarNuevoUsuario.Name = "labelRegistrarNuevoUsuario";
+            this.labelRegistrarNuevoUsuario.Size = new System.Drawing.Size(234, 21);
+            this.labelRegistrarNuevoUsuario.TabIndex = 2;
+            this.labelRegistrarNuevoUsuario.Text = "-Comienza a jugar-";
             // 
-            // textBox3
+            // labelNombreUsuarioRegistro
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox3.Location = new System.Drawing.Point(67, 193);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(222, 36);
-            this.textBox3.TabIndex = 1;
-            this.textBox3.Text = "Contraseña";
+            this.labelNombreUsuarioRegistro.AutoSize = true;
+            this.labelNombreUsuarioRegistro.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombreUsuarioRegistro.Location = new System.Drawing.Point(88, 131);
+            this.labelNombreUsuarioRegistro.Name = "labelNombreUsuarioRegistro";
+            this.labelNombreUsuarioRegistro.Size = new System.Drawing.Size(168, 21);
+            this.labelNombreUsuarioRegistro.TabIndex = 3;
+            this.labelNombreUsuarioRegistro.Text = "Nombre de usuario";
             // 
-            // textBox2
+            // textBoxNombreUsuario
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox2.Location = new System.Drawing.Point(67, 151);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(222, 36);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "Contraseña";
+            this.textBoxNombreUsuario.Location = new System.Drawing.Point(91, 166);
+            this.textBoxNombreUsuario.Name = "textBoxNombreUsuario";
+            this.textBoxNombreUsuario.Size = new System.Drawing.Size(313, 22);
+            this.textBoxNombreUsuario.TabIndex = 4;
             // 
-            // textBox1
+            // textBoxContrasenia
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox1.Font = new System.Drawing.Font("Calibri Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(67, 84);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 38);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Nombre de usuario";
+            this.textBoxContrasenia.Location = new System.Drawing.Point(92, 247);
+            this.textBoxContrasenia.Name = "textBoxContrasenia";
+            this.textBoxContrasenia.Size = new System.Drawing.Size(312, 22);
+            this.textBoxContrasenia.TabIndex = 5;
+            // 
+            // textBoxConfirmaContrasenia
+            // 
+            this.textBoxConfirmaContrasenia.Location = new System.Drawing.Point(91, 324);
+            this.textBoxConfirmaContrasenia.Name = "textBoxConfirmaContrasenia";
+            this.textBoxConfirmaContrasenia.Size = new System.Drawing.Size(313, 22);
+            this.textBoxConfirmaContrasenia.TabIndex = 6;
+            // 
+            // labelContraseniaRegistro
+            // 
+            this.labelContraseniaRegistro.AutoSize = true;
+            this.labelContraseniaRegistro.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelContraseniaRegistro.Location = new System.Drawing.Point(89, 211);
+            this.labelContraseniaRegistro.Name = "labelContraseniaRegistro";
+            this.labelContraseniaRegistro.Size = new System.Drawing.Size(109, 21);
+            this.labelContraseniaRegistro.TabIndex = 7;
+            this.labelContraseniaRegistro.Text = "Contraseña";
+            // 
+            // labelRepiteContrasenia
+            // 
+            this.labelRepiteContrasenia.AutoSize = true;
+            this.labelRepiteContrasenia.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRepiteContrasenia.Location = new System.Drawing.Point(89, 286);
+            this.labelRepiteContrasenia.Name = "labelRepiteContrasenia";
+            this.labelRepiteContrasenia.Size = new System.Drawing.Size(206, 21);
+            this.labelRepiteContrasenia.TabIndex = 8;
+            this.labelRepiteContrasenia.Text = "Confirma la contraseña";
+            // 
+            // buttonRegistrame
+            // 
+            this.buttonRegistrame.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegistrame.Location = new System.Drawing.Point(91, 372);
+            this.buttonRegistrame.Name = "buttonRegistrame";
+            this.buttonRegistrame.Size = new System.Drawing.Size(313, 43);
+            this.buttonRegistrame.TabIndex = 9;
+            this.buttonRegistrame.Text = "Regístrame";
+            this.buttonRegistrame.UseVisualStyleBackColor = true;
             // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CincoEnLinea.Properties.Resources.resize_img;
-            this.ClientSize = new System.Drawing.Size(482, 388);
-            this.Controls.Add(this.groupBox1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(505, 452);
+            this.Controls.Add(this.buttonRegistrame);
+            this.Controls.Add(this.labelRepiteContrasenia);
+            this.Controls.Add(this.labelContraseniaRegistro);
+            this.Controls.Add(this.textBoxConfirmaContrasenia);
+            this.Controls.Add(this.textBoxContrasenia);
+            this.Controls.Add(this.textBoxNombreUsuario);
+            this.Controls.Add(this.labelNombreUsuarioRegistro);
+            this.Controls.Add(this.labelRegistrarNuevoUsuario);
+            this.Controls.Add(this.linkLabelRegistrar5EnLinea);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.LinkLabel linkLabelRegistrar5EnLinea;
+        private System.Windows.Forms.Label labelRegistrarNuevoUsuario;
+        private System.Windows.Forms.Label labelNombreUsuarioRegistro;
+        private System.Windows.Forms.TextBox textBoxNombreUsuario;
+        private System.Windows.Forms.TextBox textBoxContrasenia;
+        private System.Windows.Forms.TextBox textBoxConfirmaContrasenia;
+        private System.Windows.Forms.Label labelContraseniaRegistro;
+        private System.Windows.Forms.Label labelRepiteContrasenia;
+        private System.Windows.Forms.Button buttonRegistrame;
     }
 }

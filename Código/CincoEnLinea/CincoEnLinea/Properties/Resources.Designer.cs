@@ -63,16 +63,6 @@ namespace CincoEnLinea.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FondoInicioSesion {
-            get {
-                object obj = ResourceManager.GetObject("FondoInicioSesion", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap fondoMenuPrincipal {
             get {
                 object obj = ResourceManager.GetObject("fondoMenuPrincipal", resourceCulture);
@@ -93,9 +83,9 @@ namespace CincoEnLinea.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap negroDegradado {
+        internal static System.Drawing.Bitmap Logo_UV {
             get {
-                object obj = ResourceManager.GetObject("negroDegradado", resourceCulture);
+                object obj = ResourceManager.GetObject("Logo-UV", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +93,9 @@ namespace CincoEnLinea.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap resize_img {
+        internal static System.Drawing.Bitmap negroDegradado {
             get {
-                object obj = ResourceManager.GetObject("resize-img", resourceCulture);
+                object obj = ResourceManager.GetObject("negroDegradado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
