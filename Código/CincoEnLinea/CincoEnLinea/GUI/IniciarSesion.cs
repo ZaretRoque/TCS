@@ -34,7 +34,7 @@ namespace CincoEnLinea.GUI {
             }
             
         }
-
+        
         private void MouseClicRegistrate(object sender, MouseEventArgs e) {
             Registro registro = new Registro();
             registro.Show();
@@ -50,16 +50,22 @@ namespace CincoEnLinea.GUI {
         public Boolean ConfirmaIngreso(String usuarioName, String contrasenia) {
             Consultas queries = new Consultas();
             String contraEncriptada = EncriptaContrasena(contrasenia);
-            if(queries.ValidaNombreUsuario(usuarioName)) {
-                if(queries.ValidaContraUsuario(contraEncriptada)) {
-                    return true;
+            try{
+                if(queries.ValidaNombreUsuario(usuarioName)) {
+                    if(queries.ValidaContraUsuario(contraEncriptada)) {
+                        return true;
+                    } else {
+                        MessageBox.Show("La contraseña está mal, inténtalo otra vez", "Pequeño problema",
+                            MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        return false;
+                    }
                 } else {
-                    MessageBox.Show("La contraseña está mal, inténtalo otra vez", "Pequeño problema",
+                    MessageBox.Show("El usuario no está registrado", "Ups",
                         MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return false;
                 }
-            } else {
-                MessageBox.Show("El usuario no está registrado", "Ups",
+            } catch(MySql.Data.MySqlClient.MySqlException e) {
+                MessageBox.Show("Tuvimos un problema con la base de datos, inténtalo más tarde", "Error en conexión",
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return false;
             }
