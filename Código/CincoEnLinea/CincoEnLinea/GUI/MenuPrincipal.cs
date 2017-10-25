@@ -1,10 +1,13 @@
-﻿using System;
+﻿using CincoEnLinea.RecursosInternacionalizacion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +16,9 @@ namespace CincoEnLinea.GUI {
     public partial class MenuPrincipal : Form {
         public MenuPrincipal() {
             InitializeComponent();
+            AplicarIdioma();
+            /* Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
+            AplicarIdioma();*/
         }
 
         /// <summary>
@@ -93,6 +99,16 @@ namespace CincoEnLinea.GUI {
 
         private void ClicSalir(object sender, EventArgs e) {
             this.Dispose();
+        }
+
+        public void AplicarIdioma() {
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
+            this.Text = MenuPrincipalRes.wTMenuPrincipal;
+            labelMenu.Text = MenuPrincipalRes.labMenu;
+            labelEntrarSala.Text = MenuPrincipalRes.sala;
+            labelMejoresJugadores.Text = MenuPrincipalRes.mejoresJugadores;
+            labelVerReglas.Text = MenuPrincipalRes.reglas;
+            labelCerrarSesion.Text = MenuPrincipalRes.cerrarSesion;
         }
     }
 }

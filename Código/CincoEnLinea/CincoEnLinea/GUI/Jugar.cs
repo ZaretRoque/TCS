@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CincoEnLinea.RecursosInternacionalizacion;
+using System;
 using System.Drawing;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace CincoEnLinea {
@@ -8,6 +10,16 @@ namespace CincoEnLinea {
 
         public Jugar() {
             InitializeComponent();
+            AplicarIdioma();
+        }
+
+        private void AplicarIdioma() {
+            this.Text = JugarRes.wTJugar;
+            labelTurno.Text = JugarRes.labTurno;
+            labelNombreJugadorTurno.Text = JugarRes.nombreJugador;
+            abandonaPartida.Text = JugarRes.bAbandonar;
+
+
         }
 
         private void tableLayoutPanelTablero_Paint(object sender, PaintEventArgs e) {
@@ -434,10 +446,15 @@ namespace CincoEnLinea {
         }
 
         private void ClicAbandonarPartida(object sender, EventArgs e) {
-            if(MessageBox.Show("¿Seguro que deseas salir?", "¿Miedo?",
+            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.JugarRes",
+                    typeof(Jugar).Assembly);
+            string mensaje = rm.GetString("confirmacionSalida");
+            string titulo = rm.GetString("tituloConfirmacion");
+            if (MessageBox.Show(mensaje, titulo,
                        MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes) {
                 this.Dispose();
             }
         }
     }
+
 }

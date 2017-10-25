@@ -33,7 +33,17 @@ namespace CincoEnLinea.BD {
 
             return returnValue;
         }
-
+        /// <summary>
+        /// Método que realiza el registro de un nuevo usuario en la base de datos
+        /// Puede lanzar una excepción MySQLException si algo sale mal durante el intento
+        /// de conexión
+        /// </summary>
+        /// <param name="nombreUsuario"> El nombre de usuario a registrar</param>
+        /// <param name="contrasena">La contraseña para el usuario, esta contraseña se
+        /// almacena usando el método SHA2</param>
+        /// <returns>
+        /// Un entero indicando el número de filas afectadas por la inserción,
+        /// dicho entero será mayor a 0 si y solo si la inserción fue correcta</returns>
         public int RegistrarUsuario(string nombreUsuario, string contrasena) {
             int filasAfectadas = 0; //si es igual a 0 la inserción no salió bien
             MySqlConnection conexion = new MySqlConnection(conexionBD);
@@ -47,7 +57,12 @@ namespace CincoEnLinea.BD {
             conexion.Close();
             return filasAfectadas;
         }
-
+        /// <summary>
+        /// Recupera un usuario dado su nombre. Puede lanzar una MySqlException si algo sale mal
+        /// </summary>
+        /// <param name="nombreUsuario"> El nombre del usuario a buscar</param>
+        /// <returns>Un objeto Usuario que puede estar vacío si no se encuentra el
+        /// nombre especificado</returns>
         public Usuario RecuperarUsuario(string nombreUsuario) {
             Usuario usuario = new Usuario();
             MySqlConnection conexion = new MySqlConnection(conexionBD);
@@ -62,11 +77,16 @@ namespace CincoEnLinea.BD {
             }
             return usuario;
         }
-
+        /// <summary>
+        /// Recupera los mejores jugadores de la base de datos, se ordenan de mayor a menor
+        /// tomando como criterio el número de partidas ganadas. Puede lanzar una MySqlException
+        /// si algo sale mal al intentar conectar
+        /// </summary>
+        /// <returns></returns>
         public List<Usuario> RecuperarMejoresJugadores() {
             MySqlConnection conexion = new MySqlConnection(conexionBD);
             conexion.Open();
-            string sqlQuery = "select nombreUsuario, partidasGanadas, partidasEmpatadas, " +
+            string sqlQuery = "select nombreUsuario, partidasGanadas, partidasPerdidas, " +
                 "partidasEmpatadas from usuario natural join EstadisticasUsuario order by " +
                 "partidasGanadas";
             MySqlCommand cmd = new MySqlCommand(sqlQuery, conexion);

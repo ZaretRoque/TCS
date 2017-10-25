@@ -7,12 +7,18 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
+using System.Resources;
+using CincoEnLinea.RecursosInternacionalizacion;
 
 namespace CincoEnLinea.GUI {
     public partial class IniciarSesion : Form {
+        
         public IniciarSesion() {
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             InitializeComponent();
         }
 
@@ -23,18 +29,24 @@ namespace CincoEnLinea.GUI {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ClicEntrar(object sender, EventArgs e) {
-            if(textBoxNombreUsuario.Text.Equals("") || textBoxContrasena.Text.Equals("")) {
-                MessageBox.Show("Faltaron campos por llenar, no seas así", "Ups",
+            
+            if (textBoxNombreUsuario.Text.Equals("") || textBoxContrasena.Text.Equals("")) {
+                ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.IniciarSesionRes", 
+                    typeof(IniciarSesion).Assembly);
+                string mensaje = rm.GetString("camposVacios");
+                MessageBox.Show(mensaje, "Ups",
                         MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            } else {
+            }
+            else {
                 if (ConfirmaIngreso(textBoxNombreUsuario.Text, textBoxContrasena.Text)) {
                     MenuPrincipal mP = new MenuPrincipal();
                     mP.Show();
+                    //mP.AplicarIdioma();
                 }
             }
-            
+
         }
-        
+
         private void MouseClicRegistrate(object sender, MouseEventArgs e) {
             Registro registro = new Registro();
             registro.Show();
@@ -50,22 +62,34 @@ namespace CincoEnLinea.GUI {
         public Boolean ConfirmaIngreso(String usuarioName, String contrasenia) {
             Consultas queries = new Consultas();
             String contraEncriptada = EncriptaContrasena(contrasenia);
-            try{
-                if(queries.ValidaNombreUsuario(usuarioName)) {
-                    if(queries.ValidaContraUsuario(contraEncriptada)) {
+            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.IniciarSesionRes",
+                    typeof(IniciarSesion).Assembly);
+            string mensaje;
+            string titulo;
+            try {
+                if (queries.ValidaNombreUsuario(usuarioName)) {
+                    if (queries.ValidaContraUsuario(contraEncriptada)) {
                         return true;
-                    } else {
-                        MessageBox.Show("La contraseña está mal, inténtalo otra vez", "Pequeño problema",
+                    }
+                    else {
+                        mensaje = rm.GetString("contrasenaIncorrecta");
+                        titulo = rm.GetString("tituloMensajeContrasena");
+                        MessageBox.Show(mensaje, titulo,
                             MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         return false;
                     }
-                } else {
-                    MessageBox.Show("El usuario no está registrado", "Ups",
+                }
+                else {
+                    mensaje = rm.GetString("noRegistrado");
+                    MessageBox.Show(mensaje, "Ups",
                         MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return false;
                 }
-            } catch(MySql.Data.MySqlClient.MySqlException e) {
-                MessageBox.Show("Tuvimos un problema con la base de datos, inténtalo más tarde", "Error en conexión",
+            }
+            catch (MySql.Data.MySqlClient.MySqlException e) {
+                mensaje = rm.GetString("excepcionBD");
+                titulo = rm.GetString("tituloExcepcionBD");
+                MessageBox.Show(mensaje, titulo,
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return false;
             }
@@ -89,6 +113,30 @@ namespace CincoEnLinea.GUI {
             }
 
             return contrasenaSha.ToString();
+        }
+
+        private void linkLabelEspañol_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-MX");
+            
+            AplicarIdioma();
+        }
+
+        private void linkLabelEnglish_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            
+            AplicarIdioma();
+        }
+
+        private void AplicarIdioma() {
+           // ResourceManager rm = new ResourceManager("RecursosInternacionalizacion.IniciarSesionRes", typeof(IniciarSesion).Assembly);
+            this.Text = IniciarSesionRes.wTIniciarSesion;
+            buttonEntrar.Text = IniciarSesionRes.buttonEntrar;
+            label1.Text = IniciarSesionRes.contrasena;
+            labelDesarrolladores.Text = IniciarSesionRes.Desarrolladores;
+            labelIniciaSesion.Text = IniciarSesionRes.labIniciaSesion;
+            labelNoTienesCuenta.Text = IniciarSesionRes.noCuenta;
+            labelUsuario.Text = IniciarSesionRes.Usuario;
+            linkLabelRegistrate.Text = IniciarSesionRes.registrar;
         }
     }
 }

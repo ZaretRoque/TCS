@@ -1,10 +1,12 @@
 ﻿using CincoEnLinea.BD;
+using CincoEnLinea.RecursosInternacionalizacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,22 +18,46 @@ namespace CincoEnLinea
         public Registro()
         {
             InitializeComponent();
+            AplicarIdioma();
+        }
+
+        private void AplicarIdioma() {
+            this.Text = RegistroRes.wTRegistro;
+            labelRegistrarNuevoUsuario.Text = RegistroRes.labComienzaJugar;
+            labelNombreUsuarioRegistro.Text = RegistroRes.nombreUsuario;
+            labelContraseniaRegistro.Text = RegistroRes.contrasena;
+            labelRepiteContrasenia.Text = RegistroRes.confirmaContrasena;
+            buttonRegistrame.Text = RegistroRes.bRegistro;
         }
 
         private void ClicRegistrame(object sender, EventArgs e) {
             String nombreUsuario = textBoxNombreUsuario.Text;
             Consultas queries = new Consultas();
+            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.RegistroRes",
+                    typeof(Registro).Assembly);
+            string mensaje;
+            string titulo;
 
             //valida que no exista un usuario con el mismo nombre en la BD
-            if(!queries.ValidaNombreUsuario(nombreUsuario)) {
+            if (!queries.ValidaNombreUsuario(nombreUsuario)) {
                 if(ValidaContrasena(textBoxContrasenia.Text, textBoxConfirmaContrasenia.Text)) {
                     queries.RegistrarUsuario(nombreUsuario, textBoxConfirmaContrasenia.Text);
-                    MessageBox.Show("¡A jugar, padrino!", "Registro exitoso",
+                    mensaje = rm.GetString("registroExitoso");
+                    titulo = rm.GetString("registroExitosoTitulo");
+                    
+                    MessageBox.Show(mensaje, titulo,
                        MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Dispose();
                 }
+                else {
+                    mensaje = rm.GetString("contrasenaInvalida");
+                    titulo = rm.GetString("contrasenaInvalidaTitulo");
+                    MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
             } else {
-                MessageBox.Show("Ya hay un usuario registrado con ese nombre", "¡Qué incómodo!",
+                mensaje = rm.GetString("usuarioRepetido");
+                titulo = rm.GetString("usuarioRepetidoTitulo");
+                MessageBox.Show(mensaje, titulo,
                        MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
 

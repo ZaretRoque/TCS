@@ -35,10 +35,9 @@
             // 
             this.buttonRegresarVerReglas.BackColor = System.Drawing.Color.Silver;
             this.buttonRegresarVerReglas.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegresarVerReglas.Location = new System.Drawing.Point(471, 443);
-            this.buttonRegresarVerReglas.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRegresarVerReglas.Location = new System.Drawing.Point(353, 360);
             this.buttonRegresarVerReglas.Name = "buttonRegresarVerReglas";
-            this.buttonRegresarVerReglas.Size = new System.Drawing.Size(146, 39);
+            this.buttonRegresarVerReglas.Size = new System.Drawing.Size(110, 32);
             this.buttonRegresarVerReglas.TabIndex = 0;
             this.buttonRegresarVerReglas.Text = "Regresar";
             this.buttonRegresarVerReglas.UseVisualStyleBackColor = false;
@@ -49,18 +48,20 @@
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.labelReglasTitulo);
             this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(681, 133);
+            this.panel1.Size = new System.Drawing.Size(511, 108);
             this.panel1.TabIndex = 1;
             // 
             // labelReglasTitulo
             // 
             this.labelReglasTitulo.AutoSize = true;
-            this.labelReglasTitulo.Font = new System.Drawing.Font("Moon", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReglasTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelReglasTitulo.ForeColor = System.Drawing.Color.White;
-            this.labelReglasTitulo.Location = new System.Drawing.Point(265, 39);
+            this.labelReglasTitulo.Location = new System.Drawing.Point(199, 32);
+            this.labelReglasTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReglasTitulo.Name = "labelReglasTitulo";
-            this.labelReglasTitulo.Size = new System.Drawing.Size(157, 40);
+            this.labelReglasTitulo.Size = new System.Drawing.Size(108, 36);
             this.labelReglasTitulo.TabIndex = 0;
             this.labelReglasTitulo.Text = "Reglas";
             // 
@@ -68,22 +69,22 @@
             // 
             this.labelContenidoReglas.AutoSize = true;
             this.labelContenidoReglas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContenidoReglas.Location = new System.Drawing.Point(29, 158);
+            this.labelContenidoReglas.Location = new System.Drawing.Point(22, 128);
+            this.labelContenidoReglas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelContenidoReglas.Name = "labelContenidoReglas";
-            this.labelContenidoReglas.Size = new System.Drawing.Size(552, 253);
+            this.labelContenidoReglas.Size = new System.Drawing.Size(429, 231);
             this.labelContenidoReglas.TabIndex = 2;
             this.labelContenidoReglas.Text = resources.GetString("labelContenidoReglas.Text");
             // 
             // VerReglas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(673, 508);
+            this.ClientSize = new System.Drawing.Size(505, 413);
             this.Controls.Add(this.labelContenidoReglas);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonRegresarVerReglas);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VerReglas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reglas";

@@ -120,61 +120,31 @@
   <data name="bRegresar" xml:space="preserve">
     <value>Regresar</value>
   </data>
-  <data name="butttonEntrar" xml:space="preserve">
-    <value>Entrar</value>
-  </data>
-  <data name="colEmpatadas" xml:space="preserve">
+  <data name="empatadas" xml:space="preserve">
     <value>Empatadas</value>
   </data>
-  <data name="colGanadas" xml:space="preserve">
+  <data name="excepcionBD" xml:space="preserve">
+    <value>Tuvimos un problema con la base de datos, inténtalo más tarde</value>
+  </data>
+  <data name="ganadas" xml:space="preserve">
     <value>Ganadas</value>
   </data>
-  <data name="colPerdidas" xml:space="preserve">
+  <data name="labMejoresJugadores" xml:space="preserve">
+    <value>Mejores jugadores</value>
+  </data>
+  <data name="perdidas" xml:space="preserve">
     <value>Perdidas</value>
   </data>
-  <data name="colPosicion" xml:space="preserve">
+  <data name="posicion" xml:space="preserve">
     <value>Posición</value>
   </data>
-  <data name="colUsuario" xml:space="preserve">
+  <data name="tituloExcepcionBD" xml:space="preserve">
+    <value>Error en la base de datos</value>
+  </data>
+  <data name="usuario" xml:space="preserve">
     <value>Usuario</value>
   </data>
-  <data name="gBoxIniciarSesion" xml:space="preserve">
-    <value>Iniciar Sesión</value>
-  </data>
-  <data name="labelNoTienesCuenta" xml:space="preserve">
-    <value>¿No tienes cuenta?</value>
-  </data>
-  <data name="labelRegla1" xml:space="preserve">
-    <value>Durante su turno cada jugador elige una casilla vacía y coloca su ficha en ella</value>
-  </data>
-  <data name="labelRegla2" xml:space="preserve">
-    <value>Gana el jugador que logre poner 5 fichas en línea vertical, horizontal o diagonal</value>
-  </data>
-  <data name="labelRegla3" xml:space="preserve">
-    <value>Si el tablero se llena de fichas se declara empate</value>
-  </data>
-  <data name="labelRegla4" xml:space="preserve">
-    <value>Si se abandona la partida se registra como partida perdida</value>
-  </data>
-  <data name="linkLabelRegistrate" xml:space="preserve">
-    <value>Regístrate</value>
-  </data>
-  <data name="textBoxUsuario" xml:space="preserve">
-    <value>Usuario</value>
-  </data>
-  <data name="WindowTitleMejoresJugadores" xml:space="preserve">
-    <value>Mejores Jugadores</value>
-  </data>
-  <data name="WindowTitleVerReglas" xml:space="preserve">
-    <value>Ver reglas</value>
-  </data>
-  <data name="botonJugadores" xml:space="preserve">
-    <value>Jugadores</value>
-  </data>
-  <data name="botonReglas" xml:space="preserve">
-    <value>Reglas</value>
-  </data>
-  <data name="botonTablero" xml:space="preserve">
-    <value>Tablero</value>
+  <data name="wTMejoresJugadores" xml:space="preserve">
+    <value>Mejores jugadores</value>
   </data>
 </root>

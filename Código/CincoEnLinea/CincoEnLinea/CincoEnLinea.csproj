@@ -101,21 +101,85 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Recursos Internacionalización\StringResources.ES-MX.Designer.cs">
-      <DependentUpon>StringResources.ES-MX.resx</DependentUpon>
+    <Compile Include="RecursosInternacionalizacion\IniciarSesionRes.en-US1.Designer.cs">
+      <DependentUpon>IniciarSesionRes.en-US.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Recursos Internacionalización\StringResources.EN-US.Designer.cs">
-      <DependentUpon>StringResources.EN-US.resx</DependentUpon>
+    <Compile Include="RecursosInternacionalizacion\IniciarSesionRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IniciarSesionRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosInternacionalizacion\JugarRes.en-US.Designer.cs">
+      <DependentUpon>JugarRes.en-US.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Recursos Internacionalización\StringResources.Designer.cs">
+    <Compile Include="RecursosInternacionalizacion\JugarRes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StringResources.resx</DependentUpon>
+      <DependentUpon>JugarRes.resx</DependentUpon>
     </Compile>
+    <Compile Include="RecursosInternacionalizacion\MejoresJugadoresRes.en-US.Designer.cs">
+      <DependentUpon>MejoresJugadoresRes.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RecursosInternacionalizacion\MejoresJugadoresRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MejoresJugadoresRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosInternacionalizacion\MenuPrincipalRes.en-US.Designer.cs">
+      <DependentUpon>MenuPrincipalRes.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RecursosInternacionalizacion\MenuPrincipalRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MenuPrincipalRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosInternacionalizacion\RegistroRes.en-US.Designer.cs">
+      <DependentUpon>RegistroRes.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RecursosInternacionalizacion\RegistroRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistroRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosInternacionalizacion\ReglasRes.en-US.Designer.cs">
+      <DependentUpon>ReglasRes.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RecursosInternacionalizacion\ReglasRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReglasRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosInternacionalizacion\SalaEsperaRes.en-US.Designer.cs">
+      <DependentUpon>SalaEsperaRes.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RecursosInternacionalizacion\SalaEsperaRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalaEsperaRes.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUI\IniciarSesion.en-001.resx">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\IniciarSesion.en-US.resx">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\IniciarSesion.es-MX.resx">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,17 +206,61 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Recursos Internacionalización\StringResources.ES-MX.resx">
+    <EmbeddedResource Include="RecursosInternacionalizacion\IniciarSesionRes.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>StringResources.ES-MX.Designer.cs</LastGenOutput>
+      <LastGenOutput>IniciarSesionRes.en-US1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Recursos Internacionalización\StringResources.EN-US.resx">
+    <EmbeddedResource Include="RecursosInternacionalizacion\IniciarSesionRes.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>StringResources.EN-US.Designer.cs</LastGenOutput>
+      <LastGenOutput>IniciarSesionRes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Recursos Internacionalización\StringResources.resx">
+    <EmbeddedResource Include="RecursosInternacionalizacion\JugarRes.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>JugarRes.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosInternacionalizacion\JugarRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>JugarRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosInternacionalizacion\MejoresJugadoresRes.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MejoresJugadoresRes.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosInternacionalizacion\MejoresJugadoresRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MejoresJugadoresRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosInternacionalizacion\MenuPrincipalRes.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MenuPrincipalRes.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosInternacionalizacion\MenuPrincipalRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MenuPrincipalRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosInternacionalizacion\RegistroRes.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RegistroRes.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosInternacionalizacion\RegistroRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RegistroRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosInternacionalizacion\ReglasRes.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReglasRes.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosInternacionalizacion\ReglasRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReglasRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosInternacionalizacion\SalaEsperaRes.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SalaEsperaRes.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosInternacionalizacion\SalaEsperaRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SalaEsperaRes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
