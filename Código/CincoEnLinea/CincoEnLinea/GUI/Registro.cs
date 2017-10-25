@@ -37,28 +37,35 @@ namespace CincoEnLinea
                     typeof(Registro).Assembly);
             string mensaje;
             string titulo;
+            if (ValidarCamposLlenos()) {
+                //valida que no exista un usuario con el mismo nombre en la BD
+                if (!queries.ValidaNombreUsuario(nombreUsuario)) {
+                    if (ValidaContrasena(textBoxContrasenia.Text, textBoxConfirmaContrasenia.Text)) {
+                        queries.RegistrarUsuario(nombreUsuario, textBoxConfirmaContrasenia.Text);
+                        mensaje = rm.GetString("registroExitoso");
+                        titulo = rm.GetString("registroExitosoTitulo");
 
-            //valida que no exista un usuario con el mismo nombre en la BD
-            if (!queries.ValidaNombreUsuario(nombreUsuario)) {
-                if(ValidaContrasena(textBoxContrasenia.Text, textBoxConfirmaContrasenia.Text)) {
-                    queries.RegistrarUsuario(nombreUsuario, textBoxConfirmaContrasenia.Text);
-                    mensaje = rm.GetString("registroExitoso");
-                    titulo = rm.GetString("registroExitosoTitulo");
-                    
-                    MessageBox.Show(mensaje, titulo,
-                       MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    this.Dispose();
+                        MessageBox.Show(mensaje, titulo,
+                           MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        this.Dispose();
+                    }
+                    else {
+                        mensaje = rm.GetString("contrasenaInvalida");
+                        titulo = rm.GetString("contrasenaInvalidaTitulo");
+                        MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
                 }
                 else {
-                    mensaje = rm.GetString("contrasenaInvalida");
-                    titulo = rm.GetString("contrasenaInvalidaTitulo");
-                    MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    mensaje = rm.GetString("usuarioRepetido");
+                    titulo = rm.GetString("usuarioRepetidoTitulo");
+                    MessageBox.Show(mensaje, titulo,
+                           MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
-            } else {
-                mensaje = rm.GetString("usuarioRepetido");
-                titulo = rm.GetString("usuarioRepetidoTitulo");
-                MessageBox.Show(mensaje, titulo,
-                       MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else {
+                mensaje = rm.GetString("camposVacios");
+                titulo = rm.GetString("camposVaciosTitulo");
+                MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
 
         }
@@ -67,6 +74,19 @@ namespace CincoEnLinea
             if (contrasena.Equals(confirmaContra)) {
                 return true;
             } else {
+                return false;
+            }
+        }
+
+        private Boolean ValidarCamposLlenos() {
+            string contrasena = textBoxContrasenia.Text;
+            string contrasenaConfirmada = textBoxConfirmaContrasenia.Text;
+            string nombreUsuario = textBoxNombreUsuario.Text;
+
+            if(contrasena.Length >0 && contrasenaConfirmada.Length >0 && nombreUsuario.Length > 0) {
+                return true;
+            }
+            else {
                 return false;
             }
         }

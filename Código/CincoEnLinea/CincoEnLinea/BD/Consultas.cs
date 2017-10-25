@@ -88,7 +88,7 @@ namespace CincoEnLinea.BD {
             conexion.Open();
             string sqlQuery = "select nombreUsuario, partidasGanadas, partidasPerdidas, " +
                 "partidasEmpatadas from usuario natural join EstadisticasUsuario order by " +
-                "partidasGanadas";
+                "partidasGanadas desc";
             MySqlCommand cmd = new MySqlCommand(sqlQuery, conexion);
             MySqlDataReader reader = cmd.ExecuteReader();
             List<Usuario> usuarios = new List<Usuario>();

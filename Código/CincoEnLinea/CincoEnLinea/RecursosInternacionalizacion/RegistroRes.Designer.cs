@@ -70,6 +70,24 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Hay campos vacíos, intenta de nuevo.
+        /// </summary>
+        internal static string camposVacios {
+            get {
+                return ResourceManager.GetString("camposVacios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Por qué eres así?.
+        /// </summary>
+        internal static string camposVaciosTitulo {
+            get {
+                return ResourceManager.GetString("camposVaciosTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Confirma la contraseña.
         /// </summary>
         internal static string confirmaContrasena {

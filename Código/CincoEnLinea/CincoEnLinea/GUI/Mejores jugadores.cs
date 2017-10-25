@@ -49,6 +49,7 @@ namespace CincoEnLinea.GUI {
                     item.SubItems.Add(usuario.PartidasPerdidas.ToString());
                     item.SubItems.Add(usuario.PartidasEmpatadas.ToString());
                     item.Tag = usuario;
+                    contador++;
                 }
             }
             catch (MySql.Data.MySqlClient.MySqlException e) {

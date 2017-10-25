@@ -120,6 +120,12 @@
   <data name="bRegistro" xml:space="preserve">
     <value>Sign me up</value>
   </data>
+  <data name="camposVacios" xml:space="preserve">
+    <value>There are empty fields, try again</value>
+  </data>
+  <data name="camposVaciosTitulo" xml:space="preserve">
+    <value>Why are you like this?</value>
+  </data>
   <data name="confirmaContrasena" xml:space="preserve">
     <value>Repeat your password</value>
   </data>
