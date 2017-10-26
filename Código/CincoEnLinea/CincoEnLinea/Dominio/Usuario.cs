@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CincoEnLinea.Dominio {
     [Serializable]
-    class Usuario {
+    public class Usuario {
         private int idUsuario;
         private string nombreUsuario;
         private string contrasena;
@@ -28,5 +28,7 @@ namespace CincoEnLinea.Dominio {
         public int PartidasGanadas { get => partidasGanadas; set => partidasGanadas = value; }
         public int PartidasPerdidas { get => partidasPerdidas; set => partidasPerdidas = value; }
         public int PartidasEmpatadas { get => partidasEmpatadas; set => partidasEmpatadas = value; }
+
+        
     }
 }

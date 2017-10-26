@@ -9,7 +9,7 @@ using CincoEnLinea.Dominio;
 
 namespace CincoEnLinea.BD {
     
-    class Consultas {
+    public class Consultas {
 
         private string conexionBD;
 
@@ -74,6 +74,8 @@ namespace CincoEnLinea.BD {
             MySqlDataReader reader = cmd.ExecuteReader();
             while(reader.HasRows && reader.Read()) {
                 usuario.NombreUsuario = reader.GetString("nombreUsuario");
+                usuario.IdUsuario = reader.GetInt32("idUsuario");
+                usuario.Contrasena = reader.GetString("contrasena");
             }
             return usuario;
         }
