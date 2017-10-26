@@ -109,6 +109,13 @@ namespace CincoEnLinea.GUI {
             labelMejoresJugadores.Text = MenuPrincipalRes.mejoresJugadores;
             labelVerReglas.Text = MenuPrincipalRes.reglas;
             labelCerrarSesion.Text = MenuPrincipalRes.cerrarSesion;
+            buttonTablero.Text = MenuPrincipalRes.botonTablero;
+        }
+
+        private void ClicBotonTablero(object sender, EventArgs e) {
+           this.Dispose();
+           TableroJugar jj = new TableroJugar();
+           jj.Show();
         }
     }
 }

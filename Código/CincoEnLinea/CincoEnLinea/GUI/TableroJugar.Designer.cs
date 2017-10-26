@@ -1,6 +1,6 @@
 ﻿namespace CincoEnLinea
 {
-    partial class Jugar 
+    partial class TableroJugar 
     {
         /// <summary>
         /// Required designer variable.
@@ -195,6 +195,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4_5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4_4)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // abandonaPartida
@@ -1108,16 +1109,17 @@
             // 
             this.labelTitulo5Linea.AutoSize = true;
             this.labelTitulo5Linea.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitulo5Linea.Font = new System.Drawing.Font("Moon", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo5Linea.Location = new System.Drawing.Point(355, 41);
+            this.labelTitulo5Linea.Font = new System.Drawing.Font("Moon", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo5Linea.Location = new System.Drawing.Point(127, 14);
             this.labelTitulo5Linea.Name = "labelTitulo5Linea";
-            this.labelTitulo5Linea.Size = new System.Drawing.Size(147, 17);
+            this.labelTitulo5Linea.Size = new System.Drawing.Size(208, 25);
             this.labelTitulo5Linea.TabIndex = 164;
             this.labelTitulo5Linea.Text = "5inco en linea";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel1.Controls.Add(this.labelTitulo5Linea);
             this.panel1.Location = new System.Drawing.Point(197, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(440, 576);
@@ -1137,7 +1139,7 @@
             // 
             this.labelNombreJugadorTurno.AutoSize = true;
             this.labelNombreJugadorTurno.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombreJugadorTurno.Location = new System.Drawing.Point(26, 235);
+            this.labelNombreJugadorTurno.Location = new System.Drawing.Point(21, 212);
             this.labelNombreJugadorTurno.Name = "labelNombreJugadorTurno";
             this.labelNombreJugadorTurno.Size = new System.Drawing.Size(145, 17);
             this.labelNombreJugadorTurno.TabIndex = 0;
@@ -1151,7 +1153,6 @@
             this.ClientSize = new System.Drawing.Size(635, 566);
             this.Controls.Add(this.labelNombreJugadorTurno);
             this.Controls.Add(this.labelTurno);
-            this.Controls.Add(this.labelTitulo5Linea);
             this.Controls.Add(this.pictureBox4_4);
             this.Controls.Add(this.pictureBox4_5);
             this.Controls.Add(this.pictureBox6_4);
@@ -1321,6 +1322,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6_4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4_5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4_4)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

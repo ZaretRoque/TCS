@@ -58,11 +58,11 @@
     <Compile Include="GUI\IniciarSesion.Designer.cs">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Jugar.cs">
+    <Compile Include="GUI\TableroJugar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Jugar.Designer.cs">
-      <DependentUpon>Jugar.cs</DependentUpon>
+    <Compile Include="GUI\TableroJugar.Designer.cs">
+      <DependentUpon>TableroJugar.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Mejores jugadores.cs">
       <SubType>Form</SubType>
@@ -111,15 +111,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IniciarSesionRes.resx</DependentUpon>
     </Compile>
-    <Compile Include="RecursosInternacionalizacion\JugarRes.en-US.Designer.cs">
-      <DependentUpon>JugarRes.en-US.resx</DependentUpon>
+    <Compile Include="RecursosInternacionalizacion\TableroJugarRes.en-US.Designer.cs">
+      <DependentUpon>TableroJugarRes.en-US.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="RecursosInternacionalizacion\JugarRes.Designer.cs">
+    <Compile Include="RecursosInternacionalizacion\TableroJugarRes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>JugarRes.resx</DependentUpon>
+      <DependentUpon>TableroJugarRes.resx</DependentUpon>
     </Compile>
     <Compile Include="RecursosInternacionalizacion\MejoresJugadoresRes.en-US.Designer.cs">
       <DependentUpon>MejoresJugadoresRes.en-US.resx</DependentUpon>
@@ -183,8 +183,8 @@
     <EmbeddedResource Include="GUI\IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Jugar.resx">
-      <DependentUpon>Jugar.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\TableroJugar.resx">
+      <DependentUpon>TableroJugar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Mejores jugadores.resx">
       <DependentUpon>Mejores jugadores.cs</DependentUpon>
@@ -214,13 +214,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>IniciarSesionRes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RecursosInternacionalizacion\JugarRes.en-US.resx">
+    <EmbeddedResource Include="RecursosInternacionalizacion\TableroJugarRes.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>JugarRes.en-US.Designer.cs</LastGenOutput>
+      <LastGenOutput>TableroJugarRes.en-US.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RecursosInternacionalizacion\JugarRes.resx">
+    <EmbeddedResource Include="RecursosInternacionalizacion\TableroJugarRes.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>JugarRes.Designer.cs</LastGenOutput>
+      <LastGenOutput>TableroJugarRes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RecursosInternacionalizacion\MejoresJugadoresRes.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -41,6 +41,7 @@
             this.pictureBoxVerReglasDer = new System.Windows.Forms.PictureBox();
             this.pictureBoxCerrarSesionIzq = new System.Windows.Forms.PictureBox();
             this.pictureBoxCerrarSesionDer = new System.Windows.Forms.PictureBox();
+            this.buttonTablero = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEntrarSalaIzq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEntrarSalaDer)).BeginInit();
@@ -57,20 +58,19 @@
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(646, 131);
+            this.panel1.Size = new System.Drawing.Size(861, 161);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Moon", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(119, 41);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(159, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(334, 55);
+            this.label1.Size = new System.Drawing.Size(514, 62);
             this.label1.TabIndex = 1;
             this.label1.Text = "5inco en linea";
             // 
@@ -79,10 +79,9 @@
             this.labelEntrarSala.AutoSize = true;
             this.labelEntrarSala.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelEntrarSala.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.labelEntrarSala.Location = new System.Drawing.Point(237, 241);
-            this.labelEntrarSala.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEntrarSala.Location = new System.Drawing.Point(316, 297);
             this.labelEntrarSala.Name = "labelEntrarSala";
-            this.labelEntrarSala.Size = new System.Drawing.Size(123, 22);
+            this.labelEntrarSala.Size = new System.Drawing.Size(157, 30);
             this.labelEntrarSala.TabIndex = 1;
             this.labelEntrarSala.Text = "Entrar a sala";
             this.labelEntrarSala.Click += new System.EventHandler(this.ClicEntrarSala);
@@ -93,10 +92,9 @@
             this.labelMejoresJugadores.AutoSize = true;
             this.labelMejoresJugadores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelMejoresJugadores.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.labelMejoresJugadores.Location = new System.Drawing.Point(196, 316);
-            this.labelMejoresJugadores.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelMejoresJugadores.Location = new System.Drawing.Point(261, 389);
             this.labelMejoresJugadores.Name = "labelMejoresJugadores";
-            this.labelMejoresJugadores.Size = new System.Drawing.Size(213, 22);
+            this.labelMejoresJugadores.Size = new System.Drawing.Size(278, 30);
             this.labelMejoresJugadores.TabIndex = 2;
             this.labelMejoresJugadores.Text = "Ver mejores jugadores";
             this.labelMejoresJugadores.Click += new System.EventHandler(this.MouseClicMejoresJugadores);
@@ -107,10 +105,9 @@
             this.labelVerReglas.AutoSize = true;
             this.labelVerReglas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelVerReglas.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.labelVerReglas.Location = new System.Drawing.Point(248, 384);
-            this.labelVerReglas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelVerReglas.Location = new System.Drawing.Point(331, 473);
             this.labelVerReglas.Name = "labelVerReglas";
-            this.labelVerReglas.Size = new System.Drawing.Size(102, 22);
+            this.labelVerReglas.Size = new System.Drawing.Size(131, 30);
             this.labelVerReglas.TabIndex = 3;
             this.labelVerReglas.Text = "Ver reglas";
             this.labelVerReglas.Click += new System.EventHandler(this.MouseClicSobreVerReglas);
@@ -121,10 +118,9 @@
             this.labelCerrarSesion.AutoSize = true;
             this.labelCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelCerrarSesion.Font = new System.Drawing.Font("Century Gothic", 13.8F);
-            this.labelCerrarSesion.Location = new System.Drawing.Point(237, 456);
-            this.labelCerrarSesion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCerrarSesion.Location = new System.Drawing.Point(316, 561);
             this.labelCerrarSesion.Name = "labelCerrarSesion";
-            this.labelCerrarSesion.Size = new System.Drawing.Size(126, 22);
+            this.labelCerrarSesion.Size = new System.Drawing.Size(166, 30);
             this.labelCerrarSesion.TabIndex = 4;
             this.labelCerrarSesion.Text = "Cerrar sesión";
             this.labelCerrarSesion.Click += new System.EventHandler(this.ClicSalir);
@@ -134,20 +130,19 @@
             // 
             this.labelMenu.AutoSize = true;
             this.labelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
-            this.labelMenu.Location = new System.Drawing.Point(9, 166);
-            this.labelMenu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelMenu.Location = new System.Drawing.Point(12, 204);
             this.labelMenu.Name = "labelMenu";
-            this.labelMenu.Size = new System.Drawing.Size(167, 26);
+            this.labelMenu.Size = new System.Drawing.Size(215, 32);
             this.labelMenu.TabIndex = 5;
             this.labelMenu.Text = "Menu principal";
             // 
             // pictureBoxEntrarSalaIzq
             // 
             this.pictureBoxEntrarSalaIzq.BackColor = System.Drawing.Color.Black;
-            this.pictureBoxEntrarSalaIzq.Location = new System.Drawing.Point(202, 241);
-            this.pictureBoxEntrarSalaIzq.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxEntrarSalaIzq.Location = new System.Drawing.Point(269, 297);
+            this.pictureBoxEntrarSalaIzq.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEntrarSalaIzq.Name = "pictureBoxEntrarSalaIzq";
-            this.pictureBoxEntrarSalaIzq.Size = new System.Drawing.Size(30, 28);
+            this.pictureBoxEntrarSalaIzq.Size = new System.Drawing.Size(40, 34);
             this.pictureBoxEntrarSalaIzq.TabIndex = 6;
             this.pictureBoxEntrarSalaIzq.TabStop = false;
             this.pictureBoxEntrarSalaIzq.Visible = false;
@@ -155,10 +150,10 @@
             // pictureBoxEntrarSalaDer
             // 
             this.pictureBoxEntrarSalaDer.BackColor = System.Drawing.Color.Black;
-            this.pictureBoxEntrarSalaDer.Location = new System.Drawing.Point(359, 241);
-            this.pictureBoxEntrarSalaDer.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxEntrarSalaDer.Location = new System.Drawing.Point(479, 297);
+            this.pictureBoxEntrarSalaDer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxEntrarSalaDer.Name = "pictureBoxEntrarSalaDer";
-            this.pictureBoxEntrarSalaDer.Size = new System.Drawing.Size(30, 28);
+            this.pictureBoxEntrarSalaDer.Size = new System.Drawing.Size(40, 34);
             this.pictureBoxEntrarSalaDer.TabIndex = 7;
             this.pictureBoxEntrarSalaDer.TabStop = false;
             this.pictureBoxEntrarSalaDer.Visible = false;
@@ -166,69 +161,81 @@
             // pictureBoxMejoresJugadoresIzq
             // 
             this.pictureBoxMejoresJugadoresIzq.BackColor = System.Drawing.Color.Black;
-            this.pictureBoxMejoresJugadoresIzq.Location = new System.Drawing.Point(162, 312);
-            this.pictureBoxMejoresJugadoresIzq.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxMejoresJugadoresIzq.Location = new System.Drawing.Point(216, 384);
+            this.pictureBoxMejoresJugadoresIzq.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxMejoresJugadoresIzq.Name = "pictureBoxMejoresJugadoresIzq";
-            this.pictureBoxMejoresJugadoresIzq.Size = new System.Drawing.Size(30, 28);
+            this.pictureBoxMejoresJugadoresIzq.Size = new System.Drawing.Size(40, 34);
             this.pictureBoxMejoresJugadoresIzq.TabIndex = 8;
             this.pictureBoxMejoresJugadoresIzq.TabStop = false;
             // 
             // pictureBoxMejoresJugadoresDer
             // 
             this.pictureBoxMejoresJugadoresDer.BackColor = System.Drawing.Color.Black;
-            this.pictureBoxMejoresJugadoresDer.Location = new System.Drawing.Point(410, 316);
-            this.pictureBoxMejoresJugadoresDer.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxMejoresJugadoresDer.Location = new System.Drawing.Point(547, 389);
+            this.pictureBoxMejoresJugadoresDer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxMejoresJugadoresDer.Name = "pictureBoxMejoresJugadoresDer";
-            this.pictureBoxMejoresJugadoresDer.Size = new System.Drawing.Size(30, 28);
+            this.pictureBoxMejoresJugadoresDer.Size = new System.Drawing.Size(40, 34);
             this.pictureBoxMejoresJugadoresDer.TabIndex = 9;
             this.pictureBoxMejoresJugadoresDer.TabStop = false;
             // 
             // pictureBoxVerReglasIzq
             // 
             this.pictureBoxVerReglasIzq.BackColor = System.Drawing.Color.Black;
-            this.pictureBoxVerReglasIzq.Location = new System.Drawing.Point(213, 380);
-            this.pictureBoxVerReglasIzq.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxVerReglasIzq.Location = new System.Drawing.Point(284, 468);
+            this.pictureBoxVerReglasIzq.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxVerReglasIzq.Name = "pictureBoxVerReglasIzq";
-            this.pictureBoxVerReglasIzq.Size = new System.Drawing.Size(30, 28);
+            this.pictureBoxVerReglasIzq.Size = new System.Drawing.Size(40, 34);
             this.pictureBoxVerReglasIzq.TabIndex = 10;
             this.pictureBoxVerReglasIzq.TabStop = false;
             // 
             // pictureBoxVerReglasDer
             // 
             this.pictureBoxVerReglasDer.BackColor = System.Drawing.Color.Black;
-            this.pictureBoxVerReglasDer.Location = new System.Drawing.Point(359, 380);
-            this.pictureBoxVerReglasDer.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxVerReglasDer.Location = new System.Drawing.Point(479, 468);
+            this.pictureBoxVerReglasDer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxVerReglasDer.Name = "pictureBoxVerReglasDer";
-            this.pictureBoxVerReglasDer.Size = new System.Drawing.Size(30, 28);
+            this.pictureBoxVerReglasDer.Size = new System.Drawing.Size(40, 34);
             this.pictureBoxVerReglasDer.TabIndex = 11;
             this.pictureBoxVerReglasDer.TabStop = false;
             // 
             // pictureBoxCerrarSesionIzq
             // 
             this.pictureBoxCerrarSesionIzq.BackColor = System.Drawing.Color.Black;
-            this.pictureBoxCerrarSesionIzq.Location = new System.Drawing.Point(202, 456);
-            this.pictureBoxCerrarSesionIzq.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxCerrarSesionIzq.Location = new System.Drawing.Point(269, 561);
+            this.pictureBoxCerrarSesionIzq.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxCerrarSesionIzq.Name = "pictureBoxCerrarSesionIzq";
-            this.pictureBoxCerrarSesionIzq.Size = new System.Drawing.Size(30, 28);
+            this.pictureBoxCerrarSesionIzq.Size = new System.Drawing.Size(40, 34);
             this.pictureBoxCerrarSesionIzq.TabIndex = 12;
             this.pictureBoxCerrarSesionIzq.TabStop = false;
             // 
             // pictureBoxCerrarSesionDer
             // 
             this.pictureBoxCerrarSesionDer.BackColor = System.Drawing.Color.Black;
-            this.pictureBoxCerrarSesionDer.Location = new System.Drawing.Point(366, 452);
-            this.pictureBoxCerrarSesionDer.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxCerrarSesionDer.Location = new System.Drawing.Point(488, 556);
+            this.pictureBoxCerrarSesionDer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxCerrarSesionDer.Name = "pictureBoxCerrarSesionDer";
-            this.pictureBoxCerrarSesionDer.Size = new System.Drawing.Size(30, 28);
+            this.pictureBoxCerrarSesionDer.Size = new System.Drawing.Size(40, 34);
             this.pictureBoxCerrarSesionDer.TabIndex = 13;
             this.pictureBoxCerrarSesionDer.TabStop = false;
             // 
+            // buttonTablero
+            // 
+            this.buttonTablero.Font = new System.Drawing.Font("Moon", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTablero.Location = new System.Drawing.Point(597, 211);
+            this.buttonTablero.Name = "buttonTablero";
+            this.buttonTablero.Size = new System.Drawing.Size(133, 30);
+            this.buttonTablero.TabIndex = 14;
+            this.buttonTablero.Text = "Tablero";
+            this.buttonTablero.UseVisualStyleBackColor = true;
+            this.buttonTablero.Click += new System.EventHandler(this.ClicBotonTablero);
+            // 
             // MenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(599, 584);
+            this.ClientSize = new System.Drawing.Size(799, 719);
+            this.Controls.Add(this.buttonTablero);
             this.Controls.Add(this.pictureBoxCerrarSesionDer);
             this.Controls.Add(this.pictureBoxCerrarSesionIzq);
             this.Controls.Add(this.pictureBoxVerReglasDer);
@@ -244,7 +251,7 @@
             this.Controls.Add(this.labelEntrarSala);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú principal";
@@ -281,5 +288,6 @@
         private System.Windows.Forms.PictureBox pictureBoxVerReglasDer;
         private System.Windows.Forms.PictureBox pictureBoxCerrarSesionIzq;
         private System.Windows.Forms.PictureBox pictureBoxCerrarSesionDer;
+        private System.Windows.Forms.Button buttonTablero;
     }
 }
