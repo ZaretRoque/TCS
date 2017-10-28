@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD\Consultas.cs" />
+    <Compile Include="Dominio\Crupier.cs" />
     <Compile Include="Dominio\Usuario.cs" />
     <Compile Include="GUI\IniciarSesion.cs">
       <SubType>Form</SubType>

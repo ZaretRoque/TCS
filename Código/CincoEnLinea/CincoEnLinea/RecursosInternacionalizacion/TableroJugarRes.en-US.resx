@@ -126,11 +126,17 @@
   <data name="labTurno" xml:space="preserve">
     <value>Turn</value>
   </data>
+  <data name="mensajeGanar" xml:space="preserve">
+    <value>Your grandma will be so proud of you!</value>
+  </data>
   <data name="nombreJugador" xml:space="preserve">
     <value>Player</value>
   </data>
   <data name="tituloConfirmacion" xml:space="preserve">
     <value>Are you a coward?</value>
+  </data>
+  <data name="tituloGanar" xml:space="preserve">
+    <value>Winner</value>
   </data>
   <data name="wTJugar" xml:space="preserve">
     <value>Play</value>

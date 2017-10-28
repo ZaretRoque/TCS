@@ -88,6 +88,15 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ¡Ganaste! Tu abuelita va a estar orgullosa.
+        /// </summary>
+        internal static string mensajeGanar {
+            get {
+                return ResourceManager.GetString("mensajeGanar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Jugador.
         /// </summary>
         internal static string nombreJugador {
@@ -102,6 +111,15 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         internal static string tituloConfirmacion {
             get {
                 return ResourceManager.GetString("tituloConfirmacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ganador.
+        /// </summary>
+        internal static string tituloGanar {
+            get {
+                return ResourceManager.GetString("tituloGanar", resourceCulture);
             }
         }
         

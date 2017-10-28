@@ -1,4 +1,5 @@
-﻿using CincoEnLinea.RecursosInternacionalizacion;
+﻿using CincoEnLinea.Dominio;
+using CincoEnLinea.RecursosInternacionalizacion;
 using System;
 using System.Drawing;
 using System.Resources;
@@ -7,13 +8,12 @@ using System.Windows.Forms;
 namespace CincoEnLinea {
     public partial class TableroJugar : Form {
         private PictureBox[,] pictureTablero = new PictureBox[8, 8];
-        private int[,] tableroTiros = new int[9,9];
         private int turno = 1;
+        Crupier crupier = new Crupier();
 
         public TableroJugar() {
             InitializeComponent();
             AplicarIdioma();
-            LlenarTableroTiros();
         }
 
         private void AplicarIdioma() {
@@ -635,100 +635,48 @@ namespace CincoEnLinea {
             panelGrafico.FillEllipse(colorRelleno, rect);
         }
 
-        public void LlenarTableroTiros() {
-            for(int i = 0; i < 9; i++) {
-                for(int j = 0; j < 9; j++) {
-                    tableroTiros[i, j] = 0;
-                }
-            }
-        }
-
         public void PintarTiro(int posY, int posX, Bitmap panelPintar, PictureBox pulsado) {
-            if (tableroTiros[posY, posX] == 0) {
+            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.TableroJugarRes",
+                    typeof(TableroJugar).Assembly);
+            if (crupier.ValidarTiro(posY, posX)) {
                 if (turno == 1) {
                     DibujaFichaNegra(panelPintar);
 
-                    tableroTiros[posY, posX] = 1;
-                    ComprobarHorizontal(turno);
-                    ComprobarVertical(turno);
+                    crupier.GuardarTiro(posY, posX, 1);
+                    bool horizontal = crupier.ComprobarHorizontal(turno);
+                    bool vertical = crupier.ComprobarVertical(turno);
+                    bool diagonalPositiva = crupier.ComprobarDiagonalPositiva(turno);
+                    bool diagonalNegativa = crupier.ComprobarDiagonalNegativa(turno);
+                    if(horizontal || vertical || diagonalPositiva || diagonalNegativa) {
+
+                        string mensaje = rm.GetString("mensajeGanar");
+                        string titulo = rm.GetString("tituloGanar");
+                        MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    crupier.Turno = 2;
                     turno = 2;
                 } else {
                     DibujaFichaAzul(panelPintar);
+                    
+                    crupier.GuardarTiro(posY, posX, 2);
+                    bool horizontal = crupier.ComprobarHorizontal(turno);
+                    bool vertical = crupier.ComprobarVertical(turno);
+                    bool diagonalPositiva = crupier.ComprobarDiagonalPositiva(turno);
+                    bool diagonalNegativa = crupier.ComprobarDiagonalNegativa(turno);
+                    if (horizontal || vertical || diagonalPositiva || diagonalNegativa) {
 
-                    tableroTiros[posY, posX] = 2;
-                    ComprobarHorizontal(turno);
-                    ComprobarVertical(turno);
+                        string mensaje = rm.GetString("mensajeGanar");
+                        string titulo = rm.GetString("tituloGanar");
+                        MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    crupier.Turno = 1;
                     turno = 1;
                 }
                 pulsado.Enabled = false;  
             }
         }
 
-        public int ComprobarHorizontal(int turno) {
-            int contador = 0;
-            int turnoAlterno = RegresaTiroContrario(turno);
-
-            for(int i =0; i < 9; i++) {
-                for(int j=0; j < 9; j++) {    
-                    if (turnoAlterno == tableroTiros[i, j]) {
-                        contador = 0;
-                    }
-                    if (turno == tableroTiros[i, j]) {
-                        contador++;
-                    }
-                    if (contador == 5) {
-                        MessageBox.Show("ganaste", "Yei", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        return 1;
-                    }
-                }
-                contador = 0;
-            }
-            return 0;
-        }
-
-        public int ComprobarVertical(int turno) {
-            int contador = 0;
-            int turnoAlterno = RegresaTiroContrario(turno);
-
-            for (int i = 0; i <9; i++) {
-                for (int j = 0; j <9; j++) {
-                    if (turnoAlterno == tableroTiros[j,i]) {
-                        contador = 0;
-                    }
-                    if (turno == tableroTiros[j,i]) {
-                        contador++;
-                    }
-                    if (contador == 5) {
-                        MessageBox.Show("ganaste", "Yei", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        return 1;
-                    }
-                }
-                contador = 0;
-            }
-            return 0;
-        }
-
-        public int ComprobarDiagonalIzquierda(int turno) {
-            int contador = 0;
-            int turnoAlterno = RegresaTiroContrario(turno);
-
-            for (int i = 8; i > 4; i--) {
-                for (int j = 8; j >= 0; j--) {
-                    if (turno == tableroTiros[i, j]) {
-                        contador++;
-                    }
-                }
-            }
-            return 0;
-        }
-
-        public int RegresaTiroContrario(int tiro) {
-            if (turno == 1) {
-                return 2;
-            } else {
-                return 1;
-            }
-        }
+        
 
     }
 
