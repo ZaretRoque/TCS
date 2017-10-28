@@ -10,6 +10,7 @@ namespace CincoEnLinea.Dominio {
         private int turno;
 
         public int Turno { get => turno; set => turno = value; }
+        public int[,] TableroTiros { get => tableroTiros; set => tableroTiros = value; }
 
         public Crupier() {
             LlenarTableroTiros();

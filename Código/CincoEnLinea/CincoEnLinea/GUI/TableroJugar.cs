@@ -624,12 +624,9 @@ namespace CincoEnLinea {
         }
 
         public void DibujaFichaAzul(Image panelPintar) {
-            //Asigna el Bitmap del pictureBox al Graphics para dibujar en él
             Graphics panelGrafico = Graphics.FromImage(panelPintar);
-            //Solid para rellenar la elipse y Pen para dibujarla
             SolidBrush colorRelleno = new SolidBrush(Color.AliceBlue);
             Pen blackPen = new Pen(Brushes.Black);
-            //Definimos el espacio en donde se encontrará la elipse
             Rectangle rect = new Rectangle(2, 2, 24, 24);
             panelGrafico.DrawEllipse(blackPen, rect);
             panelGrafico.FillEllipse(colorRelleno, rect);

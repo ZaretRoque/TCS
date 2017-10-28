@@ -48,6 +48,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComprobarVictoriaDiagonalNegativa.cs" />
+    <Compile Include="ComprobarVictoriaDiagonalPositiva.cs" />
+    <Compile Include="ComprobarVictoriaHorizontal.cs" />
+    <Compile Include="ComprobarVictoriaVertical.cs" />
     <Compile Include="ConsultasTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
