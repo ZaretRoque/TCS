@@ -66,5 +66,38 @@ namespace CincoEnLineaTest {
 
             Assert.AreEqual(esperado, resultado);
         }
+
+        [TestMethod]
+        public void SumarPartidaGanada() {
+            Consultas consultas = new Consultas();
+            int idUsuario = 2;
+            int esperado = 1;
+
+            int resultado = consultas.SumarPartidaGanada(idUsuario);
+
+            Assert.AreEqual(esperado, resultado);
+        }
+
+        [TestMethod]
+        public void SumarPartidaPerdida() {
+            Consultas consultas = new Consultas();
+            int idUsuario = 2;
+            int esperado = 1;
+
+            int resultado = consultas.SumarPartidaPerdida(idUsuario);
+
+            Assert.AreEqual(esperado, resultado);
+        }
+
+        [TestMethod]
+        public void SumarPartidaEmpatada() {
+            Consultas consultas = new Consultas();
+            int idUsuario = 2;
+            int esperado = 1;
+
+            int resultado = consultas.SumarPartidaEmpatada(idUsuario);
+
+            Assert.AreEqual(esperado, resultado);
+        }
     }
 }

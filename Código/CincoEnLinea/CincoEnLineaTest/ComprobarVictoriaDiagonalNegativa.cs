@@ -20,11 +20,11 @@ namespace CincoEnLineaTest {
 
         [TestMethod]
         public void ComprobarVictoria() {
-            cru.TableroTiros[0, 8] = 1;
-            cru.TableroTiros[1, 7] = 1;
-            cru.TableroTiros[2, 6] = 1;
+            cru.TableroTiros[0, 2] = 1;
+            cru.TableroTiros[1, 3] = 1;
+            cru.TableroTiros[2, 4] = 1;
             cru.TableroTiros[3, 5] = 1;
-            cru.TableroTiros[4, 4] = 1;
+            cru.TableroTiros[4, 6] = 1;
             Boolean esperado = true;
 
             Boolean resultado = cru.ComprobarDiagonalNegativa(1);
@@ -34,12 +34,12 @@ namespace CincoEnLineaTest {
 
         [TestMethod]
         public void ComprobarDerrota() {
-            cru.TableroTiros[0, 8] = 1;
-            cru.TableroTiros[1, 7] = 1;
-            cru.TableroTiros[2, 6] = 2;
+            cru.TableroTiros[0, 2] = 1;
+            cru.TableroTiros[1, 3] = 1;
+            cru.TableroTiros[2, 4] = 2;
             cru.TableroTiros[3, 5] = 1;
-            cru.TableroTiros[4, 4] = 1;
-            cru.TableroTiros[5, 3] = 1;
+            cru.TableroTiros[4, 6] = 1;
+            cru.TableroTiros[5, 7] = 1;
             Boolean esperado = false;
 
             Boolean resultado = cru.ComprobarDiagonalNegativa(1);

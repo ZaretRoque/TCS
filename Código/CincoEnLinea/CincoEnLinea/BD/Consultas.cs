@@ -89,7 +89,7 @@ namespace CincoEnLinea.BD {
             MySqlConnection conexion = new MySqlConnection(conexionBD);
             conexion.Open();
             string sqlQuery = "select nombreUsuario, partidasGanadas, partidasPerdidas, " +
-                "partidasEmpatadas from usuario natural join EstadisticasUsuario order by " +
+                "partidasEmpatadas from usuario natural join EstadisticasUsuario where partidasGanadas > 0 order by " +
                 "partidasGanadas desc";
             MySqlCommand cmd = new MySqlCommand(sqlQuery, conexion);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -131,6 +131,12 @@ namespace CincoEnLinea.BD {
             }
         }
 
+        /// <summary>
+        /// Valida que la contraseña recibida sea igual a la contraseña almacenada en base de datos
+        /// </summary>
+        /// <param name="contrasenia">La contraseña a comprobar, misma que deberá haber sido cifrada mediante SHA2-256, de lo
+        /// contrario el método no funcionará de forma correcta</param>
+        /// <returns>True si la contraseña es igual, false en cualquier otro caso</returns>
         public Boolean ValidaContraUsuario(String contrasenia) {
             String contraRecuperadaUsuario = "";
             MySqlConnection conexion = new MySqlConnection(conexionBD);
@@ -149,6 +155,57 @@ namespace CincoEnLinea.BD {
             } else {
                 return true;
             }
+        }
+
+        /// <summary>
+        /// Suma una partida ganada al jugador cuyo id sea recibido como parámetro
+        /// </summary>
+        /// <param name="idUsuario">El id del usuario al que será sumada la partida</param>
+        /// <returns>Un entero que representa el número de filas afectadas por la actualización</returns>
+        public int SumarPartidaGanada(int idUsuario) {
+            int filasAfectadas = 0; //si es igual a 0 la inserción no salió bien
+            MySqlConnection conexion = new MySqlConnection(conexionBD);
+            conexion.Open();
+            string sqlQuery = "Update estadisticasUsuario set partidasGanadas = partidasGanadas + 1 where idUsuario = @idUsuario";
+            MySqlCommand cmd = new MySqlCommand(sqlQuery, conexion);
+            cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+            filasAfectadas = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return filasAfectadas;
+        }
+
+        /// <summary>
+        /// Suma una partida perdida al jugador cuyo id sea recibido como parámetro
+        /// </summary>
+        /// <param name="idUsuario">El id del usuario al que será sumada la partida</param>
+        /// <returns>Un entero que representa el número de filas afectadas por la actualización</returns>
+        public int SumarPartidaPerdida(int idUsuario) {
+            int filasAfectadas = 0; //si es igual a 0 la inserción no salió bien
+            MySqlConnection conexion = new MySqlConnection(conexionBD);
+            conexion.Open();
+            string sqlQuery = "Update estadisticasUsuario set partidasPerdidas = partidasPerdidas + 1 where idUsuario = @idUsuario";
+            MySqlCommand cmd = new MySqlCommand(sqlQuery, conexion);
+            cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+            filasAfectadas = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return filasAfectadas;
+        }
+
+        /// <summary>
+        /// Suma una partida empatada al jugador cuyo id sea recibido como parámetro
+        /// </summary>
+        /// <param name="idUsuario">El id del usuario al que será sumada la partida</param>
+        /// <returns>Un entero que representa el número de filas afectadas por la actualización</returns>
+        public int SumarPartidaEmpatada(int idUsuario) {
+            int filasAfectadas = 0; //si es igual a 0 la inserción no salió bien
+            MySqlConnection conexion = new MySqlConnection(conexionBD);
+            conexion.Open();
+            string sqlQuery = "Update estadisticasUsuario set partidasEmpatadas = partidasEmpatadas + 1 where idUsuario = @idUsuario";
+            MySqlCommand cmd = new MySqlCommand(sqlQuery, conexion);
+            cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+            filasAfectadas = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return filasAfectadas;
         }
     }
 }
