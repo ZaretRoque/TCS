@@ -1,4 +1,4 @@
-<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="845" measuredH="413" mockupW="450" mockupH="400">
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="850" measuredH="356" mockupW="450" mockupH="343">
   <controls>
     <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="475" y="62" w="-1" h="-1" measuredW="255" measuredH="43" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
@@ -6,26 +6,21 @@
       </controlProperties>
     </control>
     <control controlID="4" controlTypeID="com.balsamiq.mockups::HRule" x="404" y="95" w="416" h="-1" measuredW="100" measuredH="10" zOrder="2" locked="false" isInGroup="-1"/>
-    <control controlID="10" controlTypeID="com.balsamiq.mockups::HRule" x="404" y="178" w="416" h="-1" measuredW="100" measuredH="10" zOrder="5" locked="false" isInGroup="-1"/>
-    <control controlID="11" controlTypeID="com.balsamiq.mockups::HRule" x="404" y="255" w="416" h="-1" measuredW="100" measuredH="10" zOrder="6" locked="false" isInGroup="-1"/>
-    <control controlID="12" controlTypeID="com.balsamiq.mockups::HRule" x="404" y="347" w="416" h="-1" measuredW="100" measuredH="10" zOrder="7" locked="false" isInGroup="-1"/>
-    <control controlID="14" controlTypeID="com.balsamiq.mockups::VRule" x="527" y="116" w="-1" h="262" measuredW="10" measuredH="100" zOrder="8" locked="false" isInGroup="-1"/>
-    <control controlID="16" controlTypeID="com.balsamiq.mockups::VRule" x="674" y="116" w="-1" h="262" measuredW="10" measuredH="100" zOrder="9" locked="false" isInGroup="-1"/>
-    <control controlID="20" controlTypeID="__group__" x="699" y="293" w="109" h="32" measuredW="109" measuredH="32" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="20" controlTypeID="__group__" x="585" y="228" w="77" h="22" measuredW="77" measuredH="22" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
         <href>Ver%20reglas%26bm%3BVer%20reglas.bmml%26bm%3BVer%20reglas.bmml%26bm%3BVer%20reglas.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22304%2C280%2C413%2C312%22%20href%3D%22Ver%2520reglas.bmml%22%20alt%3D%22Ver%20reglas%22%20id%3D%2220%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22185%2C215%2C262%2C237%22%20href%3D%22Ver%2520reglas.bmml%22%20alt%3D%22Ver%20reglas%22%20id%3D%2220%22/%3E</map>
       </controlProperties>
       <groupChildrenDescriptors>
-        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="20"/>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="47" y="6" w="-1" h="-1" measuredW="62" measuredH="21" zOrder="1" locked="false" isInGroup="20">
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="77" h="-1" measuredW="67" measuredH="22" zOrder="0" locked="false" isInGroup="20">
           <controlProperties>
+            <size>14</size>
             <text>Ver%20reglas</text>
           </controlProperties>
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="22" controlTypeID="com.balsamiq.mockups::TitleWindow" x="395" y="13" w="-1" h="-1" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::TitleWindow" x="400" y="13" w="450" h="343" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
         <bottomheight>7</bottomheight>
         <close>true</close>
@@ -34,63 +29,57 @@
         <text>Men%FA</text>
       </controlProperties>
     </control>
-    <control controlID="27" controlTypeID="__group__" x="404" y="132" w="123" h="32" measuredW="123" measuredH="32" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="27" controlTypeID="__group__" x="574" y="130" w="107" h="22" measuredW="107" measuredH="22" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <href>Loby%26bm%3BLoby.bmml%26bm%3BLoby.bmml%26bm%3BLoby.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%229%2C119%2C132%2C151%22%20href%3D%22Loby.bmml%22%20alt%3D%22Loby%22%20id%3D%2227%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22174%2C117%2C281%2C139%22%20href%3D%22Loby.bmml%22%20alt%3D%22Loby%22%20id%3D%2227%22/%3E</map>
       </controlProperties>
       <groupChildrenDescriptors>
-        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="27"/>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="47" y="6" w="-1" h="-1" measuredW="76" measuredH="21" zOrder="1" locked="false" isInGroup="27">
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="107" h="-1" measuredW="83" measuredH="22" zOrder="0" locked="false" isInGroup="27">
           <controlProperties>
-            <text>Entrar%20a%20loby</text>
+            <size>14</size>
+            <text>Entrar%20a%20sala</text>
           </controlProperties>
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="28" controlTypeID="__group__" x="552" y="208" w="194" h="32" measuredW="194" measuredH="32" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="28" controlTypeID="__group__" x="543" y="179" w="168" h="22" measuredW="168" measuredH="22" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <href>Mejores%20jugadores%26bm%3BMejores%20jugadores.bmml%26bm%3BMejores%20jugadores.bmml%26bm%3BMejores%20jugadores.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22157%2C195%2C351%2C227%22%20href%3D%22Mejores%2520jugadores.bmml%22%20alt%3D%22Mejores%20jugadores%22%20id%3D%2228%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22143%2C166%2C311%2C188%22%20href%3D%22Mejores%2520jugadores.bmml%22%20alt%3D%22Mejores%20jugadores%22%20id%3D%2228%22/%3E</map>
       </controlProperties>
       <groupChildrenDescriptors>
-        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="28">
-          <controlProperties>
-            <color>0</color>
-            <text/>
-          </controlProperties>
-        </control>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="44" y="7" w="150" h="-1" measuredW="93" measuredH="17" zOrder="1" locked="false" isInGroup="28">
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="168" h="-1" measuredW="145" measuredH="22" zOrder="0" locked="false" isInGroup="28">
           <controlProperties>
             <align>left</align>
-            <size>9</size>
+            <size>14</size>
             <text>Ver%20mejores%20jugadores</text>
             <textOrientation>right</textOrientation>
           </controlProperties>
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="31" controlTypeID="__group__" x="410" y="293" w="113" h="32" measuredW="113" measuredH="32" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="31" controlTypeID="__group__" x="574" y="271" w="99" h="22" measuredW="99" measuredH="22" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <href>Iniciar%20sesi%F3n%26bm%3BIniciar%20sesi%F3n.bmml%26bm%3BIniciar%20sesi%F3n.bmml%26bm%3BIniciar%20sesi%F3n.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2215%2C280%2C128%2C312%22%20href%3D%22Iniciar%2520sesi%25C3%25B3n.bmml%22%20alt%3D%22Iniciar%20sesi%F3n%22%20id%3D%2231%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22174%2C258%2C273%2C280%22%20href%3D%22Iniciar%2520sesi%25C3%25B3n.bmml%22%20alt%3D%22Iniciar%20sesi%F3n%22%20id%3D%2231%22/%3E</map>
       </controlProperties>
       <groupChildrenDescriptors>
-        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="31">
-          <controlProperties>
-            <color>0</color>
-            <text/>
-          </controlProperties>
-        </control>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="44" y="7" w="69" h="-1" measuredW="68" measuredH="19" zOrder="1" locked="false" isInGroup="31">
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="99" h="-1" measuredW="87" measuredH="22" zOrder="0" locked="false" isInGroup="31">
           <controlProperties>
             <align>left</align>
-            <size>11</size>
+            <size>14</size>
             <text>Cerrar%20sesi%F3n</text>
             <textOrientation>right</textOrientation>
           </controlProperties>
         </control>
       </groupChildrenDescriptors>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::Label" x="426" y="109" w="-1" h="-1" measuredW="91" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Men%FA%20Principal</text>
+      </controlProperties>
     </control>
   </controls>
 </mockup>
