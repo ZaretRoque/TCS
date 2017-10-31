@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComprobarEmpate.cs" />
     <Compile Include="ComprobarVictoriaDiagonalNegativa.cs" />
     <Compile Include="ComprobarVictoriaDiagonalPositiva.cs" />
     <Compile Include="ComprobarVictoriaHorizontal.cs" />

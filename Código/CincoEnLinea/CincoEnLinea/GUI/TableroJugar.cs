@@ -644,11 +644,19 @@ namespace CincoEnLinea {
                     bool vertical = crupier.ComprobarVertical(turno);
                     bool diagonalPositiva = crupier.ComprobarDiagonalPositiva(turno);
                     bool diagonalNegativa = crupier.ComprobarDiagonalNegativa(turno);
+                    bool empate = crupier.ComprobarEmpate();
                     if(horizontal || vertical || diagonalPositiva || diagonalNegativa) {
 
                         string mensaje = rm.GetString("mensajeGanar");
                         string titulo = rm.GetString("tituloGanar");
                         MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+
+                    if(empate) {
+
+                        string mensajeEmpate = rm.GetString("mensajeEmpatar");
+                        string tituloEmpate = rm.GetString("tituloEmpatar");
+                        MessageBox.Show(mensajeEmpate, tituloEmpate, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     crupier.Turno = 2;
                     turno = 2;
@@ -660,11 +668,19 @@ namespace CincoEnLinea {
                     bool vertical = crupier.ComprobarVertical(turno);
                     bool diagonalPositiva = crupier.ComprobarDiagonalPositiva(turno);
                     bool diagonalNegativa = crupier.ComprobarDiagonalNegativa(turno);
+                    bool empate = crupier.ComprobarEmpate();
                     if (horizontal || vertical || diagonalPositiva || diagonalNegativa) {
 
                         string mensaje = rm.GetString("mensajeGanar");
                         string titulo = rm.GetString("tituloGanar");
                         MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+
+                    if (empate) {
+
+                        string mensajeEmpate = rm.GetString("mensajeEmpatar");
+                        string tituloEmpate = rm.GetString("tituloEmpatar");
+                        MessageBox.Show(mensajeEmpate, tituloEmpate, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     crupier.Turno = 1;
                     turno = 1;

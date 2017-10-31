@@ -126,6 +126,9 @@
   <data name="labTurno" xml:space="preserve">
     <value>Turn</value>
   </data>
+  <data name="mensajeEmpatar" xml:space="preserve">
+    <value>Draw!</value>
+  </data>
   <data name="mensajeGanar" xml:space="preserve">
     <value>Your grandma will be so proud of you!</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="tituloConfirmacion" xml:space="preserve">
     <value>Are you a coward?</value>
+  </data>
+  <data name="tituloEmpatar" xml:space="preserve">
+    <value>Really?</value>
   </data>
   <data name="tituloGanar" xml:space="preserve">
     <value>Winner</value>

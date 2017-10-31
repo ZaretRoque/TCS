@@ -151,6 +151,20 @@ namespace CincoEnLinea.Dominio {
             return resultado;
         }
 
+        /// <summary>
+        /// Comprueba que el tablero no se haya llenado
+        /// </summary>
+        /// <returns>True cuando el tablero está lleno y false cuando no</returns>
+        public bool ComprobarEmpate() {
+            for (int columna = 0; columna < 9; columna++) {
+                for (int fila = 0; fila < 9; fila++) {
+                    if(tableroTiros[fila, columna] == 0) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
 
         /// <summary>
         /// Obtiene el número que representa al jugador contrario, se utiliza dentro de los métodos que comprueban las línea consecutivas

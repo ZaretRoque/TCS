@@ -97,7 +97,7 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Desarrolladores.
+        ///   Busca una cadena traducida similar a Desarrolladores:.
         /// </summary>
         internal static string Desarrolladores {
             get {
