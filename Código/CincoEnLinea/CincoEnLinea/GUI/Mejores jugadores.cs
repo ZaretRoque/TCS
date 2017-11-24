@@ -12,6 +12,8 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ServiceModel;
+using WcfServicioBaseDatos;
 
 namespace CincoEnLinea.GUI {
     public partial class Mejores_jugadores : Form {
@@ -35,14 +37,18 @@ namespace CincoEnLinea.GUI {
         private void LlenarTablaMejoresJugadores() {
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MejoresJugadoresRes",
                     typeof(Mejores_jugadores).Assembly);
+            ChannelFactory<IServicioBD> canalServidor;
+            IServicioBD interfazServidor;
             string mensaje;
             string titulo;
             try {
-                Consultas consultas = new Consultas();
-                List<Usuario> mejoresJugadores = consultas.RecuperarMejoresJugadores();
+                canalServidor = new ChannelFactory<IServicioBD>("configuracionServidor");
+                interfazServidor = canalServidor.CreateChannel();
+                //utilizamos el dataContract del servicio para que pueda 'entender' el valor de retorno
+                List<WcfServicioBaseDatos.Usuario> mejoresJugadores = interfazServidor.RecuperarMejoresJugadores();
                 listViewMejoresJugadores.View = View.Details;
                 int contador = 1;
-                foreach (Usuario usuario in mejoresJugadores) {
+                foreach (WcfServicioBaseDatos.Usuario usuario in mejoresJugadores) {
                     ListViewItem item = listViewMejoresJugadores.Items.Add(contador.ToString());
                     item.SubItems.Add(usuario.NombreUsuario);
                     item.SubItems.Add(usuario.PartidasGanadas.ToString());

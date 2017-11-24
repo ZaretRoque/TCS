@@ -10,6 +10,8 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ServiceModel;
+using WcfServicioBaseDatos;
 
 namespace CincoEnLinea
 {
@@ -31,43 +33,63 @@ namespace CincoEnLinea
         }
 
         private void ClicRegistrame(object sender, EventArgs e) {
-            String nombreUsuario = textBoxNombreUsuario.Text;
-            Consultas queries = new Consultas();
+            
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.RegistroRes",
                     typeof(Registro).Assembly);
+            String nombreUsuario = textBoxNombreUsuario.Text;
             string mensaje;
             string titulo;
-            if (ValidarCamposLlenos()) {
-                //valida que no exista un usuario con el mismo nombre en la BD
-                if (!queries.ValidaNombreUsuario(nombreUsuario)) {
-                    if (ValidaContrasena(textBoxContrasenia.Text, textBoxConfirmaContrasenia.Text)) {
-                        queries.RegistrarUsuario(nombreUsuario, textBoxConfirmaContrasenia.Text);
-                        mensaje = rm.GetString("registroExitoso");
-                        titulo = rm.GetString("registroExitosoTitulo");
+            ChannelFactory<IServicioBD> canalServidor;
+            IServicioBD interfazServidor;
 
+            if (ValidarCamposLlenos()) {
+                try {
+                    canalServidor = new ChannelFactory<IServicioBD>("configuracionServidor");
+                    interfazServidor = canalServidor.CreateChannel();
+
+                    bool valor = interfazServidor.ValidaNombreUsuario(nombreUsuario);
+                    //valida que no exista un usuario con el mismo nombre en la BD
+                    if (!interfazServidor.ValidaNombreUsuario(nombreUsuario)) {
+                        if (ValidaContrasena(textBoxContrasenia.Text, textBoxConfirmaContrasenia.Text)) {
+                            interfazServidor.RegistrarUsuario(nombreUsuario, textBoxConfirmaContrasenia.Text);
+                            mensaje = rm.GetString("registroExitoso");
+                            titulo = rm.GetString("registroExitosoTitulo");
+
+                            MessageBox.Show(mensaje, titulo,
+                               MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            this.Dispose();
+                            //se puede crear un objeto Iniciar sesión
+                            Application.Restart();
+                        } else {
+                            mensaje = rm.GetString("contrasenaInvalida");
+                            titulo = rm.GetString("contrasenaInvalidaTitulo");
+                            MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
+                    } else {
+                        mensaje = rm.GetString("usuarioRepetido");
+                        titulo = rm.GetString("usuarioRepetidoTitulo");
                         MessageBox.Show(mensaje, titulo,
-                           MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        this.Dispose();
+                               MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
-                    else {
-                        mensaje = rm.GetString("contrasenaInvalida");
-                        titulo = rm.GetString("contrasenaInvalidaTitulo");
-                        MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    }
-                }
-                else {
-                    mensaje = rm.GetString("usuarioRepetido");
-                    titulo = rm.GetString("usuarioRepetidoTitulo");
+
+                } catch (MySql.Data.MySqlClient.MySqlException ex) {
+                    mensaje = rm.GetString("excepcionBD");
+                    titulo = rm.GetString("tituloExcepcionBD");
                     MessageBox.Show(mensaje, titulo,
-                           MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                } catch (System.ServiceModel.FaultException ex) {
+                    mensaje = rm.GetString("excepcionServicioWcf");
+                    titulo = rm.GetString("tituloExcepcionWcf");
+                    MessageBox.Show(mensaje, titulo,
+                       MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
                 }
-            }
-            else {
+            } else {
                 mensaje = rm.GetString("camposVacios");
                 titulo = rm.GetString("camposVaciosTitulo");
                 MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-
         }
 
         public Boolean ValidaContrasena(String contrasena, String confirmaContra) {

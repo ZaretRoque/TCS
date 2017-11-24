@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -98,7 +99,15 @@ namespace CincoEnLinea.GUI {
         }
 
         private void ClicSalir(object sender, EventArgs e) {
-            this.Dispose();
+            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MenuPrincipalRes",
+                   typeof(TableroJugar).Assembly);
+            string mensaje = rm.GetString("confirmacionSalida");
+            string titulo = rm.GetString("tituloConfirmacion");
+            if (MessageBox.Show(mensaje, titulo,
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes) {
+                this.Dispose();
+                Application.Restart();
+            }
         }
 
         public void AplicarIdioma() {

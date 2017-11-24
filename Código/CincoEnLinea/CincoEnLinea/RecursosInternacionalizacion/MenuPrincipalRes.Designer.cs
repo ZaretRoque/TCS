@@ -79,6 +79,15 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ¿En serio deseas salir?.
+        /// </summary>
+        internal static string confirmacionSalida {
+            get {
+                return ResourceManager.GetString("confirmacionSalida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Menú Principal.
         /// </summary>
         internal static string labMenu {
@@ -111,6 +120,15 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         internal static string sala {
             get {
                 return ResourceManager.GetString("sala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirmación de salida.
+        /// </summary>
+        internal static string tituloConfirmacion {
+            get {
+                return ResourceManager.GetString("tituloConfirmacion", resourceCulture);
             }
         }
         

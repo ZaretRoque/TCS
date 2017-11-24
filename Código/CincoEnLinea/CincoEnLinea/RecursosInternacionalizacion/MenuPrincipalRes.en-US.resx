@@ -123,6 +123,9 @@
   <data name="cerrarSesion" xml:space="preserve">
     <value>    Sign out</value>
   </data>
+  <data name="confirmacionSalida" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
   <data name="labMenu" xml:space="preserve">
     <value>Main menu</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="sala" xml:space="preserve">
     <value>   Join loby</value>
+  </data>
+  <data name="tituloConfirmacion" xml:space="preserve">
+    <value>Exit confirmation</value>
   </data>
   <data name="wTMenuPrincipal" xml:space="preserve">
     <value>Main menu</value>

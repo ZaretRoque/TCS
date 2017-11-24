@@ -13,6 +13,8 @@ using System.Globalization;
 using System.Windows.Forms;
 using System.Resources;
 using CincoEnLinea.RecursosInternacionalizacion;
+using System.ServiceModel;
+using WcfServicioBaseDatos;
 
 namespace CincoEnLinea.GUI {
     public partial class IniciarSesion : Form {
@@ -41,6 +43,7 @@ namespace CincoEnLinea.GUI {
                 if (ConfirmaIngreso(textBoxNombreUsuario.Text, textBoxContrasena.Text)) {
                     MenuPrincipal mP = new MenuPrincipal();
                     mP.Show();
+                    this.Hide();
                     //mP.AplicarIdioma();
                 }
             }
@@ -60,37 +63,45 @@ namespace CincoEnLinea.GUI {
         /// <param name="contrasenia"></param>
         /// <returns></returns>
         public Boolean ConfirmaIngreso(String usuarioName, String contrasenia) {
-            Consultas queries = new Consultas();
             String contraEncriptada = EncriptaContrasena(contrasenia);
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.IniciarSesionRes",
                     typeof(IniciarSesion).Assembly);
+            ChannelFactory<IServicioBD> canalServidor;
+            IServicioBD interfazServidor;
             string mensaje;
             string titulo;
+
             try {
-                if (queries.ValidaNombreUsuario(usuarioName)) {
-                    if (queries.ValidaContraUsuario(contraEncriptada)) {
+                canalServidor = new ChannelFactory<IServicioBD>("configuracionServidor");
+                interfazServidor = canalServidor.CreateChannel();
+
+                if (interfazServidor.ValidaNombreUsuario(usuarioName)) {
+                    if (interfazServidor.ValidaContraseniaUsuario(contraEncriptada)) {
                         return true;
-                    }
-                    else {
+                    } else {
                         mensaje = rm.GetString("contrasenaIncorrecta");
                         titulo = rm.GetString("tituloMensajeContrasena");
                         MessageBox.Show(mensaje, titulo,
                             MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         return false;
                     }
-                }
-                else {
+                } else {
                     mensaje = rm.GetString("noRegistrado");
                     MessageBox.Show(mensaje, "Ups",
                         MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return false;
                 }
-            }
-            catch (MySql.Data.MySqlClient.MySqlException e) {
+            } catch (MySql.Data.MySqlClient.MySqlException e) {
                 mensaje = rm.GetString("excepcionBD");
                 titulo = rm.GetString("tituloExcepcionBD");
                 MessageBox.Show(mensaje, titulo,
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return false;
+            } catch (FaultException e) {
+                mensaje = rm.GetString("excepcionServicioWcf");
+                titulo = rm.GetString("tituloExcepcionWcf");
+                MessageBox.Show(mensaje, titulo,
+                   MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return false;
             }
         }
@@ -102,7 +113,6 @@ namespace CincoEnLinea.GUI {
         /// <returns></returns>
         public string EncriptaContrasena(string contrasena) {
             SHA256CryptoServiceProvider encriptado = new SHA256CryptoServiceProvider();
-
             byte[] inputBytes = Encoding.UTF8.GetBytes(contrasena);
             byte[] hashedBytes = encriptado.ComputeHash(inputBytes);
 
@@ -137,6 +147,10 @@ namespace CincoEnLinea.GUI {
             labelNoTienesCuenta.Text = IniciarSesionRes.noCuenta;
             labelUsuario.Text = IniciarSesionRes.Usuario;
             linkLabelRegistrate.Text = IniciarSesionRes.registrar;
+        }
+
+        private void ClicLabelRegistrate(object sender, LinkLabelLinkClickedEventArgs e) {
+            this.Hide();
         }
     }
 }
