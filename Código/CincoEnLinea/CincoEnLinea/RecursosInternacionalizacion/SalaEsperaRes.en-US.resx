@@ -126,14 +126,11 @@
   <data name="bUnirse" xml:space="preserve">
     <value>Join game</value>
   </data>
-  <data name="ganadas" xml:space="preserve">
-    <value>Won matches</value>
-  </data>
   <data name="labPartidasDisp" xml:space="preserve">
     <value>Game lobby</value>
   </data>
-  <data name="perdidas" xml:space="preserve">
-    <value>Lost matches</value>
+  <data name="sala" xml:space="preserve">
+    <value>Room</value>
   </data>
   <data name="usuario" xml:space="preserve">
     <value>User</value>

@@ -10,7 +10,7 @@ namespace WcfServicioBaseDatos {
     
     public class Consultas {
 
-        private string conexionBD;
+        readonly string conexionBD;
 
         public Consultas() {
             conexionBD = GetConnectionStringByName("ConexionBD");
@@ -67,8 +67,7 @@ namespace WcfServicioBaseDatos {
             Usuario usuario = new Usuario();
             MySqlConnection conexion = new MySqlConnection(conexionBD);
             conexion.Open();
-            string sqlQuery = "Select idUsuario, nombreUsuario" +
-                "from usuario where nombreUsuario = @nombreUsuario";
+            string sqlQuery = "Select idUsuario, nombreUsuario from usuario where nombreUsuario = @nombreUsuario";
             MySqlCommand cmd = new MySqlCommand(sqlQuery, conexion);
             cmd.Parameters.AddWithValue("@nombreUsuario", nombreUsuario);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -123,7 +122,7 @@ namespace WcfServicioBaseDatos {
                 nombreRecuperadoUsuario = reader.GetString("nombreUsuario");
             }
 
-            if (nombreRecuperadoUsuario.Equals("")) {
+            if (string.IsNullOrEmpty(nombreRecuperadoUsuario)) {
                 return false;
             } else {
                 return true;
@@ -149,7 +148,7 @@ namespace WcfServicioBaseDatos {
                 contraRecuperadaUsuario = reader.GetString("contrasena");
             }
 
-            if (contraRecuperadaUsuario.Equals("")) {
+            if (string.IsNullOrEmpty(contraRecuperadaUsuario)) {
                 return false;
             } else {
                 return true;

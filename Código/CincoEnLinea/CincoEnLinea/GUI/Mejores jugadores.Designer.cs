@@ -1,5 +1,5 @@
 ﻿namespace CincoEnLinea.GUI {
-    partial class Mejores_jugadores {
+    partial class MejoresJugadores {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -126,7 +126,6 @@
             this.Name = "Mejores_jugadores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mejores jugadores";
-            this.Load += new System.EventHandler(this.Mejores_jugadores_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

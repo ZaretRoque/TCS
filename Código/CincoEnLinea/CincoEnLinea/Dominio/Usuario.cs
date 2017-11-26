@@ -16,6 +16,11 @@ namespace CincoEnLinea.Dominio {
 
         public Usuario() { }
 
+        public Usuario(int idUsuario, string nombreUsuario) {
+            this.idUsuario = idUsuario;
+            this.nombreUsuario = nombreUsuario;
+        }
+
         public Usuario(int idUsuario, string nombreUsuario, string contrasena) {
             this.idUsuario = idUsuario;
             this.nombreUsuario = nombreUsuario;

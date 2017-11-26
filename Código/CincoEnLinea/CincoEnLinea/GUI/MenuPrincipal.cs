@@ -1,4 +1,5 @@
-﻿using CincoEnLinea.RecursosInternacionalizacion;
+﻿using CincoEnLinea.Dominio;
+using CincoEnLinea.RecursosInternacionalizacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +16,17 @@ using System.Windows.Forms;
 namespace CincoEnLinea.GUI {
 
     public partial class MenuPrincipal : Form {
+        Usuario usuario;
+        public MenuPrincipal(Usuario usuario) {
+            this.usuario = usuario;
+            InitializeComponent();
+            AplicarIdioma();
+        }
+
         public MenuPrincipal() {
             InitializeComponent();
             AplicarIdioma();
-            /* Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
-            AplicarIdioma();*/
         }
-
         /// <summary>
         /// Método que hace invisibles todos los pictureBox de cada opción del menú principal,
         /// mientras el mouse no se pose sobre alguna opción
@@ -82,7 +87,7 @@ namespace CincoEnLinea.GUI {
 
         private void MouseClicMejoresJugadores(object sender, EventArgs e) {
             this.Dispose();
-            Mejores_jugadores mJuga = new Mejores_jugadores();
+            MejoresJugadores mJuga = new MejoresJugadores();
             mJuga.Show();
         }
 
@@ -94,7 +99,7 @@ namespace CincoEnLinea.GUI {
 
         private void ClicEntrarSala(object sender, EventArgs e) {
             this.Dispose();
-            SalaEspera sE = new SalaEspera();
+            SalaEspera sE = new SalaEspera(usuario);
             sE.Show();
         }
 
@@ -111,7 +116,6 @@ namespace CincoEnLinea.GUI {
         }
 
         public void AplicarIdioma() {
-            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(idioma);
             this.Text = MenuPrincipalRes.wTMenuPrincipal;
             labelMenu.Text = MenuPrincipalRes.labMenu;
             labelEntrarSala.Text = MenuPrincipalRes.sala;

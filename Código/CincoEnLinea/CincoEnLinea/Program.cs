@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CincoEnLinea.GUI;
-using CincoEnLinea.BD;
 using System.Configuration;
 using CincoEnLinea.Dominio;
 

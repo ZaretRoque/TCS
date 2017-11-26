@@ -1,23 +1,14 @@
-﻿
-using CincoEnLinea.BD;
-using CincoEnLinea.Dominio;
-using CincoEnLinea.RecursosInternacionalizacion;
+﻿using CincoEnLinea.RecursosInternacionalizacion;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.ServiceModel;
+using System.Windows.Forms;
 using WcfServicioBaseDatos;
 
 namespace CincoEnLinea.GUI {
-    public partial class Mejores_jugadores : Form {
-        public Mejores_jugadores() {
+    public partial class MejoresJugadores : Form {
+        public MejoresJugadores() {
             InitializeComponent();
             AplicarIdioma();
             LlenarTablaMejoresJugadores();
@@ -36,7 +27,7 @@ namespace CincoEnLinea.GUI {
 
         private void LlenarTablaMejoresJugadores() {
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MejoresJugadoresRes",
-                    typeof(Mejores_jugadores).Assembly);
+                    typeof(MejoresJugadores).Assembly);
             ChannelFactory<IServicioBD> canalServidor;
             IServicioBD interfazServidor;
             string mensaje;
@@ -64,10 +55,6 @@ namespace CincoEnLinea.GUI {
                 MessageBox.Show(mensaje, titulo,
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-        }
-
-        private void Mejores_jugadores_Load(object sender, EventArgs e) {
-            
         }
 
 

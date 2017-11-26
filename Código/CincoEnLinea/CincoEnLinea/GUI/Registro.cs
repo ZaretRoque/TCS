@@ -1,5 +1,4 @@
-﻿using CincoEnLinea.BD;
-using CincoEnLinea.RecursosInternacionalizacion;
+﻿using CincoEnLinea.RecursosInternacionalizacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,8 +45,7 @@ namespace CincoEnLinea
                 try {
                     canalServidor = new ChannelFactory<IServicioBD>("configuracionServidor");
                     interfazServidor = canalServidor.CreateChannel();
-
-                    bool valor = interfazServidor.ValidaNombreUsuario(nombreUsuario);
+                    
                     //valida que no exista un usuario con el mismo nombre en la BD
                     if (!interfazServidor.ValidaNombreUsuario(nombreUsuario)) {
                         if (ValidaContrasena(textBoxContrasenia.Text, textBoxConfirmaContrasenia.Text)) {
@@ -110,6 +108,17 @@ namespace CincoEnLinea
             }
             else {
                 return false;
+            }
+        }
+
+        private void VerificarEntrada(object sender, KeyPressEventArgs e) {
+            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '_' && e.KeyChar != '-') {
+                e.Handled = true;
+                ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.RegistroRes",
+                    typeof(Registro).Assembly);
+                ToolTip tool = new ToolTip();
+                String mensaje = rm.GetString("toolTip");
+                tool.Show(mensaje, textBoxNombreUsuario, 2000);
             }
         }
     }

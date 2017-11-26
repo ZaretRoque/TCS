@@ -150,6 +150,9 @@
   <data name="registroExitosoTitulo" xml:space="preserve">
     <value>Success sign up</value>
   </data>
+  <data name="toolTip" xml:space="preserve">
+    <value>Only letters, numbers, hyphen and underscore are allowed</value>
+  </data>
   <data name="usuarioRepetido" xml:space="preserve">
     <value>That username already exists</value>
   </data>

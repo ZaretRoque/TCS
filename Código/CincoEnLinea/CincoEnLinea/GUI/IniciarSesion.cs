@@ -1,5 +1,4 @@
-﻿using CincoEnLinea.BD;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,10 +17,12 @@ using WcfServicioBaseDatos;
 
 namespace CincoEnLinea.GUI {
     public partial class IniciarSesion : Form {
-        
+        ChannelFactory<IServicioBD> canalServidor;
+        IServicioBD interfazServidor;
+
         public IniciarSesion() {
-            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             InitializeComponent();
+            IniciarServicio();
         }
 
 
@@ -41,10 +42,14 @@ namespace CincoEnLinea.GUI {
             }
             else {
                 if (ConfirmaIngreso(textBoxNombreUsuario.Text, textBoxContrasena.Text)) {
-                    MenuPrincipal mP = new MenuPrincipal();
+                    WcfServicioBaseDatos.Usuario usuario = interfazServidor.RecuperarUsuario(textBoxNombreUsuario.Text);
+                    Dominio.Usuario usuarioDominio = new Dominio.Usuario {
+                        IdUsuario = usuario.IdUsuario,
+                        NombreUsuario = usuario.NombreUsuario
+                    };
+                    MenuPrincipal mP = new MenuPrincipal(usuarioDominio);
                     mP.Show();
                     this.Hide();
-                    //mP.AplicarIdioma();
                 }
             }
 
@@ -66,14 +71,12 @@ namespace CincoEnLinea.GUI {
             String contraEncriptada = EncriptaContrasena(contrasenia);
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.IniciarSesionRes",
                     typeof(IniciarSesion).Assembly);
-            ChannelFactory<IServicioBD> canalServidor;
-            IServicioBD interfazServidor;
+            
             string mensaje;
             string titulo;
 
             try {
-                canalServidor = new ChannelFactory<IServicioBD>("configuracionServidor");
-                interfazServidor = canalServidor.CreateChannel();
+                
 
                 if (interfazServidor.ValidaNombreUsuario(usuarioName)) {
                     if (interfazServidor.ValidaContraseniaUsuario(contraEncriptada)) {
@@ -138,7 +141,6 @@ namespace CincoEnLinea.GUI {
         }
 
         private void AplicarIdioma() {
-           // ResourceManager rm = new ResourceManager("RecursosInternacionalizacion.IniciarSesionRes", typeof(IniciarSesion).Assembly);
             this.Text = IniciarSesionRes.wTIniciarSesion;
             buttonEntrar.Text = IniciarSesionRes.buttonEntrar;
             label1.Text = IniciarSesionRes.contrasena;
@@ -151,6 +153,17 @@ namespace CincoEnLinea.GUI {
 
         private void ClicLabelRegistrate(object sender, LinkLabelLinkClickedEventArgs e) {
             this.Hide();
+        }
+
+        private void IniciarServicio() {
+            canalServidor = new ChannelFactory<IServicioBD>("configuracionServidor");
+            interfazServidor = canalServidor.CreateChannel();
+        }
+
+        private void VerificarEntrada(object sender, KeyPressEventArgs e) {
+            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '_' && e.KeyChar != '-') {
+                e.Handled = true;
+            }
         }
     }
 }

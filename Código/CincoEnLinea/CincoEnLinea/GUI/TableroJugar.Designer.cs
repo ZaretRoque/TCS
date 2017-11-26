@@ -1240,7 +1240,6 @@
             this.Name = "Jugar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jugando";
-            this.Load += new System.EventHandler(this.Jugar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox0_0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox0_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8_0)).EndInit();

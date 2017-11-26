@@ -88,7 +88,7 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Menú Principal.
+        ///   Busca una cadena traducida similar a Menu Principal.
         /// </summary>
         internal static string labMenu {
             get {

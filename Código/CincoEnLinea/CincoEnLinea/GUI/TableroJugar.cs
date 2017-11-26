@@ -25,11 +25,7 @@ namespace CincoEnLinea {
 
         }
 
-
-        private void Jugar_Load(object sender, EventArgs e) {
-        }
-
-
+        
         private void ClicPictureBox0_0(object sender, EventArgs e) {
             //Se define un Bitmap para poder crear un objeto de tipo Graphics
             Bitmap panelPintar = new Bitmap(pictureBox0_0.Height, pictureBox0_0.Width);

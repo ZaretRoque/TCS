@@ -88,15 +88,6 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Partidas ganadas.
-        /// </summary>
-        internal static string ganadas {
-            get {
-                return ResourceManager.GetString("ganadas", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Partidas disponibles.
         /// </summary>
         internal static string labPartidasDisp {
@@ -106,11 +97,11 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Partidas perdidas.
+        ///   Busca una cadena traducida similar a Sala.
         /// </summary>
-        internal static string perdidas {
+        internal static string sala {
             get {
-                return ResourceManager.GetString("perdidas", resourceCulture);
+                return ResourceManager.GetString("sala", resourceCulture);
             }
         }
         
