@@ -1,5 +1,6 @@
 ﻿using CincoEnLinea.Dominio;
 using CincoEnLinea.RecursosInternacionalizacion;
+using Quobject.SocketIoClientDotNet.Client;
 using System;
 using System.Drawing;
 using System.Resources;
@@ -10,7 +11,17 @@ namespace CincoEnLinea {
         private PictureBox[,] pictureTablero = new PictureBox[8, 8];
         private int turno = 1;
         Crupier crupier = new Crupier();
+        Usuario usuario;
+        Socket socket;
 
+        public TableroJugar(Usuario usuario, Socket socket) {
+            this.socket = socket;
+            this.usuario = usuario;
+            InitializeComponent();
+            AplicarIdioma();
+        }
+
+        //Se debe quitar
         public TableroJugar() {
             InitializeComponent();
             AplicarIdioma();

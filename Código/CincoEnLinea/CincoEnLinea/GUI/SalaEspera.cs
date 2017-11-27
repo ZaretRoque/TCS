@@ -68,6 +68,7 @@ namespace CincoEnLinea.GUI {
                 });
                 socket.On("comenzarJuego", (data) => {
                     MessageBox.Show("Comienza el juego", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    this.Invoke(new Action(() => mostrarTablero()));
                 });
             });
         }
@@ -80,6 +81,11 @@ namespace CincoEnLinea.GUI {
                 item.SubItems.Add(partida.NombreUsuario);
                 item.Tag = partida;
             }
+        }
+
+        private void mostrarTablero() {
+            TableroJugar tablero = new TableroJugar(usuario, socket);
+            tablero.Show();
         }
     }
 }
