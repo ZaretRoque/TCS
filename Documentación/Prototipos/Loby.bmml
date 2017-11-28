@@ -10,10 +10,10 @@
             <text>Sala</text>
           </controlProperties>
         </control>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::DataGrid" x="23" y="69" w="380" h="164" measuredW="119" measuredH="51" zOrder="1" locked="false" isInGroup="12">
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::DataGrid" x="23" y="69" w="380" h="164" measuredW="99" measuredH="81" zOrder="1" locked="false" isInGroup="12">
           <controlProperties>
-            <selectedIndex>0</selectedIndex>
-            <text>Usuario%2C%20PG%2C%20PP%0AWacha%2C%2010%2C%2090</text>
+            <selectedIndex>-1</selectedIndex>
+            <text>Sala%2C%20Usuario%0A1%2C%20Wacha%0A2%2C%20shadow</text>
           </controlProperties>
         </control>
         <control controlID="2" controlTypeID="com.balsamiq.mockups::SubTitle" x="23" y="42" w="-1" h="-1" measuredW="221" measuredH="27" zOrder="2" locked="false" isInGroup="12">
@@ -29,8 +29,8 @@
         </control>
         <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="285" y="283" w="-1" h="-1" measuredW="118" measuredH="27" zOrder="4" locked="false" isInGroup="12">
           <controlProperties>
-            <href>Esperando%20Confirmaci%F3n%26bm%3BEsperando%20Confirmaci%F3n.bmml%26bm%3BEsperando%20Confirmaci%F3n.bmml%26bm%3BEsperando%20Confirmaci%F3n.bmml</href>
-            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22285%2C283%2C403%2C310%22%20href%3D%22Esperando%2520Confirmaci%25C3%25B3n.bmml%22%20alt%3D%22Esperando%20Confirmaci%F3n%22%20id%3D%224%22/%3E</map>
+            <href>Jugar%26bm%3BJugar.bmml%26bm%3BJugar.bmml%26bm%3BJugar.bmml</href>
+            <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22285%2C283%2C403%2C310%22%20href%3D%22Jugar.bmml%22%20alt%3D%22Jugar%22%20id%3D%224%22/%3E</map>
             <state>up</state>
             <text>Unirse%20a%20partida</text>
           </controlProperties>
@@ -48,9 +48,9 @@
             <text>Sala</text>
           </controlProperties>
         </control>
-        <control controlID="1" controlTypeID="com.balsamiq.mockups::DataGrid" x="23" y="69" w="380" h="164" measuredW="119" measuredH="51" zOrder="1" locked="false" isInGroup="14">
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::DataGrid" x="23" y="69" w="380" h="164" measuredW="99" measuredH="81" zOrder="1" locked="false" isInGroup="14">
           <controlProperties>
-            <text>Usuario%2C%20PG%2C%20PP%0AWacha%2C%2010%2C%2090</text>
+            <text>Sala%2C%20Usuario%0A1%2C%20Wacha%0A2%2C%20shadow</text>
           </controlProperties>
         </control>
         <control controlID="2" controlTypeID="com.balsamiq.mockups::SubTitle" x="23" y="42" w="-1" h="-1" measuredW="221" measuredH="27" zOrder="2" locked="false" isInGroup="14">
