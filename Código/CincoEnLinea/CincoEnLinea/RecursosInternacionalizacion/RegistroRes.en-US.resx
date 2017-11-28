@@ -138,6 +138,12 @@
   <data name="contrasenaInvalidaTitulo" xml:space="preserve">
     <value>What's wrong with you?</value>
   </data>
+  <data name="excepcionBD" xml:space="preserve">
+    <value>Our dog ate the database, sorry</value>
+  </data>
+  <data name="excepcionServicioWcf" xml:space="preserve">
+    <value>Our dog ate the server, sorry</value>
+  </data>
   <data name="labComienzaJugar" xml:space="preserve">
     <value>Join us and start playing!</value>
   </data>
@@ -149,6 +155,12 @@
   </data>
   <data name="registroExitosoTitulo" xml:space="preserve">
     <value>Success sign up</value>
+  </data>
+  <data name="tituloExcepcionBD" xml:space="preserve">
+    <value>Database error</value>
+  </data>
+  <data name="tituloExcepcionWcf" xml:space="preserve">
+    <value>Server error</value>
   </data>
   <data name="toolTip" xml:space="preserve">
     <value>Only letters, numbers, hyphen and underscore are allowed</value>

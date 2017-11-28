@@ -159,4 +159,10 @@
   <data name="tituloMensajeContrasena" xml:space="preserve">
     <value>Pequeño problema</value>
   </data>
+  <data name="excepcionServicioWcf" xml:space="preserve">
+    <value>Error en el servidor, intenta más tarde</value>
+  </data>
+  <data name="tituloExcepcionWcf" xml:space="preserve">
+    <value>Error en servidor</value>
+  </data>
 </root>

@@ -138,6 +138,12 @@
   <data name="contrasenaInvalidaTitulo" xml:space="preserve">
     <value>¿Qué pasó amiguito?</value>
   </data>
+  <data name="excepcionBD" xml:space="preserve">
+    <value>Algo salió mal, intenta de nuevo</value>
+  </data>
+  <data name="excepcionServicioWcf" xml:space="preserve">
+    <value>Tuvimos problemas al conectarnos, intenta más tarde</value>
+  </data>
   <data name="labComienzaJugar" xml:space="preserve">
     <value>Comienza a jugar</value>
   </data>
@@ -149,6 +155,12 @@
   </data>
   <data name="registroExitosoTitulo" xml:space="preserve">
     <value>Registro exitoso</value>
+  </data>
+  <data name="tituloExcepcionBD" xml:space="preserve">
+    <value>Error en base de datos</value>
+  </data>
+  <data name="tituloExcepcionWcf" xml:space="preserve">
+    <value>Error en servidor</value>
   </data>
   <data name="toolTip" xml:space="preserve">
     <value>Sólo se permiten letras, números, guión medio(-) y guión bajo</value>

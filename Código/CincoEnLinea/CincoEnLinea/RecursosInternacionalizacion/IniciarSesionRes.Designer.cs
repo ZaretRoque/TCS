@@ -115,6 +115,15 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Error en el servidor, intenta más tarde.
+        /// </summary>
+        internal static string excepcionServicioWcf {
+            get {
+                return ResourceManager.GetString("excepcionServicioWcf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Inicia Sesión.
         /// </summary>
         internal static string labIniciaSesion {
@@ -156,6 +165,15 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         internal static string tituloExcepcionBD {
             get {
                 return ResourceManager.GetString("tituloExcepcionBD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error en servidor.
+        /// </summary>
+        internal static string tituloExcepcionWcf {
+            get {
+                return ResourceManager.GetString("tituloExcepcionWcf", resourceCulture);
             }
         }
         
