@@ -24,12 +24,12 @@
         /// </summary>
         private void InitializeComponent() {
             this.listViewMejoresJugadores = new System.Windows.Forms.ListView();
-            this.colPosición = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colUsuario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colGanadas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colPerdidas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colEmpatadas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.bRegresarMejoresJugadores = new System.Windows.Forms.Button();
+            this.columnaPosición = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaUsuario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaGanadas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaPerdidas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaEmpatadas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonRegresarMejoresJugadores = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelMejoresJugadores = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -39,11 +39,11 @@
             // 
             this.listViewMejoresJugadores.BackColor = System.Drawing.Color.White;
             this.listViewMejoresJugadores.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colPosición,
-            this.colUsuario,
-            this.colGanadas,
-            this.colPerdidas,
-            this.colEmpatadas});
+            this.columnaPosición,
+            this.columnaUsuario,
+            this.columnaGanadas,
+            this.columnaPerdidas,
+            this.columnaEmpatadas});
             this.listViewMejoresJugadores.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewMejoresJugadores.ForeColor = System.Drawing.SystemColors.MenuText;
             this.listViewMejoresJugadores.Location = new System.Drawing.Point(12, 124);
@@ -53,42 +53,42 @@
             this.listViewMejoresJugadores.UseCompatibleStateImageBehavior = false;
             this.listViewMejoresJugadores.View = System.Windows.Forms.View.Details;
             // 
-            // colPosición
+            // columnaPosición
             // 
-            this.colPosición.Text = "Posición";
-            this.colPosición.Width = 90;
+            this.columnaPosición.Text = "Posición";
+            this.columnaPosición.Width = 90;
             // 
-            // colUsuario
+            // columnaUsuario
             // 
-            this.colUsuario.Text = "Usuario";
-            this.colUsuario.Width = 110;
+            this.columnaUsuario.Text = "Usuario";
+            this.columnaUsuario.Width = 110;
             // 
-            // colGanadas
+            // columnaGanadas
             // 
-            this.colGanadas.Text = "Ganadas";
-            this.colGanadas.Width = 110;
+            this.columnaGanadas.Text = "Ganadas";
+            this.columnaGanadas.Width = 110;
             // 
-            // colPerdidas
+            // columnaPerdidas
             // 
-            this.colPerdidas.Text = "Perdidas";
-            this.colPerdidas.Width = 123;
+            this.columnaPerdidas.Text = "Perdidas";
+            this.columnaPerdidas.Width = 123;
             // 
-            // colEmpatadas
+            // columnaEmpatadas
             // 
-            this.colEmpatadas.Text = "Empatadas";
-            this.colEmpatadas.Width = 142;
+            this.columnaEmpatadas.Text = "Empatadas";
+            this.columnaEmpatadas.Width = 142;
             // 
-            // bRegresarMejoresJugadores
+            // buttonRegresarMejoresJugadores
             // 
-            this.bRegresarMejoresJugadores.BackColor = System.Drawing.Color.Silver;
-            this.bRegresarMejoresJugadores.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bRegresarMejoresJugadores.Location = new System.Drawing.Point(386, 373);
-            this.bRegresarMejoresJugadores.Name = "bRegresarMejoresJugadores";
-            this.bRegresarMejoresJugadores.Size = new System.Drawing.Size(115, 31);
-            this.bRegresarMejoresJugadores.TabIndex = 1;
-            this.bRegresarMejoresJugadores.Text = "Regresar";
-            this.bRegresarMejoresJugadores.UseVisualStyleBackColor = false;
-            this.bRegresarMejoresJugadores.Click += new System.EventHandler(this.ClicRegresar);
+            this.buttonRegresarMejoresJugadores.BackColor = System.Drawing.Color.Silver;
+            this.buttonRegresarMejoresJugadores.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegresarMejoresJugadores.Location = new System.Drawing.Point(386, 373);
+            this.buttonRegresarMejoresJugadores.Name = "buttonRegresarMejoresJugadores";
+            this.buttonRegresarMejoresJugadores.Size = new System.Drawing.Size(115, 31);
+            this.buttonRegresarMejoresJugadores.TabIndex = 1;
+            this.buttonRegresarMejoresJugadores.Text = "Regresar";
+            this.buttonRegresarMejoresJugadores.UseVisualStyleBackColor = false;
+            this.buttonRegresarMejoresJugadores.Click += new System.EventHandler(this.ClicRegresar);
             // 
             // panel1
             // 
@@ -113,17 +113,17 @@
             this.labelMejoresJugadores.TabIndex = 0;
             this.labelMejoresJugadores.Text = "Mejores jugadores";
             // 
-            // Mejores_jugadores
+            // MejoresJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(562, 422);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.bRegresarMejoresJugadores);
+            this.Controls.Add(this.buttonRegresarMejoresJugadores);
             this.Controls.Add(this.listViewMejoresJugadores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Mejores_jugadores";
+            this.Name = "MejoresJugadores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mejores jugadores";
             this.panel1.ResumeLayout(false);
@@ -135,12 +135,12 @@
         #endregion
 
         private System.Windows.Forms.ListView listViewMejoresJugadores;
-        private System.Windows.Forms.ColumnHeader colPosición;
-        private System.Windows.Forms.ColumnHeader colUsuario;
-        private System.Windows.Forms.ColumnHeader colGanadas;
-        private System.Windows.Forms.ColumnHeader colPerdidas;
-        private System.Windows.Forms.ColumnHeader colEmpatadas;
-        private System.Windows.Forms.Button bRegresarMejoresJugadores;
+        private System.Windows.Forms.ColumnHeader columnaPosición;
+        private System.Windows.Forms.ColumnHeader columnaUsuario;
+        private System.Windows.Forms.ColumnHeader columnaGanadas;
+        private System.Windows.Forms.ColumnHeader columnaPerdidas;
+        private System.Windows.Forms.ColumnHeader columnaEmpatadas;
+        private System.Windows.Forms.Button buttonRegresarMejoresJugadores;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelMejoresJugadores;
     }

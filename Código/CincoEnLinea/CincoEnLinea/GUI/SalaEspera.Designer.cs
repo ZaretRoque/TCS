@@ -26,12 +26,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelPartidasDisponibles = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.LVPartidasDisponibles = new System.Windows.Forms.ListView();
-            this.colPartida = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colUsuario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listViewPartidasDisponibles = new System.Windows.Forms.ListView();
+            this.columnaPartida = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaUsuario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bUnirsePartida = new System.Windows.Forms.Button();
-            this.bCrearPartida = new System.Windows.Forms.Button();
+            this.buttonUnirsePartida = new System.Windows.Forms.Button();
+            this.buttonCrearPartida = new System.Windows.Forms.Button();
             this.buttonRegresar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,71 +70,71 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "5inco en linea";
             // 
-            // LVPartidasDisponibles
+            // listViewPartidasDisponibles
             // 
-            this.LVPartidasDisponibles.BackColor = System.Drawing.Color.White;
-            this.LVPartidasDisponibles.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colPartida,
-            this.colUsuario});
-            this.LVPartidasDisponibles.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LVPartidasDisponibles.ForeColor = System.Drawing.Color.Black;
-            this.LVPartidasDisponibles.FullRowSelect = true;
-            this.LVPartidasDisponibles.GridLines = true;
-            this.LVPartidasDisponibles.Location = new System.Drawing.Point(36, 158);
-            this.LVPartidasDisponibles.Margin = new System.Windows.Forms.Padding(2);
-            this.LVPartidasDisponibles.MultiSelect = false;
-            this.LVPartidasDisponibles.Name = "LVPartidasDisponibles";
-            this.LVPartidasDisponibles.Size = new System.Drawing.Size(438, 168);
-            this.LVPartidasDisponibles.TabIndex = 2;
-            this.LVPartidasDisponibles.UseCompatibleStateImageBehavior = false;
-            this.LVPartidasDisponibles.View = System.Windows.Forms.View.Details;
+            this.listViewPartidasDisponibles.BackColor = System.Drawing.Color.White;
+            this.listViewPartidasDisponibles.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnaPartida,
+            this.columnaUsuario});
+            this.listViewPartidasDisponibles.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewPartidasDisponibles.ForeColor = System.Drawing.Color.Black;
+            this.listViewPartidasDisponibles.FullRowSelect = true;
+            this.listViewPartidasDisponibles.GridLines = true;
+            this.listViewPartidasDisponibles.Location = new System.Drawing.Point(36, 158);
+            this.listViewPartidasDisponibles.Margin = new System.Windows.Forms.Padding(2);
+            this.listViewPartidasDisponibles.MultiSelect = false;
+            this.listViewPartidasDisponibles.Name = "listViewPartidasDisponibles";
+            this.listViewPartidasDisponibles.Size = new System.Drawing.Size(438, 168);
+            this.listViewPartidasDisponibles.TabIndex = 2;
+            this.listViewPartidasDisponibles.UseCompatibleStateImageBehavior = false;
+            this.listViewPartidasDisponibles.View = System.Windows.Forms.View.Details;
             // 
-            // colPartida
+            // columnaPartida
             // 
-            this.colPartida.Text = "Sala";
-            this.colPartida.Width = 217;
+            this.columnaPartida.Text = "Sala";
+            this.columnaPartida.Width = 217;
             // 
-            // colUsuario
+            // columnaUsuario
             // 
-            this.colUsuario.Text = "Usuario";
-            this.colUsuario.Width = 216;
+            this.columnaUsuario.Text = "Usuario";
+            this.columnaUsuario.Width = 216;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Controls.Add(this.bUnirsePartida);
-            this.panel2.Controls.Add(this.bCrearPartida);
+            this.panel2.Controls.Add(this.buttonUnirsePartida);
+            this.panel2.Controls.Add(this.buttonCrearPartida);
             this.panel2.Location = new System.Drawing.Point(-1, 369);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(532, 113);
             this.panel2.TabIndex = 3;
             // 
-            // bUnirsePartida
+            // buttonUnirsePartida
             // 
-            this.bUnirsePartida.BackColor = System.Drawing.Color.White;
-            this.bUnirsePartida.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bUnirsePartida.Location = new System.Drawing.Point(338, 28);
-            this.bUnirsePartida.Margin = new System.Windows.Forms.Padding(2);
-            this.bUnirsePartida.Name = "bUnirsePartida";
-            this.bUnirsePartida.Size = new System.Drawing.Size(136, 32);
-            this.bUnirsePartida.TabIndex = 5;
-            this.bUnirsePartida.Text = "Unirse a partida";
-            this.bUnirsePartida.UseVisualStyleBackColor = false;
-            this.bUnirsePartida.Click += new System.EventHandler(this.ClickUnirsePartida);
+            this.buttonUnirsePartida.BackColor = System.Drawing.Color.White;
+            this.buttonUnirsePartida.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUnirsePartida.Location = new System.Drawing.Point(338, 28);
+            this.buttonUnirsePartida.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUnirsePartida.Name = "buttonUnirsePartida";
+            this.buttonUnirsePartida.Size = new System.Drawing.Size(136, 32);
+            this.buttonUnirsePartida.TabIndex = 5;
+            this.buttonUnirsePartida.Text = "Unirse a partida";
+            this.buttonUnirsePartida.UseVisualStyleBackColor = false;
+            this.buttonUnirsePartida.Click += new System.EventHandler(this.ClickUnirsePartida);
             // 
-            // bCrearPartida
+            // buttonCrearPartida
             // 
-            this.bCrearPartida.BackColor = System.Drawing.Color.White;
-            this.bCrearPartida.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCrearPartida.Location = new System.Drawing.Point(44, 29);
-            this.bCrearPartida.Margin = new System.Windows.Forms.Padding(2);
-            this.bCrearPartida.Name = "bCrearPartida";
-            this.bCrearPartida.Size = new System.Drawing.Size(134, 31);
-            this.bCrearPartida.TabIndex = 4;
-            this.bCrearPartida.Text = "Crear partida";
-            this.bCrearPartida.UseVisualStyleBackColor = false;
-            this.bCrearPartida.Click += new System.EventHandler(this.ClickCrearPartida);
+            this.buttonCrearPartida.BackColor = System.Drawing.Color.White;
+            this.buttonCrearPartida.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCrearPartida.Location = new System.Drawing.Point(44, 29);
+            this.buttonCrearPartida.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCrearPartida.Name = "buttonCrearPartida";
+            this.buttonCrearPartida.Size = new System.Drawing.Size(134, 31);
+            this.buttonCrearPartida.TabIndex = 4;
+            this.buttonCrearPartida.Text = "Crear partida";
+            this.buttonCrearPartida.UseVisualStyleBackColor = false;
+            this.buttonCrearPartida.Click += new System.EventHandler(this.ClickCrearPartida);
             // 
             // buttonRegresar
             // 
@@ -157,7 +157,7 @@
             this.ClientSize = new System.Drawing.Size(517, 469);
             this.Controls.Add(this.buttonRegresar);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.LVPartidasDisponibles);
+            this.Controls.Add(this.listViewPartidasDisponibles);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -178,12 +178,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelPartidasDisponibles;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView LVPartidasDisponibles;
-        private System.Windows.Forms.ColumnHeader colPartida;
-        private System.Windows.Forms.ColumnHeader colUsuario;
+        private System.Windows.Forms.ListView listViewPartidasDisponibles;
+        private System.Windows.Forms.ColumnHeader columnaPartida;
+        private System.Windows.Forms.ColumnHeader columnaUsuario;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button bUnirsePartida;
-        private System.Windows.Forms.Button bCrearPartida;
+        private System.Windows.Forms.Button buttonUnirsePartida;
+        private System.Windows.Forms.Button buttonCrearPartida;
         private System.Windows.Forms.Button buttonRegresar;
     }
 }

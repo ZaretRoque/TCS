@@ -17,12 +17,12 @@ namespace CincoEnLinea.GUI {
         private void AplicarIdioma() {
             this.Text = MejoresJugadoresRes.wTMejoresJugadores;
             labelMejoresJugadores.Text = MejoresJugadoresRes.labMejoresJugadores;
-            colPosición.Text = MejoresJugadoresRes.posicion;
-            colUsuario.Text = MejoresJugadoresRes.usuario;
-            colGanadas.Text = MejoresJugadoresRes.ganadas;
-            colPerdidas.Text = MejoresJugadoresRes.perdidas;
-            colEmpatadas.Text = MejoresJugadoresRes.empatadas;
-            bRegresarMejoresJugadores.Text = MejoresJugadoresRes.bRegresar;
+            columnaPosición.Text = MejoresJugadoresRes.posicion;
+            columnaUsuario.Text = MejoresJugadoresRes.usuario;
+            columnaGanadas.Text = MejoresJugadoresRes.ganadas;
+            columnaPerdidas.Text = MejoresJugadoresRes.perdidas;
+            columnaEmpatadas.Text = MejoresJugadoresRes.empatadas;
+            buttonRegresarMejoresJugadores.Text = MejoresJugadoresRes.bRegresar;
         }
 
         private void LlenarTablaMejoresJugadores() {

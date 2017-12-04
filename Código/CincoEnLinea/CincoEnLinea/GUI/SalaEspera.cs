@@ -26,11 +26,11 @@ namespace CincoEnLinea.GUI {
         private void AplicarIdioma() {
             this.Text = SalaEsperaRes.wTSalaEspera;
             labelPartidasDisponibles.Text = SalaEsperaRes.labPartidasDisp;
-            colPartida.Text = SalaEsperaRes.sala;
-            colUsuario.Text = SalaEsperaRes.usuario;
+            columnaPartida.Text = SalaEsperaRes.sala;
+            columnaUsuario.Text = SalaEsperaRes.usuario;
             buttonRegresar.Text = SalaEsperaRes.bRegresar;
-            bUnirsePartida.Text = SalaEsperaRes.bUnirse;
-            bCrearPartida.Text = SalaEsperaRes.bCrearPartida;
+            buttonUnirsePartida.Text = SalaEsperaRes.bUnirse;
+            buttonCrearPartida.Text = SalaEsperaRes.bCrearPartida;
         }
 
         private void ClicRegresar(object sender, EventArgs e) {
@@ -48,7 +48,7 @@ namespace CincoEnLinea.GUI {
         }
 
         private void ClickUnirsePartida(object sender, EventArgs e) {
-            Partida partidaSeleccionada = LVPartidasDisponibles.SelectedItems[0].Tag as Partida;
+            Partida partidaSeleccionada = listViewPartidasDisponibles.SelectedItems[0].Tag as Partida;
             String partidaJSON = JsonConvert.SerializeObject(partidaSeleccionada);
             socket.Emit("unirseSala", partidaJSON);
         }
@@ -59,7 +59,7 @@ namespace CincoEnLinea.GUI {
                 socket.On("actualizarTablaPartidas", (data) => {
                     String partidasJSON = data as String;
                     List<Partida> partidasDisponibles = JsonConvert.DeserializeObject<List<Partida>>(partidasJSON);
-                    LVPartidasDisponibles.Invoke(new Action(() => LlenarTablaPartidas(partidasDisponibles)));
+                    listViewPartidasDisponibles.Invoke(new Action(() => LlenarTablaPartidas(partidasDisponibles)));
                 });
                 socket.On("salaLlena", (data) => {
                     String partidaJSON = data as String;
@@ -74,10 +74,10 @@ namespace CincoEnLinea.GUI {
         }
 
         private void LlenarTablaPartidas(List<Partida> partidas) {
-            LVPartidasDisponibles.Items.Clear();
-            LVPartidasDisponibles.View = View.Details;
+            listViewPartidasDisponibles.Items.Clear();
+            listViewPartidasDisponibles.View = View.Details;
             foreach (Partida partida in partidas) {
-                ListViewItem item = LVPartidasDisponibles.Items.Add(partida.IdPartida.ToString());
+                ListViewItem item = listViewPartidasDisponibles.Items.Add(partida.IdPartida.ToString());
                 item.SubItems.Add(partida.NombreUsuario);
                 item.Tag = partida;
             }
