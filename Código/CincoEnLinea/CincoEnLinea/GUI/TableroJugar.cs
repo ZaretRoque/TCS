@@ -640,55 +640,20 @@ namespace CincoEnLinea {
         }
 
         public void PintarTiro(int posY, int posX, Bitmap panelPintar, PictureBox pulsado) {
-            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.TableroJugarRes",
-                    typeof(TableroJugar).Assembly);
+            
             if (crupier.ValidarTiro(posY, posX)) {
                 if (turno == 1) {
                     DibujaFichaNegra(panelPintar);
-
                     crupier.GuardarTiro(posY, posX, 1);
-                    bool horizontal = crupier.ComprobarHorizontal(turno);
-                    bool vertical = crupier.ComprobarVertical(turno);
-                    bool diagonalPositiva = crupier.ComprobarDiagonalPositiva(turno);
-                    bool diagonalNegativa = crupier.ComprobarDiagonalNegativa(turno);
-                    bool empate = crupier.ComprobarEmpate();
-                    if(horizontal || vertical || diagonalPositiva || diagonalNegativa) {
-
-                        string mensaje = rm.GetString("mensajeGanar");
-                        string titulo = rm.GetString("tituloGanar");
-                        MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    }
-
-                    if(empate) {
-
-                        string mensajeEmpate = rm.GetString("mensajeEmpatar");
-                        string tituloEmpate = rm.GetString("tituloEmpatar");
-                        MessageBox.Show(mensajeEmpate, tituloEmpate, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    }
+                    VerificarVictoriaOEmpate(turno);
                     crupier.Turno = 2;
                     turno = 2;
                 } else {
                     DibujaFichaAzul(panelPintar);
                     
                     crupier.GuardarTiro(posY, posX, 2);
-                    bool horizontal = crupier.ComprobarHorizontal(turno);
-                    bool vertical = crupier.ComprobarVertical(turno);
-                    bool diagonalPositiva = crupier.ComprobarDiagonalPositiva(turno);
-                    bool diagonalNegativa = crupier.ComprobarDiagonalNegativa(turno);
-                    bool empate = crupier.ComprobarEmpate();
-                    if (horizontal || vertical || diagonalPositiva || diagonalNegativa) {
 
-                        string mensaje = rm.GetString("mensajeGanar");
-                        string titulo = rm.GetString("tituloGanar");
-                        MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    }
-
-                    if (empate) {
-
-                        string mensajeEmpate = rm.GetString("mensajeEmpatar");
-                        string tituloEmpate = rm.GetString("tituloEmpatar");
-                        MessageBox.Show(mensajeEmpate, tituloEmpate, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    }
+                    VerificarVictoriaOEmpate(turno);
                     crupier.Turno = 1;
                     turno = 1;
                 }
@@ -696,7 +661,38 @@ namespace CincoEnLinea {
             }
         }
 
-        
+        private void VerificarVictoriaOEmpate(int turno) {
+            bool horizontal = crupier.ComprobarHorizontal(turno);
+            bool vertical = crupier.ComprobarVertical(turno);
+            bool diagonalPositiva = crupier.ComprobarDiagonalPositiva(turno);
+            bool diagonalNegativa = crupier.ComprobarDiagonalNegativa(turno);
+            bool empate = crupier.ComprobarEmpate();
+
+            if (horizontal || diagonalNegativa || diagonalPositiva || vertical) {
+                MostrarMensajeGanar();
+            }
+
+            if (empate) {
+                MostrarMensajeEmpate();
+            }
+        }
+
+
+        private void MostrarMensajeGanar() {
+            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.TableroJugarRes",
+                    typeof(TableroJugar).Assembly);
+            string mensaje = rm.GetString("mensajeGanar");
+            string titulo = rm.GetString("tituloGanar");
+            MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        private void MostrarMensajeEmpate() {
+            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.TableroJugarRes",
+                    typeof(TableroJugar).Assembly);
+            string mensajeEmpate = rm.GetString("mensajeEmpatar");
+            string tituloEmpate = rm.GetString("tituloEmpatar");
+            MessageBox.Show(mensajeEmpate, tituloEmpate, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
 
     }
 
