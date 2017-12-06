@@ -19,10 +19,11 @@ namespace CincoEnLinea.GUI {
     public partial class IniciarSesion : Form {
         ChannelFactory<IServicioBD> canalServidor;
         IServicioBD interfazServidor;
-
+        
         public IniciarSesion() {
             InitializeComponent();
             IniciarServicio();
+            pictureBoxCincoEnLinea.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
 

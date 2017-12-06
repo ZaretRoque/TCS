@@ -117,64 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bRegistro" xml:space="preserve">
-    <value>Sign me up</value>
+  <data name="botonAbandonaPartida" xml:space="preserve">
+    <value>Quit</value>
   </data>
-  <data name="bRegresar" xml:space="preserve">
-    <value>Back</value>
+  <data name="confirmacionSalida" xml:space="preserve">
+    <value>Are you sure?</value>
   </data>
-  <data name="camposVacios" xml:space="preserve">
-    <value>There are empty fields, try again</value>
+  <data name="mensajeEmpatar" xml:space="preserve">
+    <value>Draw!</value>
   </data>
-  <data name="camposVaciosTitulo" xml:space="preserve">
-    <value>Why are you like this?</value>
+  <data name="mensajeGanar" xml:space="preserve">
+    <value>Your grandma will be so proud of you!</value>
   </data>
-  <data name="confirmaContrasena" xml:space="preserve">
-    <value>Repeat your password</value>
+  <data name="tituloConfirmacion" xml:space="preserve">
+    <value>Are you a coward?</value>
   </data>
-  <data name="contrasena" xml:space="preserve">
-    <value>Password</value>
+  <data name="tituloEmpatar" xml:space="preserve">
+    <value>Really?</value>
   </data>
-  <data name="contrasenaInvalida" xml:space="preserve">
-    <value>The password must be the same in both fields, buddy</value>
+  <data name="tituloGanar" xml:space="preserve">
+    <value>Winner</value>
   </data>
-  <data name="contrasenaInvalidaTitulo" xml:space="preserve">
-    <value>What's wrong with you?</value>
-  </data>
-  <data name="excepcionBD" xml:space="preserve">
-    <value>Our dog ate the database, sorry</value>
-  </data>
-  <data name="excepcionServicioWcf" xml:space="preserve">
-    <value>Our dog ate the server, sorry</value>
-  </data>
-  <data name="labComienzaJugar" xml:space="preserve">
-    <value>Join us and start playing!</value>
-  </data>
-  <data name="nombreUsuario" xml:space="preserve">
-    <value>User name</value>
-  </data>
-  <data name="registroExitoso" xml:space="preserve">
-    <value>Let's play, buddy!</value>
-  </data>
-  <data name="registroExitosoTitulo" xml:space="preserve">
-    <value>Success sign up</value>
-  </data>
-  <data name="tituloExcepcionBD" xml:space="preserve">
-    <value>Database error</value>
-  </data>
-  <data name="tituloExcepcionWcf" xml:space="preserve">
-    <value>Server error</value>
-  </data>
-  <data name="toolTip" xml:space="preserve">
-    <value>Only letters, numbers, hyphen and underscore are allowed</value>
-  </data>
-  <data name="usuarioRepetido" xml:space="preserve">
-    <value>That username already exists</value>
-  </data>
-  <data name="usuarioRepetidoTitulo" xml:space="preserve">
-    <value>Well... This is awkward</value>
-  </data>
-  <data name="wTRegistro" xml:space="preserve">
-    <value>Sign up</value>
+  <data name="tituloVentana" xml:space="preserve">
+    <value>Play</value>
   </data>
 </root>

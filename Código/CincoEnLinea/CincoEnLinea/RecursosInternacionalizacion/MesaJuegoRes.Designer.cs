@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CincoEnLinea.Properties {
+namespace CincoEnLinea.RecursosInternacionalizacion {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace CincoEnLinea.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class MesaJuegoRes {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal MesaJuegoRes() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace CincoEnLinea.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CincoEnLinea.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MesaJuegoRes", typeof(MesaJuegoRes).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,82 +61,74 @@ namespace CincoEnLinea.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca una cadena traducida similar a Abandonar partida.
         /// </summary>
-        internal static System.Drawing.Bitmap _5EnLineaLogo {
+        internal static string botonAbandonaPartida {
             get {
-                object obj = ResourceManager.GetObject("_5EnLineaLogo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("botonAbandonaPartida", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca una cadena traducida similar a ¿Seguro que deseas salir?.
         /// </summary>
-        internal static System.Drawing.Bitmap fichaAzul {
+        internal static string confirmacionSalida {
             get {
-                object obj = ResourceManager.GetObject("fichaAzul", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("confirmacionSalida", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca una cadena traducida similar a Ups, partida empatada.
         /// </summary>
-        internal static System.Drawing.Bitmap fichaNegra {
+        internal static string mensajeEmpatar {
             get {
-                object obj = ResourceManager.GetObject("fichaNegra", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("mensajeEmpatar", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca una cadena traducida similar a ¡Ganaste! Tu abuelita va a estar orgullosa.
         /// </summary>
-        internal static System.Drawing.Bitmap fondoMenuPrincipal {
+        internal static string mensajeGanar {
             get {
-                object obj = ResourceManager.GetObject("fondoMenuPrincipal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("mensajeGanar", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca una cadena traducida similar a ¿Miedo?.
         /// </summary>
-        internal static System.Drawing.Bitmap fondoTablero {
+        internal static string tituloConfirmacion {
             get {
-                object obj = ResourceManager.GetObject("fondoTablero", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("tituloConfirmacion", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca una cadena traducida similar a ¿En serio?.
         /// </summary>
-        internal static System.Drawing.Bitmap Logo_UV {
+        internal static string tituloEmpatar {
             get {
-                object obj = ResourceManager.GetObject("Logo-UV", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("tituloEmpatar", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca una cadena traducida similar a Ganador.
         /// </summary>
-        internal static System.Drawing.Bitmap negroDegradado {
+        internal static string tituloGanar {
             get {
-                object obj = ResourceManager.GetObject("negroDegradado", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("tituloGanar", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca una cadena traducida similar a Jugar.
         /// </summary>
-        internal static System.Drawing.Bitmap tela_impermeable_azul_marino {
+        internal static string tituloVentana {
             get {
-                object obj = ResourceManager.GetObject("tela-impermeable-azul-marino", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("tituloVentana", resourceCulture);
             }
         }
     }

@@ -113,6 +113,12 @@
     <Compile Include="GUI\IniciarSesion.Designer.cs">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\MesaJuego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MesaJuego.Designer.cs">
+      <DependentUpon>MesaJuego.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\TableroJugar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IniciarSesionRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosInternacionalizacion\MesaJuegoRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MesaJuegoRes.resx</DependentUpon>
     </Compile>
     <Compile Include="RecursosInternacionalizacion\TableroJugarRes.en-US.Designer.cs">
       <DependentUpon>TableroJugarRes.en-US.resx</DependentUpon>
@@ -238,6 +249,9 @@
     <EmbeddedResource Include="GUI\IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MesaJuego.resx">
+      <DependentUpon>MesaJuego.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\TableroJugar.resx">
       <DependentUpon>TableroJugar.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,6 +282,11 @@
     <EmbeddedResource Include="RecursosInternacionalizacion\IniciarSesionRes.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>IniciarSesionRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosInternacionalizacion\MesaJuegoRes.en-US.resx" />
+    <EmbeddedResource Include="RecursosInternacionalizacion\MesaJuegoRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MesaJuegoRes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RecursosInternacionalizacion\TableroJugarRes.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -334,7 +353,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\EtiquetaUsuario.jpg" />
+    <None Include="Resources\5EnLineaLogo.png" />
+    <None Include="Resources\fichaAzul.png" />
+    <None Include="Resources\fichaNegra.png" />
     <Content Include="Resources\FondoInicioSesion.jpg" />
     <None Include="Resources\Logo-UV.png" />
     <None Include="Resources\Logo-UV1.jpg" />
@@ -342,7 +363,6 @@
     <None Include="Resources\negroDegradado.jpg" />
     <None Include="Resources\fondoTablero.jpg" />
     <None Include="Resources\resize-img.jpg" />
-    <None Include="Resources\FondoInicioSesion1.jpg" />
     <None Include="Resources\tela-impermeable-azul-marino.jpg" />
   </ItemGroup>
   <ItemGroup>

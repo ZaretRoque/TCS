@@ -120,6 +120,9 @@
   <data name="bRegistro" xml:space="preserve">
     <value>Regístrame</value>
   </data>
+  <data name="bRegresar" xml:space="preserve">
+    <value>Regresar</value>
+  </data>
   <data name="camposVacios" xml:space="preserve">
     <value>Hay campos vacíos, intenta de nuevo</value>
   </data>

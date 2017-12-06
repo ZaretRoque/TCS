@@ -70,6 +70,15 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Regresar.
+        /// </summary>
+        internal static string bRegresar {
+            get {
+                return ResourceManager.GetString("bRegresar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Hay campos vacíos, intenta de nuevo.
         /// </summary>
         internal static string camposVacios {

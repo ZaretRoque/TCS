@@ -127,7 +127,7 @@ namespace CincoEnLinea.GUI {
 
         private void ClicBotonTablero(object sender, EventArgs e) {
            this.Dispose();
-           TableroJugar jj = new TableroJugar();
+           MesaJuego jj = new MesaJuego();
            jj.Show();
         }
     }

@@ -29,6 +29,7 @@ namespace CincoEnLinea
             labelContraseniaRegistro.Text = RegistroRes.contrasena;
             labelRepiteContrasenia.Text = RegistroRes.confirmaContrasena;
             buttonRegistrame.Text = RegistroRes.bRegistro;
+            buttonRegresar.Text = RegistroRes.bRegresar;
         }
 
         private void ClicRegistrame(object sender, EventArgs e) {
@@ -120,6 +121,11 @@ namespace CincoEnLinea
                 String mensaje = rm.GetString("toolTip");
                 tool.Show(mensaje, textBoxNombreUsuario, 2000);
             }
+        }
+
+        private void ClicRegresar(object sender, EventArgs e) {
+            this.Dispose();
+            Application.Restart();
         }
     }
 }
