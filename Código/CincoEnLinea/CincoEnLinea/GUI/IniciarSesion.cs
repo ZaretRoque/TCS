@@ -40,8 +40,7 @@ namespace CincoEnLinea.GUI {
                 string mensaje = rm.GetString("camposVacios");
                 MessageBox.Show(mensaje, "Ups",
                         MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-            else {
+            } else {
                 if (ConfirmaIngreso(textBoxNombreUsuario.Text, textBoxContrasena.Text)) {
                     WcfServicioBaseDatos.Usuario usuario = interfazServidor.RecuperarUsuario(textBoxNombreUsuario.Text);
                     Dominio.Usuario usuarioDominio = new Dominio.Usuario {

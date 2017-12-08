@@ -106,8 +106,7 @@ namespace CincoEnLinea
 
             if(contrasena.Length >0 && contrasenaConfirmada.Length >0 && nombreUsuario.Length > 0) {
                 return true;
-            }
-            else {
+            } else {
                 return false;
             }
         }

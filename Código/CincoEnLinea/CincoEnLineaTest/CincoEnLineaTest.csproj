@@ -65,6 +65,10 @@
       <Project>{b80a6bb4-f946-4508-913d-f01988d8c78b}</Project>
       <Name>CincoEnLinea</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WcfServicioBaseDatos\WcfServicioBaseDatos.csproj">
+      <Project>{bc31871d-2740-4d3e-bc87-24901b13ccfc}</Project>
+      <Name>WcfServicioBaseDatos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

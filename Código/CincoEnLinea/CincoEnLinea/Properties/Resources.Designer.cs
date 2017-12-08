@@ -73,6 +73,26 @@ namespace CincoEnLinea.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5EnLineaLogo4 {
+            get {
+                object obj = ResourceManager.GetObject("_5EnLineaLogo4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cronometro {
+            get {
+                object obj = ResourceManager.GetObject("cronometro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fichaAzul {
             get {
                 object obj = ResourceManager.GetObject("fichaAzul", resourceCulture);
@@ -113,29 +133,9 @@ namespace CincoEnLinea.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logo_UV {
-            get {
-                object obj = ResourceManager.GetObject("Logo-UV", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap negroDegradado {
             get {
                 object obj = ResourceManager.GetObject("negroDegradado", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tela_impermeable_azul_marino {
-            get {
-                object obj = ResourceManager.GetObject("tela-impermeable-azul-marino", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

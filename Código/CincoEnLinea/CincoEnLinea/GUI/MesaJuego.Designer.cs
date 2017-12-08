@@ -23,8 +23,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MesaJuego));
             this.abandonaPartida = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelTiempoRestante = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5EnLinea = new System.Windows.Forms.PictureBox();
             this.pictureBox_88 = new System.Windows.Forms.PictureBox();
             this.pictureBox_87 = new System.Windows.Forms.PictureBox();
@@ -107,6 +111,9 @@
             this.pictureBox_02 = new System.Windows.Forms.PictureBox();
             this.pictureBox_01 = new System.Windows.Forms.PictureBox();
             this.pictureBox_00 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelNombreJugador = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5EnLinea)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_88)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_87)).BeginInit();
@@ -194,20 +201,47 @@
             // abandonaPartida
             // 
             this.abandonaPartida.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.abandonaPartida.Location = new System.Drawing.Point(300, 522);
+            this.abandonaPartida.Location = new System.Drawing.Point(225, 424);
+            this.abandonaPartida.Margin = new System.Windows.Forms.Padding(2);
             this.abandonaPartida.Name = "abandonaPartida";
-            this.abandonaPartida.Size = new System.Drawing.Size(200, 44);
+            this.abandonaPartida.Size = new System.Drawing.Size(150, 36);
             this.abandonaPartida.TabIndex = 82;
             this.abandonaPartida.Text = "Abandonar partida";
             this.abandonaPartida.UseVisualStyleBackColor = true;
             this.abandonaPartida.Click += new System.EventHandler(this.ClicAbandonarPartida);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.ControlarTiempo);
+            // 
+            // labelTiempoRestante
+            // 
+            this.labelTiempoRestante.AutoSize = true;
+            this.labelTiempoRestante.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTiempoRestante.Location = new System.Drawing.Point(446, 372);
+            this.labelTiempoRestante.Name = "labelTiempoRestante";
+            this.labelTiempoRestante.Size = new System.Drawing.Size(70, 33);
+            this.labelTiempoRestante.TabIndex = 84;
+            this.labelTiempoRestante.Text = "30 s";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CincoEnLinea.Properties.Resources.cronometro;
+            this.pictureBox1.Location = new System.Drawing.Point(390, 355);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 85;
+            this.pictureBox1.TabStop = false;
+            // 
             // pictureBox5EnLinea
             // 
             this.pictureBox5EnLinea.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5EnLinea.Image")));
-            this.pictureBox5EnLinea.Location = new System.Drawing.Point(506, 50);
+            this.pictureBox5EnLinea.Location = new System.Drawing.Point(380, 41);
+            this.pictureBox5EnLinea.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5EnLinea.Name = "pictureBox5EnLinea";
-            this.pictureBox5EnLinea.Size = new System.Drawing.Size(213, 200);
+            this.pictureBox5EnLinea.Size = new System.Drawing.Size(160, 162);
             this.pictureBox5EnLinea.TabIndex = 83;
             this.pictureBox5EnLinea.TabStop = false;
             // 
@@ -215,9 +249,10 @@
             // 
             this.pictureBox_88.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_88.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_88.Location = new System.Drawing.Point(450, 448);
+            this.pictureBox_88.Location = new System.Drawing.Point(338, 364);
+            this.pictureBox_88.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_88.Name = "pictureBox_88";
-            this.pictureBox_88.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_88.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_88.TabIndex = 80;
             this.pictureBox_88.TabStop = false;
             this.pictureBox_88.Click += new System.EventHandler(this.ClicTablero);
@@ -226,9 +261,10 @@
             // 
             this.pictureBox_87.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_87.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_87.Location = new System.Drawing.Point(400, 448);
+            this.pictureBox_87.Location = new System.Drawing.Point(300, 364);
+            this.pictureBox_87.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_87.Name = "pictureBox_87";
-            this.pictureBox_87.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_87.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_87.TabIndex = 79;
             this.pictureBox_87.TabStop = false;
             this.pictureBox_87.Click += new System.EventHandler(this.ClicTablero);
@@ -237,9 +273,10 @@
             // 
             this.pictureBox_86.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_86.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_86.Location = new System.Drawing.Point(350, 448);
+            this.pictureBox_86.Location = new System.Drawing.Point(262, 364);
+            this.pictureBox_86.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_86.Name = "pictureBox_86";
-            this.pictureBox_86.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_86.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_86.TabIndex = 78;
             this.pictureBox_86.TabStop = false;
             this.pictureBox_86.Click += new System.EventHandler(this.ClicTablero);
@@ -248,9 +285,10 @@
             // 
             this.pictureBox_85.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_85.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_85.Location = new System.Drawing.Point(300, 448);
+            this.pictureBox_85.Location = new System.Drawing.Point(225, 364);
+            this.pictureBox_85.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_85.Name = "pictureBox_85";
-            this.pictureBox_85.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_85.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_85.TabIndex = 77;
             this.pictureBox_85.TabStop = false;
             this.pictureBox_85.Click += new System.EventHandler(this.ClicTablero);
@@ -259,9 +297,10 @@
             // 
             this.pictureBox_84.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_84.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_84.Location = new System.Drawing.Point(250, 448);
+            this.pictureBox_84.Location = new System.Drawing.Point(188, 364);
+            this.pictureBox_84.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_84.Name = "pictureBox_84";
-            this.pictureBox_84.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_84.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_84.TabIndex = 76;
             this.pictureBox_84.TabStop = false;
             this.pictureBox_84.Click += new System.EventHandler(this.ClicTablero);
@@ -270,9 +309,10 @@
             // 
             this.pictureBox_83.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_83.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_83.Location = new System.Drawing.Point(200, 448);
+            this.pictureBox_83.Location = new System.Drawing.Point(150, 364);
+            this.pictureBox_83.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_83.Name = "pictureBox_83";
-            this.pictureBox_83.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_83.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_83.TabIndex = 75;
             this.pictureBox_83.TabStop = false;
             this.pictureBox_83.Click += new System.EventHandler(this.ClicTablero);
@@ -281,9 +321,10 @@
             // 
             this.pictureBox_82.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_82.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_82.Location = new System.Drawing.Point(150, 448);
+            this.pictureBox_82.Location = new System.Drawing.Point(112, 364);
+            this.pictureBox_82.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_82.Name = "pictureBox_82";
-            this.pictureBox_82.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_82.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_82.TabIndex = 74;
             this.pictureBox_82.TabStop = false;
             this.pictureBox_82.Click += new System.EventHandler(this.ClicTablero);
@@ -292,9 +333,10 @@
             // 
             this.pictureBox_81.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_81.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_81.Location = new System.Drawing.Point(100, 448);
+            this.pictureBox_81.Location = new System.Drawing.Point(75, 364);
+            this.pictureBox_81.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_81.Name = "pictureBox_81";
-            this.pictureBox_81.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_81.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_81.TabIndex = 73;
             this.pictureBox_81.TabStop = false;
             this.pictureBox_81.Click += new System.EventHandler(this.ClicTablero);
@@ -303,9 +345,10 @@
             // 
             this.pictureBox_80.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_80.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_80.Location = new System.Drawing.Point(50, 448);
+            this.pictureBox_80.Location = new System.Drawing.Point(38, 364);
+            this.pictureBox_80.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_80.Name = "pictureBox_80";
-            this.pictureBox_80.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_80.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_80.TabIndex = 72;
             this.pictureBox_80.TabStop = false;
             this.pictureBox_80.Click += new System.EventHandler(this.ClicTablero);
@@ -314,9 +357,10 @@
             // 
             this.pictureBox_78.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_78.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_78.Location = new System.Drawing.Point(450, 398);
+            this.pictureBox_78.Location = new System.Drawing.Point(338, 323);
+            this.pictureBox_78.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_78.Name = "pictureBox_78";
-            this.pictureBox_78.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_78.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_78.TabIndex = 71;
             this.pictureBox_78.TabStop = false;
             this.pictureBox_78.Click += new System.EventHandler(this.ClicTablero);
@@ -325,9 +369,10 @@
             // 
             this.pictureBox_77.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_77.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_77.Location = new System.Drawing.Point(400, 398);
+            this.pictureBox_77.Location = new System.Drawing.Point(300, 323);
+            this.pictureBox_77.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_77.Name = "pictureBox_77";
-            this.pictureBox_77.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_77.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_77.TabIndex = 70;
             this.pictureBox_77.TabStop = false;
             this.pictureBox_77.Click += new System.EventHandler(this.ClicTablero);
@@ -336,9 +381,10 @@
             // 
             this.pictureBox_76.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_76.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_76.Location = new System.Drawing.Point(350, 398);
+            this.pictureBox_76.Location = new System.Drawing.Point(262, 323);
+            this.pictureBox_76.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_76.Name = "pictureBox_76";
-            this.pictureBox_76.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_76.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_76.TabIndex = 69;
             this.pictureBox_76.TabStop = false;
             this.pictureBox_76.Click += new System.EventHandler(this.ClicTablero);
@@ -347,9 +393,10 @@
             // 
             this.pictureBox_75.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_75.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_75.Location = new System.Drawing.Point(300, 398);
+            this.pictureBox_75.Location = new System.Drawing.Point(225, 323);
+            this.pictureBox_75.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_75.Name = "pictureBox_75";
-            this.pictureBox_75.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_75.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_75.TabIndex = 68;
             this.pictureBox_75.TabStop = false;
             this.pictureBox_75.Click += new System.EventHandler(this.ClicTablero);
@@ -358,9 +405,10 @@
             // 
             this.pictureBox_74.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_74.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_74.Location = new System.Drawing.Point(250, 398);
+            this.pictureBox_74.Location = new System.Drawing.Point(188, 323);
+            this.pictureBox_74.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_74.Name = "pictureBox_74";
-            this.pictureBox_74.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_74.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_74.TabIndex = 67;
             this.pictureBox_74.TabStop = false;
             this.pictureBox_74.Click += new System.EventHandler(this.ClicTablero);
@@ -369,9 +417,10 @@
             // 
             this.pictureBox_73.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_73.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_73.Location = new System.Drawing.Point(200, 398);
+            this.pictureBox_73.Location = new System.Drawing.Point(150, 323);
+            this.pictureBox_73.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_73.Name = "pictureBox_73";
-            this.pictureBox_73.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_73.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_73.TabIndex = 66;
             this.pictureBox_73.TabStop = false;
             this.pictureBox_73.Click += new System.EventHandler(this.ClicTablero);
@@ -380,9 +429,10 @@
             // 
             this.pictureBox_72.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_72.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_72.Location = new System.Drawing.Point(150, 398);
+            this.pictureBox_72.Location = new System.Drawing.Point(112, 323);
+            this.pictureBox_72.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_72.Name = "pictureBox_72";
-            this.pictureBox_72.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_72.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_72.TabIndex = 65;
             this.pictureBox_72.TabStop = false;
             this.pictureBox_72.Click += new System.EventHandler(this.ClicTablero);
@@ -391,9 +441,10 @@
             // 
             this.pictureBox_71.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_71.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_71.Location = new System.Drawing.Point(100, 398);
+            this.pictureBox_71.Location = new System.Drawing.Point(75, 323);
+            this.pictureBox_71.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_71.Name = "pictureBox_71";
-            this.pictureBox_71.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_71.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_71.TabIndex = 64;
             this.pictureBox_71.TabStop = false;
             this.pictureBox_71.Click += new System.EventHandler(this.ClicTablero);
@@ -402,9 +453,10 @@
             // 
             this.pictureBox_70.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_70.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_70.Location = new System.Drawing.Point(50, 398);
+            this.pictureBox_70.Location = new System.Drawing.Point(38, 323);
+            this.pictureBox_70.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_70.Name = "pictureBox_70";
-            this.pictureBox_70.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_70.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_70.TabIndex = 63;
             this.pictureBox_70.TabStop = false;
             this.pictureBox_70.Click += new System.EventHandler(this.ClicTablero);
@@ -413,9 +465,10 @@
             // 
             this.pictureBox_68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_68.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_68.Location = new System.Drawing.Point(450, 348);
+            this.pictureBox_68.Location = new System.Drawing.Point(338, 283);
+            this.pictureBox_68.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_68.Name = "pictureBox_68";
-            this.pictureBox_68.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_68.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_68.TabIndex = 62;
             this.pictureBox_68.TabStop = false;
             this.pictureBox_68.Click += new System.EventHandler(this.ClicTablero);
@@ -424,9 +477,10 @@
             // 
             this.pictureBox_67.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_67.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_67.Location = new System.Drawing.Point(400, 348);
+            this.pictureBox_67.Location = new System.Drawing.Point(300, 283);
+            this.pictureBox_67.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_67.Name = "pictureBox_67";
-            this.pictureBox_67.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_67.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_67.TabIndex = 61;
             this.pictureBox_67.TabStop = false;
             this.pictureBox_67.Click += new System.EventHandler(this.ClicTablero);
@@ -435,9 +489,10 @@
             // 
             this.pictureBox_66.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_66.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_66.Location = new System.Drawing.Point(350, 348);
+            this.pictureBox_66.Location = new System.Drawing.Point(262, 283);
+            this.pictureBox_66.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_66.Name = "pictureBox_66";
-            this.pictureBox_66.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_66.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_66.TabIndex = 60;
             this.pictureBox_66.TabStop = false;
             this.pictureBox_66.Click += new System.EventHandler(this.ClicTablero);
@@ -446,9 +501,10 @@
             // 
             this.pictureBox_65.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_65.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_65.Location = new System.Drawing.Point(300, 348);
+            this.pictureBox_65.Location = new System.Drawing.Point(225, 283);
+            this.pictureBox_65.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_65.Name = "pictureBox_65";
-            this.pictureBox_65.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_65.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_65.TabIndex = 59;
             this.pictureBox_65.TabStop = false;
             this.pictureBox_65.Click += new System.EventHandler(this.ClicTablero);
@@ -457,9 +513,10 @@
             // 
             this.pictureBox_64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_64.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_64.Location = new System.Drawing.Point(250, 348);
+            this.pictureBox_64.Location = new System.Drawing.Point(188, 283);
+            this.pictureBox_64.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_64.Name = "pictureBox_64";
-            this.pictureBox_64.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_64.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_64.TabIndex = 58;
             this.pictureBox_64.TabStop = false;
             this.pictureBox_64.Click += new System.EventHandler(this.ClicTablero);
@@ -468,9 +525,10 @@
             // 
             this.pictureBox_63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_63.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_63.Location = new System.Drawing.Point(200, 348);
+            this.pictureBox_63.Location = new System.Drawing.Point(150, 283);
+            this.pictureBox_63.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_63.Name = "pictureBox_63";
-            this.pictureBox_63.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_63.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_63.TabIndex = 57;
             this.pictureBox_63.TabStop = false;
             this.pictureBox_63.Click += new System.EventHandler(this.ClicTablero);
@@ -479,9 +537,10 @@
             // 
             this.pictureBox_62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_62.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_62.Location = new System.Drawing.Point(150, 348);
+            this.pictureBox_62.Location = new System.Drawing.Point(112, 283);
+            this.pictureBox_62.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_62.Name = "pictureBox_62";
-            this.pictureBox_62.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_62.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_62.TabIndex = 56;
             this.pictureBox_62.TabStop = false;
             this.pictureBox_62.Click += new System.EventHandler(this.ClicTablero);
@@ -490,9 +549,10 @@
             // 
             this.pictureBox_61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_61.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_61.Location = new System.Drawing.Point(100, 348);
+            this.pictureBox_61.Location = new System.Drawing.Point(75, 283);
+            this.pictureBox_61.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_61.Name = "pictureBox_61";
-            this.pictureBox_61.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_61.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_61.TabIndex = 55;
             this.pictureBox_61.TabStop = false;
             this.pictureBox_61.Click += new System.EventHandler(this.ClicTablero);
@@ -501,9 +561,10 @@
             // 
             this.pictureBox_60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_60.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_60.Location = new System.Drawing.Point(50, 348);
+            this.pictureBox_60.Location = new System.Drawing.Point(38, 283);
+            this.pictureBox_60.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_60.Name = "pictureBox_60";
-            this.pictureBox_60.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_60.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_60.TabIndex = 54;
             this.pictureBox_60.TabStop = false;
             this.pictureBox_60.Click += new System.EventHandler(this.ClicTablero);
@@ -512,9 +573,10 @@
             // 
             this.pictureBox_58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_58.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_58.Location = new System.Drawing.Point(450, 298);
+            this.pictureBox_58.Location = new System.Drawing.Point(338, 242);
+            this.pictureBox_58.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_58.Name = "pictureBox_58";
-            this.pictureBox_58.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_58.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_58.TabIndex = 53;
             this.pictureBox_58.TabStop = false;
             this.pictureBox_58.Click += new System.EventHandler(this.ClicTablero);
@@ -523,9 +585,10 @@
             // 
             this.pictureBox_57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_57.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_57.Location = new System.Drawing.Point(400, 298);
+            this.pictureBox_57.Location = new System.Drawing.Point(300, 242);
+            this.pictureBox_57.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_57.Name = "pictureBox_57";
-            this.pictureBox_57.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_57.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_57.TabIndex = 52;
             this.pictureBox_57.TabStop = false;
             this.pictureBox_57.Click += new System.EventHandler(this.ClicTablero);
@@ -534,9 +597,10 @@
             // 
             this.pictureBox_56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_56.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_56.Location = new System.Drawing.Point(350, 298);
+            this.pictureBox_56.Location = new System.Drawing.Point(262, 242);
+            this.pictureBox_56.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_56.Name = "pictureBox_56";
-            this.pictureBox_56.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_56.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_56.TabIndex = 51;
             this.pictureBox_56.TabStop = false;
             this.pictureBox_56.Click += new System.EventHandler(this.ClicTablero);
@@ -545,9 +609,10 @@
             // 
             this.pictureBox_55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_55.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_55.Location = new System.Drawing.Point(300, 298);
+            this.pictureBox_55.Location = new System.Drawing.Point(225, 242);
+            this.pictureBox_55.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_55.Name = "pictureBox_55";
-            this.pictureBox_55.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_55.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_55.TabIndex = 50;
             this.pictureBox_55.TabStop = false;
             this.pictureBox_55.Click += new System.EventHandler(this.ClicTablero);
@@ -556,9 +621,10 @@
             // 
             this.pictureBox_54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_54.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_54.Location = new System.Drawing.Point(250, 298);
+            this.pictureBox_54.Location = new System.Drawing.Point(188, 242);
+            this.pictureBox_54.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_54.Name = "pictureBox_54";
-            this.pictureBox_54.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_54.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_54.TabIndex = 49;
             this.pictureBox_54.TabStop = false;
             this.pictureBox_54.Click += new System.EventHandler(this.ClicTablero);
@@ -567,9 +633,10 @@
             // 
             this.pictureBox_53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_53.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_53.Location = new System.Drawing.Point(200, 298);
+            this.pictureBox_53.Location = new System.Drawing.Point(150, 242);
+            this.pictureBox_53.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_53.Name = "pictureBox_53";
-            this.pictureBox_53.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_53.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_53.TabIndex = 48;
             this.pictureBox_53.TabStop = false;
             this.pictureBox_53.Click += new System.EventHandler(this.ClicTablero);
@@ -578,9 +645,10 @@
             // 
             this.pictureBox_52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_52.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_52.Location = new System.Drawing.Point(150, 298);
+            this.pictureBox_52.Location = new System.Drawing.Point(112, 242);
+            this.pictureBox_52.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_52.Name = "pictureBox_52";
-            this.pictureBox_52.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_52.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_52.TabIndex = 47;
             this.pictureBox_52.TabStop = false;
             this.pictureBox_52.Click += new System.EventHandler(this.ClicTablero);
@@ -589,9 +657,10 @@
             // 
             this.pictureBox_51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_51.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_51.Location = new System.Drawing.Point(100, 298);
+            this.pictureBox_51.Location = new System.Drawing.Point(75, 242);
+            this.pictureBox_51.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_51.Name = "pictureBox_51";
-            this.pictureBox_51.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_51.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_51.TabIndex = 46;
             this.pictureBox_51.TabStop = false;
             this.pictureBox_51.Click += new System.EventHandler(this.ClicTablero);
@@ -600,9 +669,10 @@
             // 
             this.pictureBox_50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_50.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_50.Location = new System.Drawing.Point(50, 298);
+            this.pictureBox_50.Location = new System.Drawing.Point(38, 242);
+            this.pictureBox_50.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_50.Name = "pictureBox_50";
-            this.pictureBox_50.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_50.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_50.TabIndex = 45;
             this.pictureBox_50.TabStop = false;
             this.pictureBox_50.Click += new System.EventHandler(this.ClicTablero);
@@ -611,9 +681,10 @@
             // 
             this.pictureBox_48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_48.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_48.Location = new System.Drawing.Point(450, 248);
+            this.pictureBox_48.Location = new System.Drawing.Point(338, 202);
+            this.pictureBox_48.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_48.Name = "pictureBox_48";
-            this.pictureBox_48.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_48.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_48.TabIndex = 44;
             this.pictureBox_48.TabStop = false;
             this.pictureBox_48.Click += new System.EventHandler(this.ClicTablero);
@@ -622,9 +693,10 @@
             // 
             this.pictureBox_47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_47.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_47.Location = new System.Drawing.Point(400, 248);
+            this.pictureBox_47.Location = new System.Drawing.Point(300, 202);
+            this.pictureBox_47.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_47.Name = "pictureBox_47";
-            this.pictureBox_47.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_47.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_47.TabIndex = 43;
             this.pictureBox_47.TabStop = false;
             this.pictureBox_47.Click += new System.EventHandler(this.ClicTablero);
@@ -633,9 +705,10 @@
             // 
             this.pictureBox_46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_46.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_46.Location = new System.Drawing.Point(350, 248);
+            this.pictureBox_46.Location = new System.Drawing.Point(262, 202);
+            this.pictureBox_46.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_46.Name = "pictureBox_46";
-            this.pictureBox_46.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_46.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_46.TabIndex = 42;
             this.pictureBox_46.TabStop = false;
             this.pictureBox_46.Click += new System.EventHandler(this.ClicTablero);
@@ -644,9 +717,10 @@
             // 
             this.pictureBox_45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_45.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_45.Location = new System.Drawing.Point(300, 248);
+            this.pictureBox_45.Location = new System.Drawing.Point(225, 202);
+            this.pictureBox_45.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_45.Name = "pictureBox_45";
-            this.pictureBox_45.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_45.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_45.TabIndex = 41;
             this.pictureBox_45.TabStop = false;
             this.pictureBox_45.Click += new System.EventHandler(this.ClicTablero);
@@ -655,9 +729,10 @@
             // 
             this.pictureBox_44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_44.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_44.Location = new System.Drawing.Point(250, 248);
+            this.pictureBox_44.Location = new System.Drawing.Point(188, 202);
+            this.pictureBox_44.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_44.Name = "pictureBox_44";
-            this.pictureBox_44.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_44.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_44.TabIndex = 40;
             this.pictureBox_44.TabStop = false;
             this.pictureBox_44.Click += new System.EventHandler(this.ClicTablero);
@@ -666,9 +741,10 @@
             // 
             this.pictureBox_43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_43.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_43.Location = new System.Drawing.Point(200, 248);
+            this.pictureBox_43.Location = new System.Drawing.Point(150, 202);
+            this.pictureBox_43.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_43.Name = "pictureBox_43";
-            this.pictureBox_43.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_43.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_43.TabIndex = 39;
             this.pictureBox_43.TabStop = false;
             this.pictureBox_43.Click += new System.EventHandler(this.ClicTablero);
@@ -677,9 +753,10 @@
             // 
             this.pictureBox_42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_42.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_42.Location = new System.Drawing.Point(150, 248);
+            this.pictureBox_42.Location = new System.Drawing.Point(112, 202);
+            this.pictureBox_42.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_42.Name = "pictureBox_42";
-            this.pictureBox_42.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_42.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_42.TabIndex = 38;
             this.pictureBox_42.TabStop = false;
             this.pictureBox_42.Click += new System.EventHandler(this.ClicTablero);
@@ -688,9 +765,10 @@
             // 
             this.pictureBox_41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_41.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_41.Location = new System.Drawing.Point(100, 248);
+            this.pictureBox_41.Location = new System.Drawing.Point(75, 202);
+            this.pictureBox_41.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_41.Name = "pictureBox_41";
-            this.pictureBox_41.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_41.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_41.TabIndex = 37;
             this.pictureBox_41.TabStop = false;
             this.pictureBox_41.Click += new System.EventHandler(this.ClicTablero);
@@ -699,9 +777,10 @@
             // 
             this.pictureBox_40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_40.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_40.Location = new System.Drawing.Point(50, 248);
+            this.pictureBox_40.Location = new System.Drawing.Point(38, 202);
+            this.pictureBox_40.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_40.Name = "pictureBox_40";
-            this.pictureBox_40.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_40.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_40.TabIndex = 36;
             this.pictureBox_40.TabStop = false;
             this.pictureBox_40.Click += new System.EventHandler(this.ClicTablero);
@@ -710,9 +789,10 @@
             // 
             this.pictureBox_38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_38.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_38.Location = new System.Drawing.Point(450, 200);
+            this.pictureBox_38.Location = new System.Drawing.Point(338, 162);
+            this.pictureBox_38.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_38.Name = "pictureBox_38";
-            this.pictureBox_38.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_38.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_38.TabIndex = 35;
             this.pictureBox_38.TabStop = false;
             this.pictureBox_38.Click += new System.EventHandler(this.ClicTablero);
@@ -721,9 +801,10 @@
             // 
             this.pictureBox_37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_37.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_37.Location = new System.Drawing.Point(400, 200);
+            this.pictureBox_37.Location = new System.Drawing.Point(300, 162);
+            this.pictureBox_37.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_37.Name = "pictureBox_37";
-            this.pictureBox_37.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_37.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_37.TabIndex = 34;
             this.pictureBox_37.TabStop = false;
             this.pictureBox_37.Click += new System.EventHandler(this.ClicTablero);
@@ -732,9 +813,10 @@
             // 
             this.pictureBox_36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_36.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_36.Location = new System.Drawing.Point(350, 200);
+            this.pictureBox_36.Location = new System.Drawing.Point(262, 162);
+            this.pictureBox_36.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_36.Name = "pictureBox_36";
-            this.pictureBox_36.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_36.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_36.TabIndex = 33;
             this.pictureBox_36.TabStop = false;
             this.pictureBox_36.Click += new System.EventHandler(this.ClicTablero);
@@ -743,9 +825,10 @@
             // 
             this.pictureBox_35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_35.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_35.Location = new System.Drawing.Point(300, 200);
+            this.pictureBox_35.Location = new System.Drawing.Point(225, 162);
+            this.pictureBox_35.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_35.Name = "pictureBox_35";
-            this.pictureBox_35.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_35.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_35.TabIndex = 32;
             this.pictureBox_35.TabStop = false;
             this.pictureBox_35.Click += new System.EventHandler(this.ClicTablero);
@@ -754,9 +837,10 @@
             // 
             this.pictureBox_34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_34.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_34.Location = new System.Drawing.Point(250, 200);
+            this.pictureBox_34.Location = new System.Drawing.Point(188, 162);
+            this.pictureBox_34.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_34.Name = "pictureBox_34";
-            this.pictureBox_34.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_34.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_34.TabIndex = 31;
             this.pictureBox_34.TabStop = false;
             this.pictureBox_34.Click += new System.EventHandler(this.ClicTablero);
@@ -765,9 +849,10 @@
             // 
             this.pictureBox_33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_33.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_33.Location = new System.Drawing.Point(200, 200);
+            this.pictureBox_33.Location = new System.Drawing.Point(150, 162);
+            this.pictureBox_33.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_33.Name = "pictureBox_33";
-            this.pictureBox_33.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_33.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_33.TabIndex = 30;
             this.pictureBox_33.TabStop = false;
             this.pictureBox_33.Click += new System.EventHandler(this.ClicTablero);
@@ -776,9 +861,10 @@
             // 
             this.pictureBox_32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_32.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_32.Location = new System.Drawing.Point(150, 200);
+            this.pictureBox_32.Location = new System.Drawing.Point(112, 162);
+            this.pictureBox_32.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_32.Name = "pictureBox_32";
-            this.pictureBox_32.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_32.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_32.TabIndex = 29;
             this.pictureBox_32.TabStop = false;
             this.pictureBox_32.Click += new System.EventHandler(this.ClicTablero);
@@ -787,9 +873,10 @@
             // 
             this.pictureBox_31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_31.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_31.Location = new System.Drawing.Point(100, 200);
+            this.pictureBox_31.Location = new System.Drawing.Point(75, 162);
+            this.pictureBox_31.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_31.Name = "pictureBox_31";
-            this.pictureBox_31.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_31.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_31.TabIndex = 28;
             this.pictureBox_31.TabStop = false;
             this.pictureBox_31.Click += new System.EventHandler(this.ClicTablero);
@@ -798,9 +885,10 @@
             // 
             this.pictureBox_30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_30.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_30.Location = new System.Drawing.Point(50, 200);
+            this.pictureBox_30.Location = new System.Drawing.Point(38, 162);
+            this.pictureBox_30.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_30.Name = "pictureBox_30";
-            this.pictureBox_30.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_30.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_30.TabIndex = 27;
             this.pictureBox_30.TabStop = false;
             this.pictureBox_30.Click += new System.EventHandler(this.ClicTablero);
@@ -809,9 +897,10 @@
             // 
             this.pictureBox_28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_28.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_28.Location = new System.Drawing.Point(450, 150);
+            this.pictureBox_28.Location = new System.Drawing.Point(338, 122);
+            this.pictureBox_28.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_28.Name = "pictureBox_28";
-            this.pictureBox_28.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_28.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_28.TabIndex = 26;
             this.pictureBox_28.TabStop = false;
             this.pictureBox_28.Click += new System.EventHandler(this.ClicTablero);
@@ -820,9 +909,10 @@
             // 
             this.pictureBox_27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_27.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_27.Location = new System.Drawing.Point(400, 150);
+            this.pictureBox_27.Location = new System.Drawing.Point(300, 122);
+            this.pictureBox_27.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_27.Name = "pictureBox_27";
-            this.pictureBox_27.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_27.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_27.TabIndex = 25;
             this.pictureBox_27.TabStop = false;
             this.pictureBox_27.Click += new System.EventHandler(this.ClicTablero);
@@ -831,9 +921,10 @@
             // 
             this.pictureBox_26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_26.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_26.Location = new System.Drawing.Point(350, 150);
+            this.pictureBox_26.Location = new System.Drawing.Point(262, 122);
+            this.pictureBox_26.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_26.Name = "pictureBox_26";
-            this.pictureBox_26.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_26.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_26.TabIndex = 24;
             this.pictureBox_26.TabStop = false;
             this.pictureBox_26.Click += new System.EventHandler(this.ClicTablero);
@@ -842,9 +933,10 @@
             // 
             this.pictureBox_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_25.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_25.Location = new System.Drawing.Point(300, 150);
+            this.pictureBox_25.Location = new System.Drawing.Point(225, 122);
+            this.pictureBox_25.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_25.Name = "pictureBox_25";
-            this.pictureBox_25.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_25.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_25.TabIndex = 23;
             this.pictureBox_25.TabStop = false;
             this.pictureBox_25.Click += new System.EventHandler(this.ClicTablero);
@@ -853,9 +945,10 @@
             // 
             this.pictureBox_24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_24.Location = new System.Drawing.Point(250, 150);
+            this.pictureBox_24.Location = new System.Drawing.Point(188, 122);
+            this.pictureBox_24.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_24.Name = "pictureBox_24";
-            this.pictureBox_24.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_24.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_24.TabIndex = 22;
             this.pictureBox_24.TabStop = false;
             this.pictureBox_24.Click += new System.EventHandler(this.ClicTablero);
@@ -864,9 +957,10 @@
             // 
             this.pictureBox_23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_23.Location = new System.Drawing.Point(200, 150);
+            this.pictureBox_23.Location = new System.Drawing.Point(150, 122);
+            this.pictureBox_23.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_23.Name = "pictureBox_23";
-            this.pictureBox_23.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_23.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_23.TabIndex = 21;
             this.pictureBox_23.TabStop = false;
             this.pictureBox_23.Click += new System.EventHandler(this.ClicTablero);
@@ -875,9 +969,10 @@
             // 
             this.pictureBox_22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_22.Location = new System.Drawing.Point(150, 150);
+            this.pictureBox_22.Location = new System.Drawing.Point(112, 122);
+            this.pictureBox_22.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_22.Name = "pictureBox_22";
-            this.pictureBox_22.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_22.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_22.TabIndex = 20;
             this.pictureBox_22.TabStop = false;
             this.pictureBox_22.Click += new System.EventHandler(this.ClicTablero);
@@ -886,9 +981,10 @@
             // 
             this.pictureBox_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_21.Location = new System.Drawing.Point(100, 150);
+            this.pictureBox_21.Location = new System.Drawing.Point(75, 122);
+            this.pictureBox_21.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_21.Name = "pictureBox_21";
-            this.pictureBox_21.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_21.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_21.TabIndex = 19;
             this.pictureBox_21.TabStop = false;
             this.pictureBox_21.Click += new System.EventHandler(this.ClicTablero);
@@ -897,9 +993,10 @@
             // 
             this.pictureBox_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_20.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_20.Location = new System.Drawing.Point(50, 150);
+            this.pictureBox_20.Location = new System.Drawing.Point(38, 122);
+            this.pictureBox_20.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_20.Name = "pictureBox_20";
-            this.pictureBox_20.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_20.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_20.TabIndex = 18;
             this.pictureBox_20.TabStop = false;
             this.pictureBox_20.Click += new System.EventHandler(this.ClicTablero);
@@ -908,9 +1005,10 @@
             // 
             this.pictureBox_18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_18.Location = new System.Drawing.Point(450, 100);
+            this.pictureBox_18.Location = new System.Drawing.Point(338, 81);
+            this.pictureBox_18.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_18.Name = "pictureBox_18";
-            this.pictureBox_18.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_18.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_18.TabIndex = 17;
             this.pictureBox_18.TabStop = false;
             this.pictureBox_18.Click += new System.EventHandler(this.ClicTablero);
@@ -919,9 +1017,10 @@
             // 
             this.pictureBox_17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_17.Location = new System.Drawing.Point(400, 100);
+            this.pictureBox_17.Location = new System.Drawing.Point(300, 81);
+            this.pictureBox_17.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_17.Name = "pictureBox_17";
-            this.pictureBox_17.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_17.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_17.TabIndex = 16;
             this.pictureBox_17.TabStop = false;
             this.pictureBox_17.Click += new System.EventHandler(this.ClicTablero);
@@ -930,9 +1029,10 @@
             // 
             this.pictureBox_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_16.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_16.Location = new System.Drawing.Point(350, 100);
+            this.pictureBox_16.Location = new System.Drawing.Point(262, 81);
+            this.pictureBox_16.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_16.Name = "pictureBox_16";
-            this.pictureBox_16.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_16.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_16.TabIndex = 15;
             this.pictureBox_16.TabStop = false;
             this.pictureBox_16.Click += new System.EventHandler(this.ClicTablero);
@@ -941,9 +1041,10 @@
             // 
             this.pictureBox_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_15.Location = new System.Drawing.Point(300, 100);
+            this.pictureBox_15.Location = new System.Drawing.Point(225, 81);
+            this.pictureBox_15.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_15.Name = "pictureBox_15";
-            this.pictureBox_15.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_15.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_15.TabIndex = 14;
             this.pictureBox_15.TabStop = false;
             this.pictureBox_15.Click += new System.EventHandler(this.ClicTablero);
@@ -952,9 +1053,10 @@
             // 
             this.pictureBox_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_14.Location = new System.Drawing.Point(250, 100);
+            this.pictureBox_14.Location = new System.Drawing.Point(188, 81);
+            this.pictureBox_14.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_14.Name = "pictureBox_14";
-            this.pictureBox_14.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_14.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_14.TabIndex = 13;
             this.pictureBox_14.TabStop = false;
             this.pictureBox_14.Click += new System.EventHandler(this.ClicTablero);
@@ -963,9 +1065,10 @@
             // 
             this.pictureBox_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_13.Location = new System.Drawing.Point(200, 100);
+            this.pictureBox_13.Location = new System.Drawing.Point(150, 81);
+            this.pictureBox_13.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_13.Name = "pictureBox_13";
-            this.pictureBox_13.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_13.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_13.TabIndex = 12;
             this.pictureBox_13.TabStop = false;
             this.pictureBox_13.Click += new System.EventHandler(this.ClicTablero);
@@ -974,9 +1077,10 @@
             // 
             this.pictureBox_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_12.Location = new System.Drawing.Point(150, 100);
+            this.pictureBox_12.Location = new System.Drawing.Point(112, 81);
+            this.pictureBox_12.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_12.Name = "pictureBox_12";
-            this.pictureBox_12.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_12.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_12.TabIndex = 11;
             this.pictureBox_12.TabStop = false;
             this.pictureBox_12.Click += new System.EventHandler(this.ClicTablero);
@@ -985,9 +1089,10 @@
             // 
             this.pictureBox_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_11.Location = new System.Drawing.Point(100, 100);
+            this.pictureBox_11.Location = new System.Drawing.Point(75, 81);
+            this.pictureBox_11.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_11.Name = "pictureBox_11";
-            this.pictureBox_11.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_11.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_11.TabIndex = 10;
             this.pictureBox_11.TabStop = false;
             this.pictureBox_11.Click += new System.EventHandler(this.ClicTablero);
@@ -996,9 +1101,10 @@
             // 
             this.pictureBox_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_10.Location = new System.Drawing.Point(50, 100);
+            this.pictureBox_10.Location = new System.Drawing.Point(38, 81);
+            this.pictureBox_10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_10.Name = "pictureBox_10";
-            this.pictureBox_10.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_10.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_10.TabIndex = 9;
             this.pictureBox_10.TabStop = false;
             this.pictureBox_10.Click += new System.EventHandler(this.ClicTablero);
@@ -1007,9 +1113,10 @@
             // 
             this.pictureBox_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_08.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_08.Location = new System.Drawing.Point(450, 50);
+            this.pictureBox_08.Location = new System.Drawing.Point(338, 41);
+            this.pictureBox_08.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_08.Name = "pictureBox_08";
-            this.pictureBox_08.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_08.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_08.TabIndex = 8;
             this.pictureBox_08.TabStop = false;
             this.pictureBox_08.Click += new System.EventHandler(this.ClicTablero);
@@ -1018,9 +1125,10 @@
             // 
             this.pictureBox_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_07.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_07.Location = new System.Drawing.Point(400, 50);
+            this.pictureBox_07.Location = new System.Drawing.Point(300, 41);
+            this.pictureBox_07.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_07.Name = "pictureBox_07";
-            this.pictureBox_07.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_07.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_07.TabIndex = 7;
             this.pictureBox_07.TabStop = false;
             this.pictureBox_07.Click += new System.EventHandler(this.ClicTablero);
@@ -1029,9 +1137,10 @@
             // 
             this.pictureBox_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_06.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_06.Location = new System.Drawing.Point(350, 50);
+            this.pictureBox_06.Location = new System.Drawing.Point(262, 41);
+            this.pictureBox_06.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_06.Name = "pictureBox_06";
-            this.pictureBox_06.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_06.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_06.TabIndex = 6;
             this.pictureBox_06.TabStop = false;
             this.pictureBox_06.Click += new System.EventHandler(this.ClicTablero);
@@ -1040,9 +1149,10 @@
             // 
             this.pictureBox_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_05.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_05.Location = new System.Drawing.Point(300, 50);
+            this.pictureBox_05.Location = new System.Drawing.Point(225, 41);
+            this.pictureBox_05.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_05.Name = "pictureBox_05";
-            this.pictureBox_05.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_05.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_05.TabIndex = 5;
             this.pictureBox_05.TabStop = false;
             this.pictureBox_05.Click += new System.EventHandler(this.ClicTablero);
@@ -1051,9 +1161,10 @@
             // 
             this.pictureBox_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_04.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_04.Location = new System.Drawing.Point(250, 50);
+            this.pictureBox_04.Location = new System.Drawing.Point(188, 41);
+            this.pictureBox_04.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_04.Name = "pictureBox_04";
-            this.pictureBox_04.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_04.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_04.TabIndex = 4;
             this.pictureBox_04.TabStop = false;
             this.pictureBox_04.Click += new System.EventHandler(this.ClicTablero);
@@ -1062,9 +1173,10 @@
             // 
             this.pictureBox_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_03.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_03.Location = new System.Drawing.Point(200, 50);
+            this.pictureBox_03.Location = new System.Drawing.Point(150, 41);
+            this.pictureBox_03.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_03.Name = "pictureBox_03";
-            this.pictureBox_03.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_03.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_03.TabIndex = 3;
             this.pictureBox_03.TabStop = false;
             this.pictureBox_03.Click += new System.EventHandler(this.ClicTablero);
@@ -1073,9 +1185,10 @@
             // 
             this.pictureBox_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_02.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_02.Location = new System.Drawing.Point(150, 50);
+            this.pictureBox_02.Location = new System.Drawing.Point(112, 41);
+            this.pictureBox_02.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_02.Name = "pictureBox_02";
-            this.pictureBox_02.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_02.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_02.TabIndex = 2;
             this.pictureBox_02.TabStop = false;
             this.pictureBox_02.Click += new System.EventHandler(this.ClicTablero);
@@ -1084,9 +1197,10 @@
             // 
             this.pictureBox_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_01.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_01.Location = new System.Drawing.Point(100, 50);
+            this.pictureBox_01.Location = new System.Drawing.Point(75, 41);
+            this.pictureBox_01.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_01.Name = "pictureBox_01";
-            this.pictureBox_01.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_01.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_01.TabIndex = 1;
             this.pictureBox_01.TabStop = false;
             this.pictureBox_01.Click += new System.EventHandler(this.ClicTablero);
@@ -1095,19 +1209,44 @@
             // 
             this.pictureBox_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_00.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_00.Location = new System.Drawing.Point(50, 50);
+            this.pictureBox_00.Location = new System.Drawing.Point(38, 41);
+            this.pictureBox_00.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox_00.Name = "pictureBox_00";
-            this.pictureBox_00.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox_00.Size = new System.Drawing.Size(38, 41);
             this.pictureBox_00.TabIndex = 0;
             this.pictureBox_00.TabStop = false;
             this.pictureBox_00.Click += new System.EventHandler(this.ClicTablero);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(399, 212);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 31);
+            this.label1.TabIndex = 86;
+            this.label1.Text = "Turno de:";
+            // 
+            // labelNombreJugador
+            // 
+            this.labelNombreJugador.AutoSize = true;
+            this.labelNombreJugador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombreJugador.Location = new System.Drawing.Point(400, 273);
+            this.labelNombreJugador.Name = "labelNombreJugador";
+            this.labelNombreJugador.Size = new System.Drawing.Size(87, 25);
+            this.labelNombreJugador.TabIndex = 87;
+            this.labelNombreJugador.Text = "Nombre";
+            // 
             // MesaJuego
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(721, 621);
+            this.ClientSize = new System.Drawing.Size(541, 505);
+            this.Controls.Add(this.labelNombreJugador);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.labelTiempoRestante);
             this.Controls.Add(this.pictureBox5EnLinea);
             this.Controls.Add(this.abandonaPartida);
             this.Controls.Add(this.pictureBox_88);
@@ -1191,9 +1330,11 @@
             this.Controls.Add(this.pictureBox_02);
             this.Controls.Add(this.pictureBox_01);
             this.Controls.Add(this.pictureBox_00);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MesaJuego";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MesaJuego";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5EnLinea)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_88)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_87)).EndInit();
@@ -1277,6 +1418,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_00)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1365,5 +1507,10 @@
         private System.Windows.Forms.PictureBox pictureBox_80;
         private System.Windows.Forms.Button abandonaPartida;
         private System.Windows.Forms.PictureBox pictureBox5EnLinea;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label labelTiempoRestante;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelNombreJugador;
     }
 }

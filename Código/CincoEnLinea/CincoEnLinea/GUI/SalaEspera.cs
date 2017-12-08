@@ -41,20 +41,21 @@ namespace CincoEnLinea.GUI {
 
         private void ClickCrearPartida(object sender, EventArgs e) {
             Partida partida = new Partida();
-            partida.NombreUsuario = usuario.NombreUsuario;
+            partida.NombreJugador1 = usuario.NombreUsuario;
             partida.UsuariosDentro = 1;
             String partidaJSON = JsonConvert.SerializeObject(partida);
-            socket.Emit("nuevaSala", partidaJSON);
+            socket.Emit("nuevaPartida", partidaJSON);
         }
 
         private void ClickUnirsePartida(object sender, EventArgs e) {
             Partida partidaSeleccionada = listViewPartidasDisponibles.SelectedItems[0].Tag as Partida;
+            partidaSeleccionada.NombreJugador2 = usuario.NombreUsuario;
             String partidaJSON = JsonConvert.SerializeObject(partidaSeleccionada);
-            socket.Emit("unirseSala", partidaJSON);
+            socket.Emit("unirsePartida", partidaJSON);
         }
 
         private void ConectarConServidor() {
-            socket = IO.Socket("http://localhost:8000");
+            socket = IO.Socket("http://192.168.43.72:8000");
             socket.On(Socket.EVENT_CONNECT, () => {
                 socket.On("actualizarTablaPartidas", (data) => {
                     String partidasJSON = data as String;
@@ -66,10 +67,13 @@ namespace CincoEnLinea.GUI {
                     Partida partida = JsonConvert.DeserializeObject<Partida>(partidaJSON);
                     MessageBox.Show("Sala llena", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 });
-                socket.On("comenzarJuego", (data) => {
+                socket.On("mostrarTablero", (data) => {
+                    String partidaJSON = data as String;
+                    Partida partida = JsonConvert.DeserializeObject<Partida>(partidaJSON);
                     MessageBox.Show("Comienza el juego", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    this.Invoke(new Action(() => mostrarTablero()));
+                    this.Invoke(new Action(() => MostrarTablero(partida)));
                 });
+
             });
         }
 
@@ -78,13 +82,14 @@ namespace CincoEnLinea.GUI {
             listViewPartidasDisponibles.View = View.Details;
             foreach (Partida partida in partidas) {
                 ListViewItem item = listViewPartidasDisponibles.Items.Add(partida.IdPartida.ToString());
-                item.SubItems.Add(partida.NombreUsuario);
+                item.SubItems.Add(partida.NombreJugador1);
                 item.Tag = partida;
             }
         }
 
-        private void mostrarTablero() {
-            TableroJugar tablero = new TableroJugar(usuario, socket);
+        private void MostrarTablero(Partida partida) {
+            this.Dispose();
+            MesaJuego tablero = new MesaJuego(usuario, partida);
             tablero.Show();
         }
     }

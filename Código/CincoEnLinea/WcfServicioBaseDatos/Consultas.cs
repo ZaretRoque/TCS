@@ -25,11 +25,9 @@ namespace WcfServicioBaseDatos {
             // Look for the name in the connectionStrings section.
             ConnectionStringSettings settings =
                 ConfigurationManager.ConnectionStrings[name];
-            Console.WriteLine("Configuración: "+settings);
             // If found, return the connection string.
             if (settings != null)
                 returnValue = settings.ConnectionString;
-            Console.WriteLine("Configuración: " + settings);
             return returnValue;
 
         }

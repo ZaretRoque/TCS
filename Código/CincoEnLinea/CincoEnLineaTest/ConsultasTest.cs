@@ -1,8 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CincoEnLinea.BD;
-using CincoEnLinea.Dominio;
 using System.Collections.Generic;
+using WcfServicioBaseDatos;
 
 namespace CincoEnLineaTest {
     [TestClass]

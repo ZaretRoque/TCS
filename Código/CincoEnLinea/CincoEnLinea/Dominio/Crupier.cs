@@ -39,9 +39,9 @@ namespace CincoEnLinea.Dominio {
         /// <param name="posX">La posición en el eje X</param>
         /// <returns>Un booleano, false cuando la casilla está ocupada, true cuando está libre</returns>
         public bool ValidarTiro(int posY, int posX) {
-            if(tableroTiros[posY, posX] == 0) {
+            if (tableroTiros[posY, posX] == 0) {
                 return true;
-            }else {
+            } else {
                 return false;
             }
         }
@@ -175,8 +175,7 @@ namespace CincoEnLinea.Dominio {
         public int RegresaTiroContrario(int tiro) {
             if (turno == 1) {
                 return 2;
-            }
-            else {
+            } else {
                 return 1;
             }
         }
