@@ -123,11 +123,20 @@
   <data name="confirmacionSalida" xml:space="preserve">
     <value>¿Seguro que deseas salir?</value>
   </data>
+  <data name="labelTurno" xml:space="preserve">
+    <value>Turno de</value>
+  </data>
   <data name="mensajeEmpatar" xml:space="preserve">
     <value>Ups, partida empatada</value>
   </data>
   <data name="mensajeGanar" xml:space="preserve">
     <value>¡Ganaste! Tu abuelita va a estar orgullosa</value>
+  </data>
+  <data name="mensajeNoTurno" xml:space="preserve">
+    <value>No es tu turno</value>
+  </data>
+  <data name="mensajePerder" xml:space="preserve">
+    <value>No lo creo, has perdido</value>
   </data>
   <data name="tituloConfirmacion" xml:space="preserve">
     <value>¿Miedo?</value>
@@ -137,6 +146,12 @@
   </data>
   <data name="tituloGanar" xml:space="preserve">
     <value>Ganador</value>
+  </data>
+  <data name="tituloNoTurno" xml:space="preserve">
+    <value>Aun no</value>
+  </data>
+  <data name="tituloPerder" xml:space="preserve">
+    <value>Derrotado</value>
   </data>
   <data name="tituloVentana" xml:space="preserve">
     <value>Jugar</value>

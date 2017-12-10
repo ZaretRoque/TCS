@@ -33,6 +33,12 @@ namespace CincoEnLinea.GUI {
             buttonCrearPartida.Text = SalaEsperaRes.bCrearPartida;
         }
 
+        /// <summary>
+        /// Evento asosiado al botón Regresar, libera los recursos de esta ventana y crea una nueva de 
+        /// tipo MenuPrincipal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClicRegresar(object sender, EventArgs e) {
             this.Dispose();
             MenuPrincipal mP = new MenuPrincipal(usuario);
@@ -55,7 +61,7 @@ namespace CincoEnLinea.GUI {
         }
 
         private void ConectarConServidor() {
-            socket = IO.Socket("http://192.168.43.72:8000");
+            socket = IO.Socket("http://localhost:8000");
             socket.On(Socket.EVENT_CONNECT, () => {
                 socket.On("actualizarTablaPartidas", (data) => {
                     String partidasJSON = data as String;
@@ -91,6 +97,10 @@ namespace CincoEnLinea.GUI {
             this.Dispose();
             MesaJuego tablero = new MesaJuego(usuario, partida);
             tablero.Show();
+        }
+
+        private void ClicAlCerrarVentana(object sender, FormClosingEventArgs e) {
+            Application.Exit();
         }
     }
 }

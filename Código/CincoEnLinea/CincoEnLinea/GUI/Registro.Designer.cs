@@ -168,6 +168,7 @@
             this.Name = "Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClicAlCerrarVentana);
             this.ResumeLayout(false);
             this.PerformLayout();
 

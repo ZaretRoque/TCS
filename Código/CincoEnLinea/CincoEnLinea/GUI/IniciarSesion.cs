@@ -26,9 +26,19 @@ namespace CincoEnLinea.GUI {
             pictureBoxCincoEnLinea.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
+        private void AplicarIdioma() {
+            this.Text = IniciarSesionRes.wTIniciarSesion;
+            buttonEntrar.Text = IniciarSesionRes.buttonEntrar;
+            label1.Text = IniciarSesionRes.contrasena;
+            labelDesarrolladores.Text = IniciarSesionRes.Desarrolladores;
+            labelIniciaSesion.Text = IniciarSesionRes.labIniciaSesion;
+            labelNoTienesCuenta.Text = IniciarSesionRes.noCuenta;
+            labelUsuario.Text = IniciarSesionRes.Usuario;
+            linkLabelRegistrate.Text = IniciarSesionRes.registrar;
+        }
 
         /// <summary>
-        /// Método que contiene la acción al dar clic al bontón "Entrar"
+        /// Método que se encarga de las validaciones al dar clic al bontón "Entrar" 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -55,9 +65,35 @@ namespace CincoEnLinea.GUI {
 
         }
 
-        private void MouseClicRegistrate(object sender, MouseEventArgs e) {
+        /// <summary>
+        /// Evento asosiado al Link "Español" que cambia el idioma del juego a español
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LinkLabelEspañol_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-MX");
+            AplicarIdioma();
+        }
+
+        /// <summary>
+        /// Evento asosiado al Link "Inglés" que cambia el idioma del juego a inglés
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LinkLabelEnglish_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            AplicarIdioma();
+        }
+
+        /// <summary>
+        /// Método que crea una ventada Registro al dar clic en el link "Regístrate"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClicLabelRegistrate(object sender, LinkLabelLinkClickedEventArgs e) {
             Registro registro = new Registro();
             registro.Show();
+            this.Hide();
         }
 
         /// <summary>
@@ -71,13 +107,10 @@ namespace CincoEnLinea.GUI {
             String contraEncriptada = EncriptaContrasena(contrasenia);
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.IniciarSesionRes",
                     typeof(IniciarSesion).Assembly);
-            
             string mensaje;
             string titulo;
 
             try {
-                
-
                 if (interfazServidor.ValidaNombreUsuario(usuarioName)) {
                     if (interfazServidor.ValidaContraseniaUsuario(contraEncriptada)) {
                         return true;
@@ -128,42 +161,28 @@ namespace CincoEnLinea.GUI {
             return contrasenaSha.ToString();
         }
 
-        private void linkLabelEspañol_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-MX");
-            
-            AplicarIdioma();
-        }
-
-        private void linkLabelEnglish_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-            
-            AplicarIdioma();
-        }
-
-        private void AplicarIdioma() {
-            this.Text = IniciarSesionRes.wTIniciarSesion;
-            buttonEntrar.Text = IniciarSesionRes.buttonEntrar;
-            label1.Text = IniciarSesionRes.contrasena;
-            labelDesarrolladores.Text = IniciarSesionRes.Desarrolladores;
-            labelIniciaSesion.Text = IniciarSesionRes.labIniciaSesion;
-            labelNoTienesCuenta.Text = IniciarSesionRes.noCuenta;
-            labelUsuario.Text = IniciarSesionRes.Usuario;
-            linkLabelRegistrate.Text = IniciarSesionRes.registrar;
-        }
-
-        private void ClicLabelRegistrate(object sender, LinkLabelLinkClickedEventArgs e) {
-            this.Hide();
-        }
-
+        /// <summary>
+        /// Método que inicializa el canal por el que se comunicará con el servidor
+        /// </summary>
         private void IniciarServicio() {
             canalServidor = new ChannelFactory<IServicioBD>("configuracionServidor");
             interfazServidor = canalServidor.CreateChannel();
         }
 
+        /// <summary>
+        /// Método que comprueba que no se ingresen caracteres inapropiados(-, _, \b, ;) en el textBox del 
+        /// nombre de usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void VerificarEntrada(object sender, KeyPressEventArgs e) {
             if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '_' && e.KeyChar != '-') {
                 e.Handled = true;
             }
+        }
+
+        private void ClicAlCerrarVentana(object sender, FormClosingEventArgs e) {
+            Application.Exit();
         }
     }
 }

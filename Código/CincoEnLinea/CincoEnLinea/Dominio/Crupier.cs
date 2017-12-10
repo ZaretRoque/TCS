@@ -152,7 +152,7 @@ namespace CincoEnLinea.Dominio {
         }
 
         /// <summary>
-        /// Comprueba que el tablero no se haya llenado
+        /// Comprueba que el tablero no se haya llenado con 1 y 2
         /// </summary>
         /// <returns>True cuando el tablero está lleno y false cuando no</returns>
         public bool ComprobarEmpate() {
@@ -173,7 +173,7 @@ namespace CincoEnLinea.Dominio {
         /// <param name="tiro">El tiro contrario al jugador actual</param>
         /// <returns>Un entero que representa el tiro contrario al jugador actual</returns>
         public int RegresaTiroContrario(int tiro) {
-            if (turno == 1) {
+            if (tiro == 1) {
                 return 2;
             } else {
                 return 1;

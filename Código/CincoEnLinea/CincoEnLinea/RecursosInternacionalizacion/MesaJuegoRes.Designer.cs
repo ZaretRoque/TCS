@@ -79,6 +79,15 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Turno de.
+        /// </summary>
+        internal static string labelTurno {
+            get {
+                return ResourceManager.GetString("labelTurno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Ups, partida empatada.
         /// </summary>
         internal static string mensajeEmpatar {
@@ -93,6 +102,24 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         internal static string mensajeGanar {
             get {
                 return ResourceManager.GetString("mensajeGanar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No es tu turno.
+        /// </summary>
+        internal static string mensajeNoTurno {
+            get {
+                return ResourceManager.GetString("mensajeNoTurno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No lo creo, has perdido.
+        /// </summary>
+        internal static string mensajePerder {
+            get {
+                return ResourceManager.GetString("mensajePerder", resourceCulture);
             }
         }
         
@@ -120,6 +147,24 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         internal static string tituloGanar {
             get {
                 return ResourceManager.GetString("tituloGanar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Aun no.
+        /// </summary>
+        internal static string tituloNoTurno {
+            get {
+                return ResourceManager.GetString("tituloNoTurno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Derrotado.
+        /// </summary>
+        internal static string tituloPerder {
+            get {
+                return ResourceManager.GetString("tituloPerder", resourceCulture);
             }
         }
         

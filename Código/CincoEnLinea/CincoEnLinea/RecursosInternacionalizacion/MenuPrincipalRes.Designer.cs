@@ -61,15 +61,6 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Tablero.
-        /// </summary>
-        internal static string botonTablero {
-            get {
-                return ResourceManager.GetString("botonTablero", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Cerrar sesión.
         /// </summary>
         internal static string cerrarSesion {

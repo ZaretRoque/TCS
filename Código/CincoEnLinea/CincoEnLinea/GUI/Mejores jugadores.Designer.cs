@@ -46,9 +46,10 @@
             this.columnaEmpatadas});
             this.listViewMejoresJugadores.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewMejoresJugadores.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.listViewMejoresJugadores.Location = new System.Drawing.Point(12, 124);
+            this.listViewMejoresJugadores.Location = new System.Drawing.Point(16, 153);
+            this.listViewMejoresJugadores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listViewMejoresJugadores.Name = "listViewMejoresJugadores";
-            this.listViewMejoresJugadores.Size = new System.Drawing.Size(538, 227);
+            this.listViewMejoresJugadores.Size = new System.Drawing.Size(716, 278);
             this.listViewMejoresJugadores.TabIndex = 0;
             this.listViewMejoresJugadores.UseCompatibleStateImageBehavior = false;
             this.listViewMejoresJugadores.View = System.Windows.Forms.View.Details;
@@ -82,9 +83,10 @@
             // 
             this.buttonRegresarMejoresJugadores.BackColor = System.Drawing.Color.Silver;
             this.buttonRegresarMejoresJugadores.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegresarMejoresJugadores.Location = new System.Drawing.Point(386, 373);
+            this.buttonRegresarMejoresJugadores.Location = new System.Drawing.Point(515, 459);
+            this.buttonRegresarMejoresJugadores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRegresarMejoresJugadores.Name = "buttonRegresarMejoresJugadores";
-            this.buttonRegresarMejoresJugadores.Size = new System.Drawing.Size(115, 31);
+            this.buttonRegresarMejoresJugadores.Size = new System.Drawing.Size(153, 38);
             this.buttonRegresarMejoresJugadores.TabIndex = 1;
             this.buttonRegresarMejoresJugadores.Text = "Regresar";
             this.buttonRegresarMejoresJugadores.UseVisualStyleBackColor = false;
@@ -95,9 +97,9 @@
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.labelMejoresJugadores);
             this.panel1.Location = new System.Drawing.Point(1, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 99);
+            this.panel1.Size = new System.Drawing.Size(749, 122);
             this.panel1.TabIndex = 2;
             // 
             // labelMejoresJugadores
@@ -106,26 +108,27 @@
             this.labelMejoresJugadores.BackColor = System.Drawing.Color.Black;
             this.labelMejoresJugadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMejoresJugadores.ForeColor = System.Drawing.Color.White;
-            this.labelMejoresJugadores.Location = new System.Drawing.Point(132, 39);
-            this.labelMejoresJugadores.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelMejoresJugadores.Location = new System.Drawing.Point(176, 48);
             this.labelMejoresJugadores.Name = "labelMejoresJugadores";
-            this.labelMejoresJugadores.Size = new System.Drawing.Size(261, 36);
+            this.labelMejoresJugadores.Size = new System.Drawing.Size(333, 44);
             this.labelMejoresJugadores.TabIndex = 0;
             this.labelMejoresJugadores.Text = "Mejores jugadores";
             // 
             // MejoresJugadores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(562, 422);
+            this.ClientSize = new System.Drawing.Size(749, 519);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonRegresarMejoresJugadores);
             this.Controls.Add(this.listViewMejoresJugadores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MejoresJugadores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mejores jugadores";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClicAlCerrarVentana);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

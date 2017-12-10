@@ -27,6 +27,16 @@ namespace CincoEnLinea.GUI {
             InitializeComponent();
             AplicarIdioma();
         }
+
+        public void AplicarIdioma() {
+            this.Text = MenuPrincipalRes.wTMenuPrincipal;
+            labelMenu.Text = MenuPrincipalRes.labMenu;
+            labelEntrarSala.Text = MenuPrincipalRes.sala;
+            labelMejoresJugadores.Text = MenuPrincipalRes.mejoresJugadores;
+            labelVerReglas.Text = MenuPrincipalRes.reglas;
+            labelCerrarSesion.Text = MenuPrincipalRes.cerrarSesion;
+        }
+
         /// <summary>
         /// Método que hace invisibles todos los pictureBox de cada opción del menú principal,
         /// mientras el mouse no se pose sobre alguna opción
@@ -85,24 +95,44 @@ namespace CincoEnLinea.GUI {
             pictureBoxCerrarSesionDer.Visible = true;
         }
 
+        /// <summary>
+        /// Método que libera los recursos de la ventana actual y crea una de tipo MejoresJugadores 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MouseClicMejoresJugadores(object sender, EventArgs e) {
             this.Dispose();
             MejoresJugadores mJuga = new MejoresJugadores();
             mJuga.Show();
         }
 
+        /// <summary>
+        /// Método que libera los recursos de la ventana actual y crea una de tipo VerReglas 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MouseClicSobreVerReglas(object sender, EventArgs e) {
             this.Dispose();
             VerReglas vReglas = new VerReglas();
             vReglas.Show();
         }
 
+        /// <summary>
+        /// Método que libera los recursos de la ventana actual y crea una de tipo SalaEspera 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClicEntrarSala(object sender, EventArgs e) {
             this.Dispose();
             SalaEspera sE = new SalaEspera(usuario);
             sE.Show();
         }
 
+        /// <summary>
+        /// Método que libera los recursos solo si el usuario da clic en 'Si' al mensaje de confirmación
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClicSalir(object sender, EventArgs e) {
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MenuPrincipalRes",
                    typeof(TableroJugar).Assembly);
@@ -115,20 +145,8 @@ namespace CincoEnLinea.GUI {
             }
         }
 
-        public void AplicarIdioma() {
-            this.Text = MenuPrincipalRes.wTMenuPrincipal;
-            labelMenu.Text = MenuPrincipalRes.labMenu;
-            labelEntrarSala.Text = MenuPrincipalRes.sala;
-            labelMejoresJugadores.Text = MenuPrincipalRes.mejoresJugadores;
-            labelVerReglas.Text = MenuPrincipalRes.reglas;
-            labelCerrarSesion.Text = MenuPrincipalRes.cerrarSesion;
-            buttonTablero.Text = MenuPrincipalRes.botonTablero;
-        }
-
-        private void ClicBotonTablero(object sender, EventArgs e) {
-           this.Dispose();
-           MesaJuego jj = new MesaJuego();
-           jj.Show();
+        private void ClicAlCerrarVentana(object sender, FormClosingEventArgs e) {
+            Application.Exit();
         }
     }
 }

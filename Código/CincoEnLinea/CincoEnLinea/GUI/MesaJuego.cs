@@ -17,14 +17,17 @@ namespace CincoEnLinea.GUI {
     public partial class MesaJuego : Form {
         PictureBox pictureBoxSeleccionado = null;
         private int turno;
+        private int turnoActual;
         Crupier crupier = new Crupier();
         Usuario usuario;
         Socket socket;
         List<PictureBox> picturesTablero = new List<PictureBox>();
-        int tiempoRestante;
+        int tiempoRestante = 30;
         Partida partida;
 
         public int Turno { get => turno; set => turno = value; }
+        public int TurnoActual { get => turnoActual; set => turnoActual = value; }
+
 
         public MesaJuego(Usuario usuario, Partida partida) {
             this.usuario = usuario;
@@ -33,44 +36,48 @@ namespace CincoEnLinea.GUI {
             AplicarIdioma();
             ConectarAlServidor();
             CargarListaPictureBox();
+            labelNombreJugador.Text = partida.NombreJugador1;
             String partidaJSON = JsonConvert.SerializeObject(partida);
             socket.Emit("comenzarJuego", partidaJSON);
             
         }
 
+        private void AplicarIdioma() {
+            this.Text = MesaJuegoRes.tituloVentana;
+            abandonaPartida.Text = MesaJuegoRes.botonAbandonaPartida;
+            labelTurnoDe.Text = MesaJuegoRes.labelTurno;
+        }
         //Se debe quitar
         public MesaJuego() {
             InitializeComponent();
             AplicarIdioma();
         }
 
-        private void AplicarIdioma() {
-            this.Text = MesaJuegoRes.tituloVentana;
-            abandonaPartida.Text = MesaJuegoRes.botonAbandonaPartida;
-        }
-
         /// <summary>
         /// Contiene los eventos que pueden ser invocados por el servidor
         /// </summary>
         private void ConectarAlServidor() {
-            socket = IO.Socket("http://192.168.43.72:9000");
+            socket = IO.Socket("http://localhost:9000");
             socket.On(Socket.EVENT_CONNECT, () => {
                 socket.On("asignarTurnos", (data) => {
                     String partidaJSON = data as String;
                     Partida partida = JsonConvert.DeserializeObject<Partida>(partidaJSON);
                     if (usuario.NombreUsuario.Equals(partida.NombreJugador1)) {
                         turno = 1;
+                        turnoActual = 1;
                     } else {
                         turno = 2;
                     }
-                    Console.WriteLine("Turno asignado: " + turno);
                 });
                 socket.On("pintarTiro", (data) => {
                     String jugadaJSON = data as String;
                     Jugada jugada = JsonConvert.DeserializeObject<Jugada>(jugadaJSON);
                     //PictureBox pulsado = BuscarPictureBoxSeleccionado(jugada.NombrePictureBoxSeleccionado);
-
+                    Crupier crup = new Crupier();
+                    turnoActual = crup.RegresaTiroContrario(jugada.Turno);
+                   
                     this.Invoke(new Action(() => PintarTiro(jugada)));
+                    
                 });
             });
         }
@@ -81,6 +88,18 @@ namespace CincoEnLinea.GUI {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ClicTablero(object sender, EventArgs e) {
+            if(turnoActual == turno) {
+                RealizaTiro(sender);
+            } else {
+                ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MesaJuegoRes",
+                                    typeof(TableroJugar).Assembly);
+                string mensaje = rm.GetString("mensajeNoTurno");
+                string titulo = rm.GetString("tituloNoTurno");
+                MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
+
+        public void RealizaTiro(object sender) {
             pictureBoxSeleccionado = sender as PictureBox;
             string nombrePicture = pictureBoxSeleccionado.Name;
             int coordenadaY = ConvierteStringEntero(nombrePicture.Substring(11, 1));
@@ -90,13 +109,13 @@ namespace CincoEnLinea.GUI {
                 CoordenadaY = coordenadaY,
                 IdPartida = partida.IdPartida,
                 NombrePictureBoxSeleccionado = nombrePicture,
-                Turno = turno
+                Turno = turno,
+                TurnoActual = turnoActual
             };
             String jugadaJSON = JsonConvert.SerializeObject(jugada);
             socket.Emit("realizarTiro", jugadaJSON);
-            //PintarTiro(coordenadaY, coordenadaX, pictureBoxSeleccionado);
+                //PintarTiro(coordenadaY, coordenadaX, pictureBoxSeleccionado);
         }
-
        
         /// <summary>
         /// Evento asociado al botón Abandonar partida
@@ -111,6 +130,7 @@ namespace CincoEnLinea.GUI {
             if (MessageBox.Show(mensaje, titulo,
                        MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes) {
                 this.Dispose();
+                MuestraMenuPrincipal();
             }
         }
 
@@ -133,17 +153,22 @@ namespace CincoEnLinea.GUI {
         /// el jugador, y el pictureBox donde se va a poner</param>
         public void PintarTiro(Jugada jugada) {
             PictureBox pulsado = BuscarPictureBoxSeleccionado(jugada.NombrePictureBoxSeleccionado);
+            if (turnoActual == 1) {
+                labelNombreJugador.Text = partida.NombreJugador1;
+            } else {
+                labelNombreJugador.Text = partida.NombreJugador2;
+            }
             if (crupier.ValidarTiro(jugada.CoordenadaY, jugada.CoordenadaX)) {
                 switch (jugada.Turno) {
                     case 1:
                         DibujaFichaNegra(pulsado);
                         crupier.GuardarTiro(jugada.CoordenadaY, jugada.CoordenadaX, jugada.Turno);
-                        VerificarVictoriaOEmpate(jugada.Turno);
+                        VerificarVictoriaOEmpate(jugada);
                         break;
                     case 2:
                         DibujaFichaAzul(pulsado);
                         crupier.GuardarTiro(jugada.CoordenadaY, jugada.CoordenadaX, jugada.Turno);
-                        VerificarVictoriaOEmpate(jugada.Turno);
+                        VerificarVictoriaOEmpate(jugada);
                         break;
                     default:
                         break;
@@ -168,16 +193,23 @@ namespace CincoEnLinea.GUI {
         /// <summary>
         /// Una vez hecho el tiro, verifica si hay una victoria o un empate 
         /// </summary>
-        /// <param name="turno"> Un entero que representa al jugador que realiza el tiro</param>
-        private void VerificarVictoriaOEmpate(int turno) {
-            bool horizontal = crupier.ComprobarHorizontal(turno);
-            bool vertical = crupier.ComprobarVertical(turno);
-            bool diagonalPositiva = crupier.ComprobarDiagonalPositiva(turno);
-            bool diagonalNegativa = crupier.ComprobarDiagonalNegativa(turno);
+        /// <param name="jugada"> Objetivo tipo Jugada para comprobar el turno actual en caso de victoria</param>
+        private void VerificarVictoriaOEmpate(Jugada jugada) {
+            bool horizontal = crupier.ComprobarHorizontal(jugada.Turno);
+            bool vertical = crupier.ComprobarVertical(jugada.Turno);
+            bool diagonalPositiva = crupier.ComprobarDiagonalPositiva(jugada.Turno);
+            bool diagonalNegativa = crupier.ComprobarDiagonalNegativa(jugada.Turno);
             bool empate = crupier.ComprobarEmpate();
 
             if (horizontal || diagonalNegativa || diagonalPositiva || vertical) {
-                MostrarMensajeGanar();
+                if (turno == jugada.TurnoActual) {
+                    MostrarMensajeGanar();
+                    //aquí va el método para la consulta de ganador
+                    MuestraMenuPrincipal();
+                } else {
+                    MostrarMensajePerder();
+                    MuestraMenuPrincipal();
+                }   
             }
 
             if (empate) {
@@ -185,10 +217,24 @@ namespace CincoEnLinea.GUI {
             }
         }
 
+        /// <summary>
+        /// Convierte una cadena a un entero
+        /// </summary>
+        /// <param name="cadena"></param>
+        /// <returns>returna el entero casteado o 0 si algo sale mal</returns>
         private int ConvierteStringEntero(string cadena) {
-            return int.Parse(cadena);
+            try {
+                return int.Parse(cadena);
+            } catch(FormatException e) {
+                MessageBox.Show("Error al castear", "Ups", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            return 0;
         }
 
+        /// <summary>
+        /// Método que devuelve la ruta abosoluta de la ejecución hasta ..\CincoEnLinea
+        /// </summary>
+        /// <returns></returns>
         public string DevuelveRuta() {
             string ruta = null;
             ruta = Application.StartupPath;
@@ -213,6 +259,18 @@ namespace CincoEnLinea.GUI {
                     typeof(TableroJugar).Assembly);
             string mensaje = rm.GetString("mensajeGanar");
             string titulo = rm.GetString("tituloGanar");
+            MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        /// <summary>
+        /// Muestra un mensaje al perdedor del juego, para ello busca una cadena en el archivo de recursos,
+        /// esto según el idioma de la interfaz
+        /// </summary>
+        private void MostrarMensajePerder() {
+            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MesaJuegoRes",
+                    typeof(TableroJugar).Assembly);
+            string mensaje = rm.GetString("mensajePerder");
+            string titulo = rm.GetString("tituloPerder");
             MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
@@ -350,7 +408,18 @@ namespace CincoEnLinea.GUI {
             }
             return encontrado;
         }
-        
 
+        /// <summary>
+        /// Método que libera los recursos de la ventana actual y crea una nueva de tipo MenuPrincipal
+        /// </summary>
+        public void MuestraMenuPrincipal() {
+            this.Dispose();
+            MenuPrincipal mP = new MenuPrincipal();
+            mP.Show();
+        }
+
+        private void ClicAlCerrarVentana(object sender, FormClosingEventArgs e) {
+            Application.Exit();
+        }
     }
 }

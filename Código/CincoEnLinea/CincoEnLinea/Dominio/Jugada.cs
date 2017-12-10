@@ -12,6 +12,7 @@ namespace CincoEnLinea.Dominio {
         private String nombrePictureBoxSeleccionado;
         private int idPartida;
         private int turno;
+        private int turnoActual;
 
         public Jugada() {
         }
@@ -21,5 +22,6 @@ namespace CincoEnLinea.Dominio {
         public string NombrePictureBoxSeleccionado { get => nombrePictureBoxSeleccionado; set => nombrePictureBoxSeleccionado = value; }
         public int IdPartida { get => idPartida; set => idPartida = value; }
         public int Turno { get => turno; set => turno = value; }
+        public int TurnoActual { get => turnoActual; set => turnoActual = value; }
     }
 }

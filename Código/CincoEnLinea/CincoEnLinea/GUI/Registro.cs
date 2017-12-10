@@ -12,14 +12,15 @@ using System.Windows.Forms;
 using System.ServiceModel;
 using WcfServicioBaseDatos;
 
-namespace CincoEnLinea
-{
-    public partial class Registro : Form
-    {
-        public Registro()
-        {
+namespace CincoEnLinea {
+    public partial class Registro : Form {
+        ChannelFactory<IServicioBD> canalServidor;
+        IServicioBD interfazServidor;
+
+        public Registro() {
             InitializeComponent();
             AplicarIdioma();
+            IniciarServicio();
         }
 
         private void AplicarIdioma() {
@@ -32,21 +33,21 @@ namespace CincoEnLinea
             buttonRegresar.Text = RegistroRes.bRegresar;
         }
 
-        private void ClicRegistrame(object sender, EventArgs e) {
-            
+        /// <summary>
+        /// Método que valida el registro de un nuevo usuario, comprobando que no existan campos vacíos, 
+        /// que las contraseñas coincidan y que los caracteres sean validos 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClicRegistrame(object sender, EventArgs e) {   
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.RegistroRes",
                     typeof(Registro).Assembly);
             String nombreUsuario = textBoxNombreUsuario.Text;
             string mensaje;
             string titulo;
-            ChannelFactory<IServicioBD> canalServidor;
-            IServicioBD interfazServidor;
 
             if (ValidarCamposLlenos()) {
                 try {
-                    canalServidor = new ChannelFactory<IServicioBD>("configuracionServidor");
-                    interfazServidor = canalServidor.CreateChannel();
-                    
                     //valida que no exista un usuario con el mismo nombre en la BD
                     if (!interfazServidor.ValidaNombreUsuario(nombreUsuario)) {
                         if (ValidaContrasena(textBoxContrasenia.Text, textBoxConfirmaContrasenia.Text)) {
@@ -91,6 +92,12 @@ namespace CincoEnLinea
             }
         }
 
+        /// <summary>
+        /// Método que valida que las contraseñas ingresadas seas iguales
+        /// </summary>
+        /// <param name="contrasena"></param>
+        /// <param name="confirmaContra"></param>
+        /// <returns></returns>
         public Boolean ValidaContrasena(String contrasena, String confirmaContra) {
             if (contrasena.Equals(confirmaContra)) {
                 return true;
@@ -99,6 +106,11 @@ namespace CincoEnLinea
             }
         }
 
+        /// <summary>
+        /// Método que valida que los campos en los textBox Contraseña, ConfirmarContraseña y 
+        /// NombreUsuario no estén vacíos
+        /// </summary>
+        /// <returns></returns>
         private Boolean ValidarCamposLlenos() {
             string contrasena = textBoxContrasenia.Text;
             string contrasenaConfirmada = textBoxConfirmaContrasenia.Text;
@@ -111,6 +123,19 @@ namespace CincoEnLinea
             }
         }
 
+        /// <summary>
+        /// Método que inicializa el canal por el que se comunicará con el servidor
+        /// </summary>
+        private void IniciarServicio() {
+            canalServidor = new ChannelFactory<IServicioBD>("configuracionServidor");
+            interfazServidor = canalServidor.CreateChannel();
+        }
+
+        /// <summary>
+        /// Valida que los caracteres en el nombreUsuario sean válidos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void VerificarEntrada(object sender, KeyPressEventArgs e) {
             if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '_' && e.KeyChar != '-') {
                 e.Handled = true;
@@ -122,9 +147,19 @@ namespace CincoEnLinea
             }
         }
 
+        /// <summary>
+        /// Evento que se produce cuando el usuario da clic en en regresar liberando los recursos de 
+        /// este ventana y haciendo un Restar() en la aplicación
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClicRegresar(object sender, EventArgs e) {
             this.Dispose();
             Application.Restart();
+        }
+
+        private void ClicAlCerrarVentana(object sender, FormClosingEventArgs e) {
+            Application.Exit();
         }
     }
 }
