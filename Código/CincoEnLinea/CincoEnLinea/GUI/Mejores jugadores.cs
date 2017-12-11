@@ -5,10 +5,13 @@ using System.Resources;
 using System.ServiceModel;
 using System.Windows.Forms;
 using WcfServicioBaseDatos;
+using CincoEnLinea.Dominio;
 
 namespace CincoEnLinea.GUI {
     public partial class MejoresJugadores : Form {
-        public MejoresJugadores() {
+        private Dominio.Usuario usuario;
+        public MejoresJugadores(Dominio.Usuario usuario) {
+            this.usuario = usuario;
             InitializeComponent();
             AplicarIdioma();
             LlenarTablaMejoresJugadores();
@@ -65,7 +68,7 @@ namespace CincoEnLinea.GUI {
         /// <param name="e"></param>
         private void ClicRegresar(object sender, EventArgs e) {
            this.Dispose();
-            MenuPrincipal mP = new MenuPrincipal();
+            MenuPrincipal mP = new MenuPrincipal(usuario);
             mP.Show();
         }
 

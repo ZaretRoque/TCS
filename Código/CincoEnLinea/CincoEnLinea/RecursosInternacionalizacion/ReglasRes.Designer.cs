@@ -83,7 +83,7 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         ///casilla vacía.
         ///
         ///·	 Cuando la ficha se coloca en algún lugar del tablero
-        ///el turno acaba.
+        ///el turnoAsignado acaba.
         ///
         ///·	 Gana el jugador en poner 5 fichas en línea (vertical, 
         ///horizontal o diagonal) de manera consecutiva.

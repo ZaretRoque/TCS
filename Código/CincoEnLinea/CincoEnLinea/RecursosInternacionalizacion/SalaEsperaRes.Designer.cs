@@ -97,11 +97,38 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No puedes crear más de una partida.
+        /// </summary>
+        internal static string mensajeCrearPartida {
+            get {
+                return ResourceManager.GetString("mensajeCrearPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debes seleccionar una partida.
+        /// </summary>
+        internal static string mensajeUnirsePartida {
+            get {
+                return ResourceManager.GetString("mensajeUnirsePartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Sala.
         /// </summary>
         internal static string sala {
             get {
                 return ResourceManager.GetString("sala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No tan rápido.
+        /// </summary>
+        internal static string tituloUnirsePartida {
+            get {
+                return ResourceManager.GetString("tituloUnirsePartida", resourceCulture);
             }
         }
         

@@ -23,11 +23,6 @@ namespace CincoEnLinea.GUI {
             AplicarIdioma();
         }
 
-        public MenuPrincipal() {
-            InitializeComponent();
-            AplicarIdioma();
-        }
-
         public void AplicarIdioma() {
             this.Text = MenuPrincipalRes.wTMenuPrincipal;
             labelMenu.Text = MenuPrincipalRes.labMenu;
@@ -102,7 +97,7 @@ namespace CincoEnLinea.GUI {
         /// <param name="e"></param>
         private void MouseClicMejoresJugadores(object sender, EventArgs e) {
             this.Dispose();
-            MejoresJugadores mJuga = new MejoresJugadores();
+            MejoresJugadores mJuga = new MejoresJugadores(usuario);
             mJuga.Show();
         }
 
@@ -113,7 +108,7 @@ namespace CincoEnLinea.GUI {
         /// <param name="e"></param>
         private void MouseClicSobreVerReglas(object sender, EventArgs e) {
             this.Dispose();
-            VerReglas vReglas = new VerReglas();
+            VerReglas vReglas = new VerReglas(usuario);
             vReglas.Show();
         }
 

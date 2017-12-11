@@ -129,8 +129,17 @@
   <data name="labPartidasDisp" xml:space="preserve">
     <value>Game lobby</value>
   </data>
+  <data name="mensajeCrearPartida" xml:space="preserve">
+    <value>You can't create more than one game</value>
+  </data>
+  <data name="mensajeUnirsePartida" xml:space="preserve">
+    <value>You must select a game</value>
+  </data>
   <data name="sala" xml:space="preserve">
     <value>Room</value>
+  </data>
+  <data name="tituloUnirsePartida" xml:space="preserve">
+    <value>Slow down buddy!</value>
   </data>
   <data name="usuario" xml:space="preserve">
     <value>User</value>

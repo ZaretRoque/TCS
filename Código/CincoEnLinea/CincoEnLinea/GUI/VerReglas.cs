@@ -1,4 +1,5 @@
 ﻿
+using CincoEnLinea.Dominio;
 using CincoEnLinea.RecursosInternacionalizacion;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,9 @@ using System.Windows.Forms;
 
 namespace CincoEnLinea.GUI {
     public partial class VerReglas : Form {
-        public VerReglas() {
+        private Usuario usuario;
+        public VerReglas(Usuario usuario) {
+            this.usuario = usuario;
             InitializeComponent();
             AplicarIdioma();
         }
@@ -32,7 +35,7 @@ namespace CincoEnLinea.GUI {
         /// <param name="e"></param>
         private void ClicRegresar(object sender, EventArgs e) {
             this.Dispose();
-            MenuPrincipal mP = new MenuPrincipal();
+            MenuPrincipal mP = new MenuPrincipal(usuario);
             mP.Show();
         }
 

@@ -11,11 +11,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Quobject.SocketIoClientDotNet.Client;
+using System.Configuration;
+using System.Resources;
 
 namespace CincoEnLinea.GUI {
     public partial class SalaEspera : Form {
-        Usuario usuario;
-        Socket socket;
+        private Usuario usuario;
+        private Socket socket;
+        private bool partidaCreada = false;
         public SalaEspera(Usuario usuario) {
             this.usuario = usuario;
             InitializeComponent();
@@ -40,33 +43,49 @@ namespace CincoEnLinea.GUI {
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ClicRegresar(object sender, EventArgs e) {
+            String usuarioJSON = JsonConvert.SerializeObject(usuario);
+            socket.Emit("eliminarPartida", usuarioJSON);
             this.Dispose();
             MenuPrincipal mP = new MenuPrincipal(usuario);
             mP.Show();
         }
 
         private void ClickCrearPartida(object sender, EventArgs e) {
-            Partida partida = new Partida();
-            partida.NombreJugador1 = usuario.NombreUsuario;
-            partida.UsuariosDentro = 1;
-            String partidaJSON = JsonConvert.SerializeObject(partida);
-            socket.Emit("nuevaPartida", partidaJSON);
+            if (!partidaCreada) {
+                Partida partida = new Partida();
+                partida.NombreJugador1 = usuario.NombreUsuario;
+                partida.UsuariosDentro = 1;
+                String partidaJSON = JsonConvert.SerializeObject(partida);
+                socket.Emit("nuevaPartida", partidaJSON);
+                partidaCreada = true;
+            } else {
+                MostrarMensajePartidaExistente();
+            }
         }
 
         private void ClickUnirsePartida(object sender, EventArgs e) {
-            Partida partidaSeleccionada = listViewPartidasDisponibles.SelectedItems[0].Tag as Partida;
-            partidaSeleccionada.NombreJugador2 = usuario.NombreUsuario;
-            String partidaJSON = JsonConvert.SerializeObject(partidaSeleccionada);
-            socket.Emit("unirsePartida", partidaJSON);
+            if (listViewPartidasDisponibles.SelectedIndices.Count > 0) {
+                Partida partidaSeleccionada = listViewPartidasDisponibles.SelectedItems[0].Tag as Partida;
+                partidaSeleccionada.NombreJugador2 = usuario.NombreUsuario;
+                String partidaJSON = JsonConvert.SerializeObject(partidaSeleccionada);
+                socket.Emit("unirsePartida", partidaJSON);
+            } else {
+                MostrarMensajeSeleccion();
+            }
         }
 
         private void ConectarConServidor() {
-            socket = IO.Socket("http://localhost:8000");
+            String direccionIP = ConfigurationManager.AppSettings["direccionIPServidorSalas"];
+            socket = IO.Socket(direccionIP);
             socket.On(Socket.EVENT_CONNECT, () => {
                 socket.On("actualizarTablaPartidas", (data) => {
                     String partidasJSON = data as String;
                     List<Partida> partidasDisponibles = JsonConvert.DeserializeObject<List<Partida>>(partidasJSON);
-                    listViewPartidasDisponibles.Invoke(new Action(() => LlenarTablaPartidas(partidasDisponibles)));
+                    try {
+                        listViewPartidasDisponibles.Invoke(new Action(() => LlenarTablaPartidas(partidasDisponibles)));
+                    } catch(InvalidOperationException e) {
+                       string excepcion =  e.StackTrace;
+                    }
                 });
                 socket.On("salaLlena", (data) => {
                     String partidaJSON = data as String;
@@ -101,6 +120,22 @@ namespace CincoEnLinea.GUI {
 
         private void ClicAlCerrarVentana(object sender, FormClosingEventArgs e) {
             Application.Exit();
+        }
+
+        private void MostrarMensajeSeleccion() {
+            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.SalaEsperaRes",
+                    typeof(SalaEspera).Assembly);
+            string mensaje = rm.GetString("mensajeUnirsePartida");
+            string titulo = rm.GetString("tituloUnirsePartida");
+            MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        private void MostrarMensajePartidaExistente() {
+            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.SalaEsperaRes",
+                    typeof(SalaEspera).Assembly);
+            string mensaje = rm.GetString("mensajeCrearPartida");
+            string titulo = rm.GetString("tituloUnirsePartida");
+            MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
     }
 }

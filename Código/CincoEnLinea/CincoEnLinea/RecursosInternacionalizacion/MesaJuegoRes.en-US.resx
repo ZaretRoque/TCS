@@ -123,6 +123,12 @@
   <data name="confirmacionSalida" xml:space="preserve">
     <value>Are you sure?</value>
   </data>
+  <data name="excepcionBD" xml:space="preserve">
+    <value>Our dog ate the database, sorry</value>
+  </data>
+  <data name="excepcionServicioWcf" xml:space="preserve">
+    <value>Our dog ate th sesrver, sorry</value>
+  </data>
   <data name="labelTurno" xml:space="preserve">
     <value>Turn of</value>
   </data>
@@ -143,6 +149,12 @@
   </data>
   <data name="tituloEmpatar" xml:space="preserve">
     <value>Really?</value>
+  </data>
+  <data name="tituloExcepcionBD" xml:space="preserve">
+    <value>Database error</value>
+  </data>
+  <data name="tituloExcepcionWcf" xml:space="preserve">
+    <value>Server error</value>
   </data>
   <data name="tituloGanar" xml:space="preserve">
     <value>Winner</value>

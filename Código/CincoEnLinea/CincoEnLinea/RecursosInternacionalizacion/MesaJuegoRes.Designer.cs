@@ -79,6 +79,24 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Tuvimos un problema con la base de datos, inténtalo más tarde.
+        /// </summary>
+        internal static string excepcionBD {
+            get {
+                return ResourceManager.GetString("excepcionBD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error en el servidor, intenta más tarde.
+        /// </summary>
+        internal static string excepcionServicioWcf {
+            get {
+                return ResourceManager.GetString("excepcionServicioWcf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Turno de.
         /// </summary>
         internal static string labelTurno {
@@ -138,6 +156,24 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         internal static string tituloEmpatar {
             get {
                 return ResourceManager.GetString("tituloEmpatar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error en la base de datos.
+        /// </summary>
+        internal static string tituloExcepcionBD {
+            get {
+                return ResourceManager.GetString("tituloExcepcionBD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error en servidor.
+        /// </summary>
+        internal static string tituloExcepcionWcf {
+            get {
+                return ResourceManager.GetString("tituloExcepcionWcf", resourceCulture);
             }
         }
         

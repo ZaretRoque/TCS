@@ -123,6 +123,12 @@
   <data name="confirmacionSalida" xml:space="preserve">
     <value>¿Seguro que deseas salir?</value>
   </data>
+  <data name="excepcionBD" xml:space="preserve">
+    <value>Tuvimos un problema con la base de datos, inténtalo más tarde</value>
+  </data>
+  <data name="excepcionServicioWcf" xml:space="preserve">
+    <value>Error en el servidor, intenta más tarde</value>
+  </data>
   <data name="labelTurno" xml:space="preserve">
     <value>Turno de</value>
   </data>
@@ -143,6 +149,12 @@
   </data>
   <data name="tituloEmpatar" xml:space="preserve">
     <value>¿En serio?</value>
+  </data>
+  <data name="tituloExcepcionBD" xml:space="preserve">
+    <value>Error en la base de datos</value>
+  </data>
+  <data name="tituloExcepcionWcf" xml:space="preserve">
+    <value>Error en servidor</value>
   </data>
   <data name="tituloGanar" xml:space="preserve">
     <value>Ganador</value>

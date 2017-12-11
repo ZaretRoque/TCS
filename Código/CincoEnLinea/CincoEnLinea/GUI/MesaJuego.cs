@@ -5,13 +5,16 @@ using Quobject.SocketIoClientDotNet.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Resources;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WcfServicioBaseDatos;
 
 namespace CincoEnLinea.GUI {
     public partial class MesaJuego : Form {
@@ -19,7 +22,7 @@ namespace CincoEnLinea.GUI {
         private int turno;
         private int turnoActual;
         Crupier crupier = new Crupier();
-        Usuario usuario;
+        Dominio.Usuario usuario;
         Socket socket;
         List<PictureBox> picturesTablero = new List<PictureBox>();
         int tiempoRestante = 30;
@@ -29,7 +32,7 @@ namespace CincoEnLinea.GUI {
         public int TurnoActual { get => turnoActual; set => turnoActual = value; }
 
 
-        public MesaJuego(Usuario usuario, Partida partida) {
+        public MesaJuego(Dominio.Usuario usuario, Partida partida) {
             this.usuario = usuario;
             this.partida = partida;
             InitializeComponent();
@@ -57,22 +60,18 @@ namespace CincoEnLinea.GUI {
         /// Contiene los eventos que pueden ser invocados por el servidor
         /// </summary>
         private void ConectarAlServidor() {
-            socket = IO.Socket("http://localhost:9000");
+            String direccionIP = ConfigurationManager.AppSettings["direccionIPServidorJuego"];
+            socket = IO.Socket(direccionIP);
             socket.On(Socket.EVENT_CONNECT, () => {
                 socket.On("asignarTurnos", (data) => {
                     String partidaJSON = data as String;
                     Partida partida = JsonConvert.DeserializeObject<Partida>(partidaJSON);
-                    if (usuario.NombreUsuario.Equals(partida.NombreJugador1)) {
-                        turno = 1;
-                        turnoActual = 1;
-                    } else {
-                        turno = 2;
-                    }
+                    this.Invoke(new Action(() => AsignarTurnos(partida)));
+                    
                 });
                 socket.On("pintarTiro", (data) => {
                     String jugadaJSON = data as String;
                     Jugada jugada = JsonConvert.DeserializeObject<Jugada>(jugadaJSON);
-                    //PictureBox pulsado = BuscarPictureBoxSeleccionado(jugada.NombrePictureBoxSeleccionado);
                     Crupier crup = new Crupier();
                     turnoActual = crup.RegresaTiroContrario(jugada.Turno);
                    
@@ -80,6 +79,10 @@ namespace CincoEnLinea.GUI {
                     
                 });
             });
+        }
+
+        private void IniciarTemporizador() {
+            timer1.Start();
         }
 
         /// <summary>
@@ -173,20 +176,7 @@ namespace CincoEnLinea.GUI {
                     default:
                         break;
                 }
-                /*if (jugada.Turno) {
-                    DibujaFichaNegra(pulsado);
-                    crupier.GuardarTiro(jugada.CoordenadaY, jugada.CoordenadaX, jugada.Turno);
-                    VerificarVictoriaOEmpate(jugada.Turno);
-                   // crupier.Turno = 2;
-                    //turno = 2;
-                } else {
-                    DibujaFichaAzul(pulsado);
-                    crupier.GuardarTiro(jugada.CoordenadaY, jugada.CoordenadaX, jugada.Turno);
-                    VerificarVictoriaOEmpate(jugada.Turno);
-                    //crupier.Turno = 1;
-                   // turno = 1;
-                }
-                //pulsado.Enabled = false;*/
+               // pulsado.Enabled = false;
             }
         }
 
@@ -204,16 +194,19 @@ namespace CincoEnLinea.GUI {
             if (horizontal || diagonalNegativa || diagonalPositiva || vertical) {
                 if (turno == jugada.TurnoActual) {
                     MostrarMensajeGanar();
-                    //aquí va el método para la consulta de ganador
+                    RegistrarResultadosPartida(usuario, "partidaGanada");
                     MuestraMenuPrincipal();
                 } else {
                     MostrarMensajePerder();
+                    RegistrarResultadosPartida(usuario, "partidaPerdida");
                     MuestraMenuPrincipal();
                 }   
             }
 
             if (empate) {
                 MostrarMensajeEmpate();
+                RegistrarResultadosPartida(usuario, "partidaEmpatada");
+                MuestraMenuPrincipal();
             }
         }
 
@@ -414,12 +407,60 @@ namespace CincoEnLinea.GUI {
         /// </summary>
         public void MuestraMenuPrincipal() {
             this.Dispose();
-            MenuPrincipal mP = new MenuPrincipal();
+            MenuPrincipal mP = new MenuPrincipal(usuario);
             mP.Show();
         }
 
         private void ClicAlCerrarVentana(object sender, FormClosingEventArgs e) {
             Application.Exit();
+        }
+
+        /// <summary>
+        /// Se encarga de registrar en la base de datos los resultados de cada partida. Se comunica con el servicio WCF
+        /// </summary>
+        /// <param name="usuario"> Objeto Usuario al que se registrará el resultado de la partida</param>
+        /// <param name="operacionSolicitada"> String especificando lo que será registrado, partidaGanada, partidaPerdida,
+        /// partidaEmpatada. </param>
+        private void RegistrarResultadosPartida(Dominio.Usuario usuario, String operacionSolicitada) {
+            ChannelFactory<IServicioBD> canalServidor = new ChannelFactory<IServicioBD>("configuracionServidor");
+            IServicioBD interfazServidor = canalServidor.CreateChannel();
+            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.IniciarSesionRes",
+                    typeof(IniciarSesion).Assembly);
+            string mensaje;
+            string titulo;
+            try {
+                switch (operacionSolicitada) {
+                    case "partidaGanada":
+                        interfazServidor.SumarPartidaGanada(usuario.IdUsuario);
+                        break;
+                    case "partidaPerdida":
+                        interfazServidor.SumarPartidaPerdida(usuario.IdUsuario);
+                        break;
+                    case "partidaEmpatada":
+                        interfazServidor.SumarPartidaEmpatada(usuario.IdUsuario);
+                        break;
+                    default:
+                        break;
+                }
+            } catch(MySql.Data.MySqlClient.MySqlException e) {
+                
+                mensaje = rm.GetString("excepcionBD");
+                titulo = rm.GetString("tituloExcepcionBD");
+                MessageBox.Show(mensaje, titulo,
+                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            } catch(FaultException e) {
+                mensaje = rm.GetString("excepcionServicioWcf");
+                titulo = rm.GetString("tituloExcepcionWcf");
+            }
+        }
+
+        private void AsignarTurnos(Partida partida) {
+            if (usuario.NombreUsuario.Equals(partida.NombreJugador1)) {
+                turno = 1;
+                turnoActual = 1;
+            } else {
+                turno = 2;
+            }
         }
     }
 }
