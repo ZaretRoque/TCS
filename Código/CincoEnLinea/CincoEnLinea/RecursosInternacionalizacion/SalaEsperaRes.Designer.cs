@@ -97,11 +97,29 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Que comience el juego.
+        /// </summary>
+        internal static string mensajeComenzarPartida {
+            get {
+                return ResourceManager.GetString("mensajeComenzarPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a No puedes crear más de una partida.
         /// </summary>
         internal static string mensajeCrearPartida {
             get {
                 return ResourceManager.GetString("mensajeCrearPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No puedes unirte a tu propia partida.
+        /// </summary>
+        internal static string mensajeUnirseMismaPartida {
+            get {
+                return ResourceManager.GetString("mensajeUnirseMismaPartida", resourceCulture);
             }
         }
         
@@ -120,6 +138,24 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         internal static string sala {
             get {
                 return ResourceManager.GetString("sala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Empieza.
+        /// </summary>
+        internal static string tituloComenzarPartida {
+            get {
+                return ResourceManager.GetString("tituloComenzarPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ups.
+        /// </summary>
+        internal static string tituloUnirseMismaPartida {
+            get {
+                return ResourceManager.GetString("tituloUnirseMismaPartida", resourceCulture);
             }
         }
         

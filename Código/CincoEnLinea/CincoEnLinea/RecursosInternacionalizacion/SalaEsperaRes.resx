@@ -129,14 +129,26 @@
   <data name="labPartidasDisp" xml:space="preserve">
     <value>Partidas disponibles</value>
   </data>
+  <data name="mensajeComenzarPartida" xml:space="preserve">
+    <value>Que comience el juego</value>
+  </data>
   <data name="mensajeCrearPartida" xml:space="preserve">
     <value>No puedes crear más de una partida</value>
+  </data>
+  <data name="mensajeUnirseMismaPartida" xml:space="preserve">
+    <value>No puedes unirte a tu propia partida</value>
   </data>
   <data name="mensajeUnirsePartida" xml:space="preserve">
     <value>Debes seleccionar una partida</value>
   </data>
   <data name="sala" xml:space="preserve">
     <value>Sala</value>
+  </data>
+  <data name="tituloComenzarPartida" xml:space="preserve">
+    <value>Empieza</value>
+  </data>
+  <data name="tituloUnirseMismaPartida" xml:space="preserve">
+    <value>Ups</value>
   </data>
   <data name="tituloUnirsePartida" xml:space="preserve">
     <value>No tan rápido</value>

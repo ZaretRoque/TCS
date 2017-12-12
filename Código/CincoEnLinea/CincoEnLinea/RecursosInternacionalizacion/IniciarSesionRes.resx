@@ -165,4 +165,7 @@
   <data name="tituloExcepcionWcf" xml:space="preserve">
     <value>Error en servidor</value>
   </data>
+  <data name="toolTip" xml:space="preserve">
+    <value>Sólo se permiten letras, números, guión medio(-) y guión bajo</value>
+  </data>
 </root>

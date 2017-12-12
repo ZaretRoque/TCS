@@ -133,6 +133,7 @@ namespace CincoEnLinea.GUI {
             if (MessageBox.Show(mensaje, titulo,
                        MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes) {
                 this.Dispose();
+                RegistrarResultadosPartida(usuario, "partidaPerdida");
                 MuestraMenuPrincipal();
             }
         }

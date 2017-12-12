@@ -67,8 +67,18 @@ namespace CincoEnLinea.GUI {
             if (listViewPartidasDisponibles.SelectedIndices.Count > 0) {
                 Partida partidaSeleccionada = listViewPartidasDisponibles.SelectedItems[0].Tag as Partida;
                 partidaSeleccionada.NombreJugador2 = usuario.NombreUsuario;
+                String usuarioJSON = JsonConvert.SerializeObject(usuario);
                 String partidaJSON = JsonConvert.SerializeObject(partidaSeleccionada);
-                socket.Emit("unirsePartida", partidaJSON);
+                socket.Emit("eliminarPartida", usuarioJSON);
+                if(!partidaSeleccionada.NombreJugador1.Equals(usuario.NombreUsuario)) {
+                    socket.Emit("unirsePartida", partidaJSON);
+                } else {
+                    ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.SalaEsperaRes",
+                    typeof(SalaEspera).Assembly);
+                    string mensaje = rm.GetString("mensajeUnirseMismaPartida");
+                    string titulo = rm.GetString("tituloUnirseMismaPartida");
+                    MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
             } else {
                 MostrarMensajeSeleccion();
             }
@@ -95,7 +105,11 @@ namespace CincoEnLinea.GUI {
                 socket.On("mostrarTablero", (data) => {
                     String partidaJSON = data as String;
                     Partida partida = JsonConvert.DeserializeObject<Partida>(partidaJSON);
-                    MessageBox.Show("Comienza el juego", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.SalaEsperaRes",
+                   typeof(SalaEspera).Assembly);
+                    string mensaje = rm.GetString("mensajeComenzarPartida");
+                    string titulo = rm.GetString("tituloComenzarPartida");
+                    MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Invoke(new Action(() => MostrarTablero(partida)));
                 });
 

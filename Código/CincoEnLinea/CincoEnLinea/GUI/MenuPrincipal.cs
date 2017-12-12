@@ -135,8 +135,7 @@ namespace CincoEnLinea.GUI {
             string titulo = rm.GetString("tituloConfirmacion");
             if (MessageBox.Show(mensaje, titulo,
                        MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes) {
-                this.Dispose();
-                Application.Restart();
+                Application.Exit();
             }
         }
 

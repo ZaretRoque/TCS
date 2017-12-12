@@ -187,6 +187,15 @@ namespace CincoEnLinea.RecursosInternacionalizacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Sólo se permiten letras, números, guión medio(-) y guión bajo.
+        /// </summary>
+        internal static string toolTip {
+            get {
+                return ResourceManager.GetString("toolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Usuario.
         /// </summary>
         internal static string Usuario {
