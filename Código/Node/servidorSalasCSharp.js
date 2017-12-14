@@ -68,6 +68,7 @@ function quitarPartidasLlenas(){
 
 /**
  * Busca una partida y la establece como llena, evita que más de dos jugadores se unan a la misma partida
+ * @param {partida} Un objeto partida que se va a buscar en el arreglo de partidas disponibles
  */
 function buscarPartida(partida){
 	for(i = 0; i<partidasDisponibles.length; i++){
@@ -77,6 +78,11 @@ function buscarPartida(partida){
 	}
 }
 
+
+/**
+ * Elimina la partida del usuario que se recibe como parámetro
+ * @param {JSON} Un objeto JSON que representa un usuario
+ */
 function eliminarPartida(usuarioJSON){
 	console.log(usuarioJSON);
 	var usuario = JSON.parse(usuarioJSON);

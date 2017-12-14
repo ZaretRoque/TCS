@@ -13,9 +13,9 @@ namespace Servidor {
     class ServidorWCF {
 
         static void Main(string[] args) {
-            ServidorWCF ser = new ServidorWCF();
-            if(ser.EsAdministrador())
-                ser.LevantarServidor();
+            ServidorWCF servidor = new ServidorWCF();
+            if(servidor.EsAdministrador())
+                servidor.LevantarServidor();
             else
                 MessageBox.Show("¿Lo estás ejecutando como administrador?", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }

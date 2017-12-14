@@ -21,7 +21,7 @@ namespace CincoEnLinea.Dominio {
         }
 
         /// <summary>
-        /// Llena todo el tablero de juegos con 0, de esta forma se indica que la casilla está vacía y puede ser utilizada
+        /// Llena el tablero de juegos con 0, de esta forma se indica que la casilla está vacía y puede ser utilizada
         /// por un jugador para poner su ficha
         /// </summary>
         private void LlenarTableroTiros() {

@@ -8,7 +8,7 @@ using System.Text;
 namespace WcfServicioBaseDatos {
     // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código y en el archivo de configuración a la vez.
     public class ServicioBD : IServicioBD {
-        private Consultas consultas = new Consultas();
+        private readonly Consultas consultas = new Consultas();
 
 
         public List<Usuario> RecuperarMejoresJugadores() {

@@ -123,12 +123,6 @@
     <Compile Include="GUI\MesaJuego.Designer.cs">
       <DependentUpon>MesaJuego.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\TableroJugar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\TableroJugar.Designer.cs">
-      <DependentUpon>TableroJugar.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Mejores jugadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,9 +249,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MesaJuego.resx">
       <DependentUpon>MesaJuego.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\TableroJugar.resx">
-      <DependentUpon>TableroJugar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Mejores jugadores.resx">
       <DependentUpon>Mejores jugadores.cs</DependentUpon>

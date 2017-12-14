@@ -12,6 +12,7 @@ using System.Linq;
 using System.Resources;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WcfServicioBaseDatos;
@@ -25,7 +26,6 @@ namespace CincoEnLinea.GUI {
         Dominio.Usuario usuario;
         Socket socket;
         List<PictureBox> picturesTablero = new List<PictureBox>();
-        int tiempoRestante = 30;
         Partida partida;
 
         public int Turno { get => turno; set => turno = value; }
@@ -50,11 +50,6 @@ namespace CincoEnLinea.GUI {
             abandonaPartida.Text = MesaJuegoRes.botonAbandonaPartida;
             labelTurnoDe.Text = MesaJuegoRes.labelTurno;
         }
-        //Se debe quitar
-        public MesaJuego() {
-            InitializeComponent();
-            AplicarIdioma();
-        }
 
         /// <summary>
         /// Contiene los eventos que pueden ser invocados por el servidor
@@ -65,9 +60,14 @@ namespace CincoEnLinea.GUI {
             socket.On(Socket.EVENT_CONNECT, () => {
                 socket.On("asignarTurnos", (data) => {
                     String partidaJSON = data as String;
-                    Partida partida = JsonConvert.DeserializeObject<Partida>(partidaJSON);
-                    this.Invoke(new Action(() => AsignarTurnos(partida)));
-                    
+                    Partida partidaDominio = JsonConvert.DeserializeObject<Partida>(partidaJSON);
+                    //this.Invoke(new Action(() => AsignarTurnos(partidaDominio)));
+                    if (usuario.NombreUsuario.Equals(partida.NombreJugador1)) {
+                        turno = 1;
+                        turnoActual = 1;
+                    } else {
+                        turno = 2;
+                    }
                 });
                 socket.On("pintarTiro", (data) => {
                     String jugadaJSON = data as String;
@@ -78,11 +78,12 @@ namespace CincoEnLinea.GUI {
                     this.Invoke(new Action(() => PintarTiro(jugada)));
                     
                 });
+                socket.On("jugadorAbandonaPartida", (data) => {
+                    String jugadaJSON = data as String;
+                    Jugada jugada = JsonConvert.DeserializeObject<Jugada>(jugadaJSON);
+                    this.Invoke(new Action(() => AbandonarPartida(jugada)));
+                });
             });
-        }
-
-        private void IniciarTemporizador() {
-            timer1.Start();
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace CincoEnLinea.GUI {
                 RealizaTiro(sender);
             } else {
                 ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MesaJuegoRes",
-                                    typeof(TableroJugar).Assembly);
+                                    typeof(MesaJuego).Assembly);
                 string mensaje = rm.GetString("mensajeNoTurno");
                 string titulo = rm.GetString("tituloNoTurno");
                 MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -117,7 +118,6 @@ namespace CincoEnLinea.GUI {
             };
             String jugadaJSON = JsonConvert.SerializeObject(jugada);
             socket.Emit("realizarTiro", jugadaJSON);
-                //PintarTiro(coordenadaY, coordenadaX, pictureBoxSeleccionado);
         }
        
         /// <summary>
@@ -127,14 +127,17 @@ namespace CincoEnLinea.GUI {
         /// <param name="e"></param>
         private void ClicAbandonarPartida(object sender, EventArgs e) {
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MesaJuegoRes",
-                   typeof(TableroJugar).Assembly);
+                   typeof(MesaJuego).Assembly);
             string mensaje = rm.GetString("confirmacionSalida");
             string titulo = rm.GetString("tituloConfirmacion");
             if (MessageBox.Show(mensaje, titulo,
                        MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes) {
-                this.Dispose();
-                RegistrarResultadosPartida(usuario, "partidaPerdida");
-                MuestraMenuPrincipal();
+                Jugada jugada = new Jugada {
+                    Turno = turno,
+                    IdPartida = partida.IdPartida
+                };
+                String jugadaJSON = JsonConvert.SerializeObject(jugada);
+                socket.Emit("abandonarPartida", jugadaJSON);
             }
         }
 
@@ -177,7 +180,6 @@ namespace CincoEnLinea.GUI {
                     default:
                         break;
                 }
-               // pulsado.Enabled = false;
             }
         }
 
@@ -250,7 +252,7 @@ namespace CincoEnLinea.GUI {
         /// </summary>
         private void MostrarMensajeGanar() {
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MesaJuegoRes",
-                    typeof(TableroJugar).Assembly);
+                    typeof(MesaJuego).Assembly);
             string mensaje = rm.GetString("mensajeGanar");
             string titulo = rm.GetString("tituloGanar");
             MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -262,7 +264,7 @@ namespace CincoEnLinea.GUI {
         /// </summary>
         private void MostrarMensajePerder() {
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MesaJuegoRes",
-                    typeof(TableroJugar).Assembly);
+                    typeof(MesaJuego).Assembly);
             string mensaje = rm.GetString("mensajePerder");
             string titulo = rm.GetString("tituloPerder");
             MessageBox.Show(mensaje, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -274,7 +276,7 @@ namespace CincoEnLinea.GUI {
         /// </summary>
         private void MostrarMensajeEmpate() {
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MesaJuegoRes",
-                    typeof(TableroJugar).Assembly);
+                    typeof(MesaJuego).Assembly);
             string mensajeEmpate = rm.GetString("mensajeEmpatar");
             string tituloEmpate = rm.GetString("tituloEmpatar");
             MessageBox.Show(mensajeEmpate, tituloEmpate, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -369,22 +371,6 @@ namespace CincoEnLinea.GUI {
         }
 
         /// <summary>
-        /// Lleva el control del tiempo restante para hacer el tiro
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ControlarTiempo(object sender, EventArgs e) {
-            if (tiempoRestante > 0) {
-                tiempoRestante--;
-                labelTiempoRestante.Text = tiempoRestante + " s";
-            } else {
-                timer1.Stop();
-                labelTiempoRestante.Text = "00 s";
-
-            }
-        }
-
-        /// <summary>
         /// Busca un pictureBox en la lista de los que están en el tablero, útil para manejar los tiros en las ventanas de los
         /// jugadores
         /// </summary>
@@ -452,9 +438,16 @@ namespace CincoEnLinea.GUI {
             } catch(FaultException e) {
                 mensaje = rm.GetString("excepcionServicioWcf");
                 titulo = rm.GetString("tituloExcepcionWcf");
+                MessageBox.Show(mensaje, titulo,
+                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
 
+        /// <summary>
+        /// Asigna los turnos a los jugadores
+        /// </summary>
+        /// <param name="partida">Un objeto partida, que representa la partida
+        /// a la que están unidos</param>
         private void AsignarTurnos(Partida partida) {
             if (usuario.NombreUsuario.Equals(partida.NombreJugador1)) {
                 turno = 1;
@@ -462,6 +455,20 @@ namespace CincoEnLinea.GUI {
             } else {
                 turno = 2;
             }
+        }
+
+        private void AbandonarPartida(Jugada jugada) {
+            if(jugada.Turno == turno) {
+                RegistrarResultadosPartida(usuario, "partidaPerdida");
+                this.Dispose();
+                MuestraMenuPrincipal();
+            } else {
+                RegistrarResultadosPartida(usuario, "partidaGanada");
+                this.Dispose();
+                MuestraMenuPrincipal();
+            }
+
+            
         }
     }
 }

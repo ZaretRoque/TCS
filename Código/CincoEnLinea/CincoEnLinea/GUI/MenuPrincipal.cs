@@ -130,7 +130,7 @@ namespace CincoEnLinea.GUI {
         /// <param name="e"></param>
         private void ClicSalir(object sender, EventArgs e) {
             ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.MenuPrincipalRes",
-                   typeof(TableroJugar).Assembly);
+                   typeof(MenuPrincipal).Assembly);
             string mensaje = rm.GetString("confirmacionSalida");
             string titulo = rm.GetString("tituloConfirmacion");
             if (MessageBox.Show(mensaje, titulo,

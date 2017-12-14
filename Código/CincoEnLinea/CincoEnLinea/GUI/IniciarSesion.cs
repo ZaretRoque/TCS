@@ -178,12 +178,13 @@ namespace CincoEnLinea.GUI {
         private void VerificarEntrada(object sender, KeyPressEventArgs e) {
             if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '_' && e.KeyChar != '-') {
                 e.Handled = true;
+                ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.IniciarSesionRes",
+                  typeof(Registro).Assembly);
+                ToolTip tool = new ToolTip();
+                String mensaje = rm.GetString("toolTip");
+                tool.Show(mensaje, textBoxNombreUsuario, 2000);
             }
-            ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.IniciarSesionRes",
-                   typeof(Registro).Assembly);
-            ToolTip tool = new ToolTip();
-            String mensaje = rm.GetString("toolTip");
-            tool.Show(mensaje, textBoxNombreUsuario, 2000);
+           
         }
 
         private void ClicAlCerrarVentana(object sender, FormClosingEventArgs e) {

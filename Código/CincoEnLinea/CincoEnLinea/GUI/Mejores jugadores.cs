@@ -42,13 +42,13 @@ namespace CincoEnLinea.GUI {
                 List<WcfServicioBaseDatos.Usuario> mejoresJugadores = interfazServidor.RecuperarMejoresJugadores();
                 listViewMejoresJugadores.View = View.Details;
                 int contador = 1;
-                foreach (WcfServicioBaseDatos.Usuario usuario in mejoresJugadores) {
+                foreach (WcfServicioBaseDatos.Usuario usuarioWcf in mejoresJugadores) {
                     ListViewItem item = listViewMejoresJugadores.Items.Add(contador.ToString());
-                    item.SubItems.Add(usuario.NombreUsuario);
-                    item.SubItems.Add(usuario.PartidasGanadas.ToString());
-                    item.SubItems.Add(usuario.PartidasPerdidas.ToString());
-                    item.SubItems.Add(usuario.PartidasEmpatadas.ToString());
-                    item.Tag = usuario;
+                    item.SubItems.Add(usuarioWcf.NombreUsuario);
+                    item.SubItems.Add(usuarioWcf.PartidasGanadas.ToString());
+                    item.SubItems.Add(usuarioWcf.PartidasPerdidas.ToString());
+                    item.SubItems.Add(usuarioWcf.PartidasEmpatadas.ToString());
+                    item.Tag = usuarioWcf;
                     contador++;
                 }
             }

@@ -69,8 +69,8 @@ namespace CincoEnLinea.GUI {
                 partidaSeleccionada.NombreJugador2 = usuario.NombreUsuario;
                 String usuarioJSON = JsonConvert.SerializeObject(usuario);
                 String partidaJSON = JsonConvert.SerializeObject(partidaSeleccionada);
-                socket.Emit("eliminarPartida", usuarioJSON);
                 if(!partidaSeleccionada.NombreJugador1.Equals(usuario.NombreUsuario)) {
+                    socket.Emit("eliminarPartida", usuarioJSON);
                     socket.Emit("unirsePartida", partidaJSON);
                 } else {
                     ResourceManager rm = new ResourceManager("CincoEnLinea.RecursosInternacionalizacion.SalaEsperaRes",
@@ -94,13 +94,8 @@ namespace CincoEnLinea.GUI {
                     try {
                         listViewPartidasDisponibles.Invoke(new Action(() => LlenarTablaPartidas(partidasDisponibles)));
                     } catch(InvalidOperationException e) {
-                       string excepcion =  e.StackTrace;
+                       
                     }
-                });
-                socket.On("salaLlena", (data) => {
-                    String partidaJSON = data as String;
-                    Partida partida = JsonConvert.DeserializeObject<Partida>(partidaJSON);
-                    MessageBox.Show("Sala llena", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 });
                 socket.On("mostrarTablero", (data) => {
                     String partidaJSON = data as String;
