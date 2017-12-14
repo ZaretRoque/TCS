@@ -56,5 +56,12 @@
         <text>Confirmar%20la%20contrase%F1a</text>
       </controlProperties>
     </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Button" x="422" y="37" w="94" h="31" measuredW="78" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Iniciar%20sesi%F3n%26bm%3BIniciar%20sesi%F3n.bmml%26bm%3BIniciar%20sesi%F3n.bmml%26bm%3BIniciar%20sesi%F3n.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2246%2C27%2C140%2C58%22%20href%3D%22Iniciar%2520sesi%25C3%25B3n.bmml%22%20alt%3D%22Iniciar%20sesi%F3n%22%20id%3D%2212%22/%3E</map>
+        <text>Regresar</text>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>
