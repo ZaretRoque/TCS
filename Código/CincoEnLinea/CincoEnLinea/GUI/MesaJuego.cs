@@ -59,8 +59,6 @@ namespace CincoEnLinea.GUI {
             socket = IO.Socket(direccionIP);
             socket.On(Socket.EVENT_CONNECT, () => {
                 socket.On("asignarTurnos", (data) => {
-                    String partidaJSON = data as String;
-                    Partida partidaDominio = JsonConvert.DeserializeObject<Partida>(partidaJSON);
                     if (usuario.NombreUsuario.Equals(partida.NombreJugador1)) {
                         turno = 1;
                         turnoActual = 1;
