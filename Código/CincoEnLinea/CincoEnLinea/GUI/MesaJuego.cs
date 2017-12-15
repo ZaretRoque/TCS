@@ -61,7 +61,6 @@ namespace CincoEnLinea.GUI {
                 socket.On("asignarTurnos", (data) => {
                     String partidaJSON = data as String;
                     Partida partidaDominio = JsonConvert.DeserializeObject<Partida>(partidaJSON);
-                    //this.Invoke(new Action(() => AsignarTurnos(partidaDominio)));
                     if (usuario.NombreUsuario.Equals(partida.NombreJugador1)) {
                         turno = 1;
                         turnoActual = 1;
@@ -444,19 +443,9 @@ namespace CincoEnLinea.GUI {
         }
 
         /// <summary>
-        /// Asigna los turnos a los jugadores
+        /// Registra las puntuaciones para cada jugador cuando alguno abandona la partida
         /// </summary>
-        /// <param name="partida">Un objeto partida, que representa la partida
-        /// a la que están unidos</param>
-        private void AsignarTurnos(Partida partida) {
-            if (usuario.NombreUsuario.Equals(partida.NombreJugador1)) {
-                turno = 1;
-                turnoActual = 1;
-            } else {
-                turno = 2;
-            }
-        }
-
+        /// <param name="jugada"></param>
         private void AbandonarPartida(Jugada jugada) {
             if(jugada.Turno == turno) {
                 RegistrarResultadosPartida(usuario, "partidaPerdida");

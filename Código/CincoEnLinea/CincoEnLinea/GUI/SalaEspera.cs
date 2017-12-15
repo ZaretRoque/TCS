@@ -111,6 +111,10 @@ namespace CincoEnLinea.GUI {
             });
         }
 
+        /// <summary>
+        /// Llena la tabla de las partidas disponibles para que los jugadores puedan unirse
+        /// </summary>
+        /// <param name="partidas"> Una lista de objetos Partida</param>
         private void LlenarTablaPartidas(List<Partida> partidas) {
             listViewPartidasDisponibles.Items.Clear();
             listViewPartidasDisponibles.View = View.Details;
